@@ -15,7 +15,9 @@ router.get('/:id', (req, res ) => {
 // ESTO ES PARA LA DE DOCENTES UNICAMENTE
 // router.post('/', (req, res ) => {
 //     res.json("crear Informacion ");
-//   });
+//   }
+// {timestamps} para ver la hora en la que se creo el documento
+// );
 
 
 // router.put('/:idIndo', (req, res ) => {
@@ -27,6 +29,8 @@ router.get('/:id', (req, res ) => {
 //     res.json("borrar informacion");
 //   });
   
+
+
 
 
 module.exports = router;
