@@ -13,9 +13,15 @@ const AlumnoSchema = new Schema({
   mail: String,
 });
 
-const AlumnoModel = mongoose.model("Comition1", AlumnoSchema);
+const AlumnoModel = mongoose.model("comition1", AlumnoSchema);
 
-router.get("/Comition1", (req, res) => {
+router.get("/", async(req, res) => {
+  try {
+   const respuesta =  await AlumnoModel.find()
+   res.json({ mensaje: "listado alumnos", alumnos: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: err });
+  }
   res.json("COMITION1");
 });
 
@@ -33,7 +39,7 @@ router.post("/", async (req, res) => {
     const respuesta = await alumnoNuevo.save();
     res.json({ mensaje: "alumno nuevo creado", documento: respuesta });
   } catch (error) {
-    res.status(500).json({ mensaje: "error al crear alumno nuevo", tipo: err });
+    res.status(500).json({ mensaje: "error al crear alumno nuevo", tipo: error });
   }
 });
 

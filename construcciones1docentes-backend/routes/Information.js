@@ -1,36 +1,55 @@
-const express = require('express');
+const express = require("express");
 const router = express.Router();
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+const ObjectID = mongoose.Types.ObjectId;
+
+const InformationSchema = new Schema({
+  _id: ObjectID,
+  titulo: String,
+  descripsion: String,
+},
+{timestamps: { createdAt: 'created_at' }},
+);
+
+const InformationModel = mongoose.model("information", InformationSchema);
+
+router.get("/", async(req, res) => {
+  try {
+   const respuesta =  await InformationModel.find()
+   res.json({ mensaje: "listado informacion", informacion: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: err });
+  }
+});
+
+
+router.get("/:id", async(req, res) => {
+  try {
+   const respuesta =  await InformationModel.find()
+   res.json({ mensaje: "listado informacion", informacion: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: err });
+  }
+});
 
 
 
-router.get('/', (req, res ) => {
-    res.json("Listado de info");
-  });
+// router.post("/", async (req, res) => {
+//   const informationNuevo = new InformationModel({
+//     _id: new ObjectID(),
+//     titulo: req.body.titulo,
+//     descripsion: req.body.descripsion,
+//     
+    
+//   });
 
-
-router.get('/:id', (req, res ) => {
-    res.json("Informacion unica");
-  });
-
-// ESTO ES PARA LA DE DOCENTES UNICAMENTE
-// router.post('/', (req, res ) => {
-//     res.json("crear Informacion ");
+//   try {
+//     const respuesta = await informationNuevo.save();
+//     res.json({ mensaje: "informacion nueva creado", documento: respuesta });
+//   } catch (error) {
+//     res.status(500).json({ mensaje: "error al crear informacion", tipo: error });
 //   }
-// {timestamps} para ver la hora en la que se creo el documento
-// );
-
-
-// router.put('/:idIndo', (req, res ) => {
-//     res.json("modificar informacion");
-//   });
-
-
-// router.delete('/:idIndo', (req, res ) => {
-//     res.json("borrar informacion");
-//   });
-  
-
-
-
+// });
 
 module.exports = router;
