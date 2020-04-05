@@ -32,7 +32,13 @@ router.post("/", async (req, res) => {
     apellido: req.body.apellido,
     dni: req.body.dni,
     libreta: req.body.libreta,
-    mail: req.body.mail,
+    mail: {
+      type: String,
+      lowercase: true,
+      required: [true, "can't be blank"],
+      match: [/\S+@\S+\.\S+/, "is invalid"],
+      index: true,
+    },
   });
 
   try {

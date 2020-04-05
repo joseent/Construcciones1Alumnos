@@ -26,6 +26,16 @@ router.get("/", async(req, res) => {
   }
 });
 
+router.get("/bytema/:tema", async(req, res) => {
+  try {
+    const tema = req.params.tema;
+    const respuesta =  await ConsultaModel.find({tema});
+    res.json({ mensaje: "listado resultados", resultados: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
 
 router.get("/:id", async(req, res) => {
   const id = req.params.id
@@ -36,18 +46,6 @@ router.get("/:id", async(req, res) => {
     res.status(500).json({ mensaje: "error", tipo: error });
   }
 });
-
-// NO ESTA FILTRANDO
-router.get("/tema", async(req, res) => {
-  try {
-   const respuesta =  await ConsultaModel.find({tema: 'madera'});
-   res.json({ mensaje: "listado resultados", resultados: respuesta });
-  } catch (error) {
-    res.status(500).json({ mensaje: "error", tipo: error });
-  }
-});
-
-
 
 router.post("/", async (req, res) => {
   const consultaNuevo = new ConsultaModel({
