@@ -8,7 +8,7 @@ const AlumnoSchema = new Schema({
   _id: ObjectID,
   nombre: String,
   apellido: String,
-  dni: { type: String, required: true, minlength: 8, maxlength: 8 },
+  dni: { type: String, required: true, minlength: 8, maxlength: 8, unique: true   },
   libreta: { type: String, required: true, maxlength: 9, minlength: 9 },
   mail: String,
 });

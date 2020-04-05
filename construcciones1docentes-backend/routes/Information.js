@@ -25,15 +25,16 @@ router.get("/", async(req, res) => {
 
 
 router.get("/:id", async(req, res) => {
+  const id = req.params.id
   try {
-   const respuesta =  await InformationModel.find()
+   const respuesta =  await InformationModel.findById(id);
    res.json({ mensaje: "listado informacion", informacion: respuesta });
   } catch (error) {
-    res.status(500).json({ mensaje: "error", tipo: err });
+    res.status(500).json({ mensaje: "error", tipo: error });
   }
 });
 
-
+// SOLO PARA DOCENTES
 
 // router.post("/", async (req, res) => {
 //   const informationNuevo = new InformationModel({

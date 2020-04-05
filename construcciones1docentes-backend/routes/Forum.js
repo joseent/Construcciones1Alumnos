@@ -8,6 +8,7 @@ const ConsultaSchema = new Schema({
   _id: ObjectID,
   titulo: String,
   descripsion: String,
+  tema: String,
   respuesta: String,
   respondido: Boolean,
 },
@@ -18,8 +19,8 @@ const ConsultaModel = mongoose.model("forum", ConsultaSchema);
 
 router.get("/", async(req, res) => {
   try {
-   const respuesta =  await ConsultaModel.find()
-   res.json({ mensaje: "listado consultas", consultas: respuesta });
+    const respuesta =  await ConsultaModel.find()
+    res.json({ mensaje: "listado consultas", consultas: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: err });
   }
@@ -27,13 +28,25 @@ router.get("/", async(req, res) => {
 
 
 router.get("/:id", async(req, res) => {
+  const id = req.params.id
   try {
-   const respuesta =  await ConsultaModel.find()
+   const respuesta =  await ConsultaModel.findById(id);
    res.json({ mensaje: "listado consultas", consultas: respuesta });
   } catch (error) {
-    res.status(500).json({ mensaje: "error", tipo: err });
+    res.status(500).json({ mensaje: "error", tipo: error });
   }
 });
+
+// NO ESTA FILTRANDO
+// router.get("/:tema", async(req, res) => {
+//   const tema = req.params.tema
+//   try {
+//    const respuesta =  await ConsultaModel.find({tema: tema});
+//    res.json({ mensaje: "listado consultas", consultas: respuesta });
+//   } catch (error) {
+//     res.status(500).json({ mensaje: "error", tipo: error });
+//   }
+// });
 
 
 
@@ -44,7 +57,7 @@ router.post("/", async (req, res) => {
     descripsion: req.body.descripsion,
     respuesta: "",
     respondido: false,
-    
+    tema: req.body.tema
     
   });
 
@@ -55,5 +68,45 @@ router.post("/", async (req, res) => {
     res.status(500).json({ mensaje: "error al crear consulta", tipo: error });
   }
 });
+
+// PARA DOCENTES UNICAMENTE
+
+router.put("/:id", async(req, res) => {
+  const id = req.params.id;
+  const respuestasModificadas = req.body;
+  try {
+    const respuesta =  await ConsultaModel.findByIdAndUpdate(id,respuestasModificadas);
+    res.json({ mensaje: "consulta respondida", consultas: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
+
+router.delete("/:id", async(req, res) => {
+  const id = req.params.id;
+  try {
+    const respuesta =  await ConsultaModel.findByIdAndDelete(id);
+    res.json({ mensaje: "consultas borradas", consultas: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
+
+
+
+// BORRA TODOS LOS ARCHIVOS QUE EXISTAN
+router.delete("/", async(req, res) => {
+  
+  try {
+    const respuesta =  await ConsultaModel.deleteMany();
+    res.json({ mensaje: "consultas borradas", consultas: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
+
+
 
 module.exports = router;
