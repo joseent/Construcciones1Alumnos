@@ -34,6 +34,10 @@ router.get("/:id", async(req, res) => {
   }
 });
 
+
+// ---------------------------------------
+// ---------------------------------------
+
 // SOLO PARA DOCENTES
 
 // router.post("/", async (req, res) => {
@@ -52,5 +56,18 @@ router.get("/:id", async(req, res) => {
 //     res.status(500).json({ mensaje: "error al crear informacion", tipo: error });
 //   }
 // });
+
+// BORRAR SOLO UN ARCHIVO
+
+// router.delete("/:id", async(req, res) => {
+//   const id = req.params.id;
+//   try {
+//     const respuesta =  await InformationModel.findByIdAndDelete(id);
+//     res.json({ mensaje: "informacion borradas", informacion: respuesta });
+//   } catch (error) {
+//     res.status(500).json({ mensaje: "error", tipo: error });
+//   }
+// });
+
 
 module.exports = router;

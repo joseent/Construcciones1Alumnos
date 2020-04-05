@@ -20,7 +20,7 @@ router.get("/", async(req, res) => {
    const respuesta =  await AlumnoModel.find()
    res.json({ mensaje: "listado alumnos", alumnos: respuesta });
   } catch (error) {
-    res.status(500).json({ mensaje: "error", tipo: err });
+    res.status(500).json({ mensaje: "error", tipo: error });
   }
   res.json("COMITION1");
 });
@@ -42,5 +42,17 @@ router.post("/", async (req, res) => {
     res.status(500).json({ mensaje: "error al crear alumno nuevo", tipo: error });
   }
 });
+
+// // SOLO PARA DOCENTES
+// router.delete("/", async(req, res) => {
+  
+//   try {
+//     const respuesta =  await AlumnoModel.deleteMany();
+//     res.json({ mensaje: "alumnos borradas", alumnos: respuesta });
+//   } catch (error) {
+//     res.status(500).json({ mensaje: "error", tipo: error });
+//   }
+// });
+
 
 module.exports = router;

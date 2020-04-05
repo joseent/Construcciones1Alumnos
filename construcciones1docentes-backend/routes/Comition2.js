@@ -43,4 +43,17 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+// // SOLO PARA DOCENTES
+// router.delete("/", async(req, res) => {
+  
+//   try {
+//     const respuesta =  await AlumnoModel.deleteMany();
+//     res.json({ mensaje: "alumnos borradas", alumnos: respuesta });
+//   } catch (error) {
+//     res.status(500).json({ mensaje: "error", tipo: error });
+//   }
+// });
+
+
 module.exports = router;

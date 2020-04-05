@@ -11,6 +11,7 @@ const comition6Router = require('./Comition6')
 const comition7Router = require('./Comition7')
 const forumRouter = require('./Forum')
 const InscriptionsRouter = require('./Inscriptions')
+const UserRouter = require('./users')
 
 
 
@@ -19,6 +20,10 @@ const InscriptionsRouter = require('./Inscriptions')
 router.get('/', (req, res ) => {
   res.json("hola");
 });
+
+
+// USERS
+router.use('/users', UserRouter);
 
 
 // INFORMATION
@@ -38,5 +43,7 @@ router.use('/Forum', forumRouter);
 
 // INSCRIPTIONS
 router.use('/Inscriptions', InscriptionsRouter);
+
+
 
 module.exports = router;

@@ -38,15 +38,14 @@ router.get("/:id", async(req, res) => {
 });
 
 // NO ESTA FILTRANDO
-// router.get("/:tema", async(req, res) => {
-//   const tema = req.params.tema
-//   try {
-//    const respuesta =  await ConsultaModel.find({tema: tema});
-//    res.json({ mensaje: "listado consultas", consultas: respuesta });
-//   } catch (error) {
-//     res.status(500).json({ mensaje: "error", tipo: error });
-//   }
-// });
+router.get("/tema", async(req, res) => {
+  try {
+   const respuesta =  await ConsultaModel.find({tema: 'madera'});
+   res.json({ mensaje: "listado resultados", resultados: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
 
 
 
@@ -69,6 +68,11 @@ router.post("/", async (req, res) => {
   }
 });
 
+
+// ------------------------------------------------
+// ------------------------------------------------
+// ------------------------------------------------
+
 // PARA DOCENTES UNICAMENTE
 
 router.put("/:id", async(req, res) => {
@@ -82,6 +86,8 @@ router.put("/:id", async(req, res) => {
   }
 });
 
+
+// BORRAR SOLO UN ARCHIVO
 
 router.delete("/:id", async(req, res) => {
   const id = req.params.id;
