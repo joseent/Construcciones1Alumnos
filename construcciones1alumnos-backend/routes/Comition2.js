@@ -10,7 +10,13 @@ const AlumnoSchema = new Schema({
   apellido: String,
   dni: { type: String, required: true, minlength: 8, maxlength: 8 },
   libreta: { type: String, required: true, maxlength: 9, minlength: 9 },
-  mail: String,
+  mail: {
+    type: String,
+    lowercase: true,
+    required: [true, "can't be blank"],
+    match: [/\S+@\S+\.\S+/, "is invalid"],
+    index: true,
+  },
 });
 
 const AlumnoModel = mongoose.model("comition2", AlumnoSchema);

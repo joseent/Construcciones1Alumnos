@@ -41,7 +41,7 @@ router.get("/:id", async(req, res) => {
   const id = req.params.id
   try {
    const respuesta =  await ConsultaModel.findById(id);
-   res.json({ mensaje: "listado consultas", consultas: respuesta });
+   res.json({ mensaje: "consulta", consultas: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: error });
   }
