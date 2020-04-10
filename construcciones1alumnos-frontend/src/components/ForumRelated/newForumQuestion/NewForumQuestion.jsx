@@ -1,7 +1,7 @@
 //@ts-check
 import React, { useState } from "react";
 import "./NewForumQuestion.css";
-import Axios from "axios";
+import axios from "axios";
 
 export default function NewForumQuestion() {
   const [questionTitle, setQuestionTitle] = useState("");
@@ -18,12 +18,11 @@ export default function NewForumQuestion() {
   };
 
   const handleSubmit = (e) => {
-    e.preventDefaul();
-    Axios.post('http://localhost:8000/Forum',{titulo: questionTitle, descripsion: questionDescription})
+    e.preventDefault();
+    axios.post('http://localhost:3000/Forum/', {titulo: questionTitle, descripsion: questionDescription})
     .then((res) => {
-      console.log(res.data.documento);
-      //  setQuestionTitle(res.data.documento);
-      // setQuestionDescription(res.data.documento);
+       setQuestionTitle(res.data.consultas.titulo);
+      setQuestionDescription(res.data.consultas.descripsion);
     })
     .catch((error) => {
       console.log(error.data);
@@ -32,7 +31,7 @@ export default function NewForumQuestion() {
 
   return (
     <div className="row d-flex justify-content-center">
-      <div className="QuestionBg shadow col-10 bg-light">
+      <div className="QuestionBg shadow col-10 bg-dark">
         <form onSubmit={handleSubmit}>
           <div>
             <div className="row-10 d-flex justify-content-center">

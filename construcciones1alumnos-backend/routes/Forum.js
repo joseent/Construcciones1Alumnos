@@ -60,7 +60,7 @@ router.post("/", async (req, res) => {
 
   try {
     const respuesta = await consultaNuevo.save();
-    res.json({ mensaje: "consulta nueva creado", documento: respuesta });
+    res.json({ mensaje: "consulta nueva creado", consultas: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error al crear consulta", tipo: error });
   }

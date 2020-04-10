@@ -1,12 +1,6 @@
 const express = require('express');
 const router = express.Router();
 
-const cors = require("cors"); // nos permite realizar peticiones a un servidor mediante url
-router.use(express.json({ limit: '10mb' })); // interpretar el req.body, sino seria undefined
-router.use(express.urlencoded({ extended: false , limit: '10mb'})); // idem anterior, son configuraciones de seguridad para el req.body
-router.use(cors()); // aqui decimos que app utilize los cors requeridos en la linea 3
-router.options("*", cors()); // idem anterior
-
 
 const informatioRouter = require('./Information')
 const comition1Router = require('./Comition1')

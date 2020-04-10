@@ -1,21 +1,13 @@
 //@ts-check
-import React from 'react';
-import Background from './components/background/Background';
-import LoginForm from "./components/loginForm/LoginForm";
-import ForumList from './components/ForumList/ForumList';
-import NewForumQuestion from './components/newForumQuestion/NewForumQuestion';
+import React from 'react'
+import NavBar from './components/general/navBar/NavBar'
+import BottomBar from './components/general/bottomBar/BottomBar'
 
-
-function App() {
+export default function App() {
   return (
-    <div>
-<Background/>
-{/* <LoginForm /> */}
-<NewForumQuestion/>
-<ForumList/>
-
-      </div>
-  );
+    <div className="bgColor">
+      <NavBar/>
+      <BottomBar/>
+    </div>
+  )
 }
-
-export default App;
