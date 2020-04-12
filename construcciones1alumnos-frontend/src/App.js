@@ -5,9 +5,9 @@ import BottomBar from './components/general/bottomBar/BottomBar'
 
 export default function App() {
   return (
-    <div className="bgColor">
+    <div className="bgColor relative min-h-screen">
       <NavBar/>
-      <BottomBar/>
+      <BottomBar/> 
     </div>
   )
 }

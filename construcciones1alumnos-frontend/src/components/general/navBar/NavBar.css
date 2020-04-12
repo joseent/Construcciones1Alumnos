@@ -1,0 +1,45 @@
+/* Style the navigation menu */
+.topnav {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  /* Hide the links inside the navigation menu (except for logo/home)
+  @media (min-width: 1023px){
+    .topnav #myLinksblock {
+      display: block;
+    }
+    
+  } */
+  .topnav #myLinksnone {
+    display: none;
+  }
+  
+  /* Style navigation menu links */
+  .topnav a {
+    color: goldenrod;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+    display: block;
+  }
+  
+   
+  /* Add a grey background color on mouse-over */
+  .topnav button {
+    background-color: black ;
+    color: goldenrod;
+    border-color: goldenrod;
+  }
+   
+  /* Add a grey background color on mouse-over */
+  .topnav button:hover {
+    background-color: goldenrod;
+    color: black;
+  }
+  
+  /* Style the active link (or home/logo) */
+  .active {
+    background-color:goldenrod;
+    color: black;
+  }

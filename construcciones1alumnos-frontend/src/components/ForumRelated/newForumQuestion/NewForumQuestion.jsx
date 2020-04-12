@@ -6,6 +6,7 @@ import axios from "axios";
 export default function NewForumQuestion() {
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
+  const [questionSelector, setQuestionSelector] = useState("");
 
   const handleChangeTitle = (e) => {
     const title = e.target.value;
@@ -17,64 +18,92 @@ export default function NewForumQuestion() {
     setQuestionDescription(description);
   };
 
+  const handleChangeSelector = (e) => {
+    const selector = e.target.value;
+    setQuestionSelector(selector);
+  };
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:3000/Forum/', {titulo: questionTitle, descripsion: questionDescription})
-    .then((res) => {
-       setQuestionTitle(res.data.consultas.titulo);
-      setQuestionDescription(res.data.consultas.descripsion);
-    })
-    .catch((error) => {
-      console.log(error.data);
-    });
+    axios
+      .post("http://localhost:3000/Forum/", {
+        titulo: questionTitle,
+        descripsion: questionDescription,
+        tema: questionSelector,
+      })
+      .then((res) => {
+        setQuestionTitle(res.data.consultas.titulo);
+        setQuestionDescription(res.data.consultas.descripsion);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
   };
 
   return (
-    <div className="row d-flex justify-content-center">
-      <div className="QuestionBg shadow col-10 bg-dark">
+    <div className="flex justify-center">
+      <div className="w-1/2">
         <form onSubmit={handleSubmit}>
           <div>
-            <div className="row-10 d-flex justify-content-center">
-              <div className="col">
-                
-                <div className="row mt-4 p-1 d-flex justify-content-center">
-                  <div className="col">
+            <div className="">
+              <div className="">
+                <div className="p-1">
+                  <div className=" ">
                     <input
                       value={questionTitle}
                       onChange={handleChangeTitle}
                       type="text"
                       id="title"
                       name="title"
-                      className="shadow-sm form-control"
+                      className=" w-full rounded-sm p-1 text-black"
                       placeholder="Titulo de tu consulta "
-                      />
+                      required
+                    />
                   </div>
                 </div>
 
-                <div className="row p-1 d-flex justify-content-center">
-                  <div className="col h-8 form-group ">
-                                        <textarea
+                <div className="p-1">
+                  <div className="">
+                    <select
+                      onChange={handleChangeSelector}
+                      className="w-full rounded-sm p-1 text-black"
+                      id="inputGroupSelect04"
+                      aria-label="Example select with button addon"
+                      required
+                    >
+                      <option defaultValue>Temas</option>
+                      <option value={questionSelector}>General</option>
+                      <option value={questionSelector}>Madera</option>
+                      <option value={questionSelector}>Metal</option>
+                      <option value={questionSelector}>Hormigon</option>
+                      <option value={questionSelector}>Plastico</option>
+                      <option value={questionSelector}>Vidrio</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div className="p-1">
+                  <div className="">
+                    <textarea
                       value={questionDescription}
                       onChange={handleChangeDescription}
-                      className="form-control"
+                      className="w-full rounded-sm p-1 text-black"
                       rows="8"
                       id="exampleFormControlTextarea1"
                       placeholder="Descripcion de tu consulta "
-                      
+                      required
                     ></textarea>
                   </div>
                 </div>
 
-                <div className="row p-1 d-flex justify-content-center mb-4">
-                  <div className="col">
+                  <div className="">
                     <button
                       type="submit"
-                      className="shadow btn btn-warning btn-lg btn-block font-weight-bold"
+                      className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
                     >
                       ENVIAR
                     </button>
-                  </div>
-                </div>                
+                </div>
               </div>
             </div>
           </div>

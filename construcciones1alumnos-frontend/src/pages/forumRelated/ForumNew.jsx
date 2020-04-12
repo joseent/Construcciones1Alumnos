@@ -3,8 +3,6 @@ import NewForumQuestion from "../../components/ForumRelated/newForumQuestion/New
 
 export default function ForumNew() {
   return (
-    <div>
       <NewForumQuestion />
-    </div>
   );
 }

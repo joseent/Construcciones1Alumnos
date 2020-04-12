@@ -6,10 +6,20 @@ const ObjectID = mongoose.Types.ObjectId;
 
 const ConsultaSchema = new Schema({
   _id: ObjectID,
-  titulo: String,
-  descripsion: String,
-  tema: String,
-  respuesta: String,
+  titulo: {
+    type: String,
+    required: [true, "can't be blank"]
+  } ,
+  descripsion: {
+    type: String,
+    required: [true, "can't be blank"]
+  } ,
+  tema: {
+    type: String,
+  } ,
+  respuesta: {
+    type: String,
+  } ,
   respondido: Boolean,
 },
 {timestamps: { createdAt: 'created_at' }},

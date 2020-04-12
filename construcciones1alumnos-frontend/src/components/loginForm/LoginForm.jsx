@@ -28,7 +28,7 @@ export default function LoginForm() {
           <div>
             <div className="row-4 p-3 d-flex justify-content-center">
               <div className="col d-flex justify-content-center">
-                <img className="c1Logo shadow" src={c1Logo} alt="c1Logo" />
+                <img className="w-16 rounded-full" src={c1Logo} alt="c1Logo" />
               </div>
             </div>
 
