@@ -1,15 +1,10 @@
 import React from "react";
-import "../bottomBar/BottomBar.css";
-
+import "./BottomBar.css";
 export default function BottomBar() {
   return (
-    <div className="bgColor">
-        <div className="row">
-            <footer className="footer ">
-          <p className="text-center font-bold">FACULTAD DE ARQUITECTURA Y URBANISMO</p>
-          <p className="text-center font-bold">UNIVERSIDAD NACIONAL DE TUCUMAN</p>
+            <footer className="bg-black text-center font-bold text-yellow-600 p-1 pBottom">
+          <p>FACULTAD DE ARQUITECTURA Y URBANISMO</p>
+          <p className="mb-4">UNIVERSIDAD NACIONAL DE TUCUMAN</p>
             </footer>
-        </div>
-    </div>
   );
 }

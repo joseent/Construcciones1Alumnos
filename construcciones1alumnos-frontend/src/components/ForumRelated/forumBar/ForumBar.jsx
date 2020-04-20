@@ -1,6 +1,8 @@
 //@ts-check
 import React from "react";
 import {useHistory} from "react-router-dom"
+import "./ForumBar.css";
+
 
 export default function ForumBar() {
     const history = useHistory();
@@ -9,8 +11,8 @@ export default function ForumBar() {
         history.push('/forumnew')
     }
     return (
-    <div className="container mx-auto flex justify-between ">
-      <div className="">
+    <div className="w-1/2 mx-auto flex justify-between items-center mb-5 barmedia">
+      <div className="flex">
         <select
           className="w-full rounded-sm p-1 text-black"
           id="inputGroupSelect04"
@@ -24,13 +26,14 @@ export default function ForumBar() {
           <option value="5">Plastico</option>
           <option value="6">Vidrio</option>
         </select>
-        <div className="input-group-append">
-          <button className="btn btn-outline-secondary" type="button">
+        <div className="">
+          <button className="ml-4 p-2 text-yellow-600 text-bold" type="button">
+            BUSCAR
           </button>
         </div>
       </div>
-      <button className="bg-yellow-600" onClick={newQuestion}>
-        <i className="fa fa-plus"></i>
+      <button className="bg-yellow-600 text-bold text-xl h-12" onClick={newQuestion}>
+        <i className="fa fa-plus m-2"></i>
       </button> 
     </div>
   );

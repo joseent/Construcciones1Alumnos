@@ -1,10 +1,9 @@
-.LoginBg{
-    width:90%;
-    max-width: 350px;
-    border-radius: 3%;
-}
+@media (max-width: 600px) {
+    .loginmedia {
+      width: 60%;
+    }}
 
-.c1Logo{
-    width: 80%;
-    border-radius: 100%;
-}
+        @media (max-width: 600px) {
+        .Bgegipt {
+         height: 100vh;
+        }}

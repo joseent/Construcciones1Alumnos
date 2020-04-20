@@ -2,17 +2,18 @@
 import React, { useState, useEffect } from "react";
 import "./ForumById.css";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
-export default function NewForumQuestion() {
+export default function ForumByID() {
+  const { id } = useParams();
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionAnswer, setquestionAnswer] = useState("");
 
   useEffect(() => {
     const getQuestionById = (e) => {
-      e.preventDefault();
       axios
-        .get("http://localhost:3000/Forum/")
+        .get(`http://localhost:3000/Forum/${id}`)
         .then((res) => {
           setQuestionTitle(res.data.consultas.titulo);
           setQuestionDescription(res.data.consultas.descripsion);
@@ -25,27 +26,21 @@ export default function NewForumQuestion() {
     getQuestionById();
   }, []);
 
-  return (
-    <div className="row d-flex justify-content-center">
-      <div className="QuestionBg shadow col-10 bg-dark">
-        <div className="row">
-          <div className="col">
-            <p>Titulo</p>
-            <p>{questionTitle}</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <p>Descripcion</p>
-            <p>{questionDescription}</p>
-          </div>
-        </div>
-        <div className="row">
-          <div className="col">
-            <p className="textColor">Respuesta</p>
-            <p>{questionAnswer}</p>
-          </div>
-        </div>
+    return (
+    <div className="flex justify-center items-center flex-col ">
+      <div className="w-1/2 mediasm">
+      <div className="text-center bg-gray-900 rounded-md mb-2">
+        <p className="font-bold text-gray-700">Titulo</p>
+        <p className="text-white">{questionTitle}</p>
+      </div>
+      <div className="text-center bg-gray-900 rounded-md mb-2">
+        <p className="font-bold text-gray-700">Descripcion</p>
+        <p className="text-white">{questionDescription}</p>
+      </div>
+      <div className="text-center bg-yellow-600 rounded-md text-black mb-2">
+        <p className="font-bold">Respuesta</p>
+        <p>{questionAnswer}</p>
+      </div>
       </div>
     </div>
   );
