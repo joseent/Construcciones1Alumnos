@@ -20,6 +20,9 @@ const ConsultaSchema = new Schema({
   respuesta: {
     type: String,
   } ,
+  usuario: {
+    type: String,
+  } ,
   respondido: Boolean,
 },
 {timestamps: { createdAt: 'created_at' }},
@@ -64,7 +67,8 @@ router.post("/", async (req, res) => {
     descripsion: req.body.descripsion,
     respuesta: "",
     respondido: false,
-    tema: req.body.tema
+    tema: req.body.tema,
+    usuario: req.body.usuario
     
   });
 

@@ -7,9 +7,9 @@ import "./ForumBar.css";
 export default function ForumBar() {
     const history = useHistory();
     const newQuestion = () => {
-        console.log("hola");
         history.push('/forumnew')
     }
+    
     return (
     <div className="w-1/2 mx-auto flex justify-between items-center mb-5 barmedia">
       <div className="flex">
@@ -27,7 +27,7 @@ export default function ForumBar() {
           <option value="6">Vidrio</option>
         </select>
         <div className="">
-          <button className="ml-4 p-2 text-yellow-600 text-bold" type="button">
+          <button className="ml-4 p-2 text-yellow-600 text-bold border border-yellow-600 rounded" type="button">
             BUSCAR
           </button>
         </div>

@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import "../loginForm/LoginForm.css";
 import c1Logo from "../loginForm/c1Logo.jpg";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import bgegipt from "../loginForm/bgegipt.jpg";
 import axios from "axios";
+
 export default function LoginForm() {
+  const history = useHistory();
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
 
@@ -22,13 +24,16 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users/login", {
-        usuario: usuario,
-        contrasena: contrasena,
-      })
-      .then((res) => {
-        setUsuario(res.data.consultas.titulo);
-        setContrasena(res.data.consultas.descripsion);
+    .post("http://localhost:3000/users/login", {
+      usuario: usuario,
+      contrasena: contrasena,
+    })
+    .then((res) => {
+      setUsuario(res.data.consultas.titulo);
+      setContrasena(res.data.consultas.descripsion);
+      // pushing id
+      console.log(e);
+      history.push('/home')
       })
       .catch((error) => {
         console.log(error.data);
@@ -38,7 +43,11 @@ export default function LoginForm() {
   return (
     <div>
       <div className="flex justify-center items-center">
-        <img className="Bgegipt bg-local w-full relative" src={bgegipt} alt="Bgegipt" />
+        <img
+          className="Bgegipt bg-local w-full relative"
+          src={bgegipt}
+          alt="Bgegipt"
+        />
         <div className="absolute w-1/4  bg-gray-800 rounded-md p-6 loginmedia">
           <form onSubmit={handleSubmit}>
             <div>

@@ -1,12 +1,16 @@
 //@ts-check
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./NewForumQuestion.css";
 import axios from "axios";
+import { useParams, useHistory } from "react-router-dom";
 
 export default function NewForumQuestion() {
+  const { id } = useParams();
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionSelector, setQuestionSelector] = useState("");
+  const [usuarioNombre, setusuarioNombre] = useState("");
+  const [usuarioApellido, setusuarioApellido] = useState("");
 
   const handleChangeTitle = (e) => {
     const title = e.target.value;
@@ -23,18 +27,40 @@ export default function NewForumQuestion() {
     setQuestionSelector(selector);
   };
 
+  useEffect(() => {
+    const getUserBiId = (e) => {
+      axios
+        .get(`http://localhost:3000/users/${id}`)
+        .then((res) => {
+          setusuarioNombre(res.data.usuario.nombre);
+          setusuarioApellido(res.data.usuario.apellido);
+        })
+        .catch((error) => {
+          console.log(error.data);
+        });
+    };
+    getUserBiId();
+  }, []);
+
+  const history = useHistory();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/Forum/", {
-        titulo: questionTitle,
-        descripsion: questionDescription,
-        tema: questionSelector,
-      })
-      .then((res) => {
-        setQuestionTitle(res.data.consultas.titulo);
-        setQuestionDescription(res.data.consultas.descripsion);
-      })
+    .post("http://localhost:3000/Forum/", {
+      titulo: questionTitle,
+      descripsion: questionDescription,
+      tema: questionSelector,
+      nombre: usuarioNombre,
+      apellido: usuarioApellido
+      
+    })
+    .then((res) => {
+      setQuestionTitle(res.data.consultas.titulo);
+      setQuestionDescription(res.data.consultas.descripsion);
+      setQuestionSelector(res.data.consultas.tema);
+      history.push('/forum')
+    })
       .catch((error) => {
         console.log(error.data);
       });
@@ -47,7 +73,7 @@ export default function NewForumQuestion() {
           <div>
             <div className="">
               <div className="">
-                <div className="p-1">
+                <div className="mb-2">
                   <div className=" ">
                     <input
                       value={questionTitle}
@@ -62,7 +88,7 @@ export default function NewForumQuestion() {
                   </div>
                 </div>
 
-                <div className="p-1">
+                <div className="mb-2">
                   <div className="">
                     <select
                       onChange={handleChangeSelector}
@@ -82,7 +108,7 @@ export default function NewForumQuestion() {
                   </div>
                 </div>
 
-                <div className="p-1">
+                <div className="mb-2">
                   <div className="">
                     <textarea
                       value={questionDescription}
@@ -99,7 +125,7 @@ export default function NewForumQuestion() {
                   <div className="">
                     <button
                       type="submit"
-                      className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+                      className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
                     >
                       ENVIAR
                     </button>
