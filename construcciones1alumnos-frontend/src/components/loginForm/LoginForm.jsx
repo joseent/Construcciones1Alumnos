@@ -22,18 +22,20 @@ export default function LoginForm() {
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
-    axios
+        axios
     .post("http://localhost:3000/users/login", {
       usuario: usuario,
       contrasena: contrasena,
     })
     .then((res) => {
-      setUsuario(res.data.consultas.titulo);
-      setContrasena(res.data.consultas.descripsion);
+      setUsuario(res.data.consultas.usuario);
+      setContrasena(res.data.consultas.contrasena);
       // pushing id
       console.log(e);
-      history.push('/home')
+      // localStorage.setItem('id', e);
+      // history.push('/home')
       })
       .catch((error) => {
         console.log(error.data);
@@ -79,7 +81,7 @@ export default function LoginForm() {
                       <input
                         value={contrasena}
                         onChange={handleChangeContrasena}
-                        type="text"
+                        type="password"
                         id="contrasena"
                         name="contrasena"
                         className=" w-full rounded-sm p-1 text-black"
