@@ -13,6 +13,9 @@ const comition7Router = require('./Comition7')
 const forumRouter = require('./Forum')
 const InscriptionsRouter = require('./Inscriptions')
 const UserRouter = require('./users')
+const SeminarsRouter = require ('./Seminars')
+const PublicityRouter = require('./Publicity')
+const ClassRoomPicturesRouter = require('./Classroompictures')
 
 
 
@@ -41,9 +44,17 @@ router.use('/Comition7', comition7Router);
 
 // FORUM
 router.use('/Forum', forumRouter);
-
 // INSCRIPTIONS
 router.use('/Inscriptions', InscriptionsRouter);
+
+// SEMINARS
+router.use('/Seminars', SeminarsRouter);
+
+// PUBLICITY
+router.use('/Publicity', PublicityRouter);
+
+// CLASSPICTURES
+router.use('/Classroompictures', ClassRoomPicturesRouter);
 
 
 

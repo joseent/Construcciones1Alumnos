@@ -30,9 +30,8 @@ export default function LoginForm() {
       contrasena: contrasena,
     })
     .then((res) => {
-      setUsuario(res.data.consultas.usuario);
-      setContrasena(res.data.consultas.contrasena);
       // pushing id
+      localStorage.id = res.data.usuario._id;
       console.log(e);
       // localStorage.setItem('id', e);
       // history.push('/home')
@@ -104,7 +103,7 @@ export default function LoginForm() {
             </div>
           </form>
           <div className="text-center">
-            <span>No estas registrado?</span>
+            <span>No estas registrado? </span>
             <Link to="/register" className="font-bold tracking-tight">
               REGISTRATE AQUI!
             </Link>

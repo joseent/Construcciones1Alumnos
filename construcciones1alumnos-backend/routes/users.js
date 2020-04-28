@@ -112,7 +112,7 @@ router.post("/login", async (req, res) => {
     }
 
   } catch (error) {
-    res.status(500).json({ mensaje: "error al crear usuario", tipo: error });
+    res.status(500).json({ mensaje: "error al conectar usuario", tipo: error });
   }
 });
 

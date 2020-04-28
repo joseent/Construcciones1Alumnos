@@ -13,6 +13,7 @@ import UserInfo from "../../../pages/userRelated/UserInfo";
 import Register from "../../../pages/userRelated/Register";
 import InfoByIDPage from "../../../pages/infoRelated/InfoByIDpage";
 import Login from "../../../pages/userRelated/LogIn";
+import PublicHome from "../../../pages/PublicHome";
 
 const handleOnClick = () => {
   var x = document.getElementById("myLinksblock");
@@ -119,6 +120,9 @@ export default function NavBar() {
           </Route>
           <Route path="/">
             <Home />
+          </Route>
+          <Route path="/publicHome">
+            <PublicHome />
           </Route>
         </Switch>
       </Router>
