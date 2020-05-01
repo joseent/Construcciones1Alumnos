@@ -1,9 +1,23 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import BottomBar from "../components/general/bottomBar/BottomBar";
 import c1Logo from "../images/c1Logo.jpg";
 import bgegipt from "../images/bgegipt.jpg";
+import infofau from "../images/infoFau.jpeg";
+import areatecnica from "../images/areatecnica.jpg";
+import objetivogeneral from "../images/objetivosgenerales.jpg";
+import mapaconceptual1 from "../images/mapaconceptual1.jpg";
+import mapaconceptual2 from "../images/mapaconceptual2.jpg";
+import metodologia1 from "../images/metodologia1.jpg";
+import metodologia2 from "../images/metodologia2.jpg";
+import metodologia3 from "../images/metodologia3.jpg";
+import metodologia4 from "../images/metodologia4.jpg";
+import metodologia5 from "../images/metodologia5.jpg";
+import metodologia6 from "../images/metodologia6.jpg";
+import metodologia7 from "../images/metodologia7.jpg";
+
+import "./PublicHome.css"
+
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
@@ -54,15 +68,19 @@ export default function PublicHome() {
 
   return (
     <div className="flex flex-col items-center">
-      <div className="w-full bg-yellow-600 p-6">
+      <div className="w-full bgColor p-6">
         <p className="text-3xl text-center font-bold">CONSTRUCCIONES I</p>
         <div className="text-center">
           <span>No estas registrado?</span>
-          <Router>
             <Link to="/register" className="font-bold tracking-tight">
               REGISTRATE AQUI!
             </Link>
-          </Router>
+        </div>
+        <div className="text-center">
+          <span>No estas registrado?</span>
+            <Link to="/login" className="font-bold tracking-tight">
+              LOGEAR!
+            </Link>
         </div>
       </div>
       {/* FONDO */}
@@ -82,6 +100,7 @@ export default function PublicHome() {
         <div className="w-4/5 flex justify-center">
           <div className="w-4/5 text-center text-yellow-600  my-20">
             <p>INFO FACUTLAD</p>
+            <img src={infofau} alt="" />
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
               ullam maxime, nobis et animi quis sit quia eveniet distinctio
@@ -94,6 +113,24 @@ export default function PublicHome() {
         <div className="w-4/5 flex justify-center">
           <div className="w-4/5 text-center text-yellow-600 my-20">
             <p>INFO CATEDRA</p>
+            <Carousel>
+              <div>
+                <img src={areatecnica} />
+                <p className="legend">area tecnica</p>
+              </div>
+              <div>
+                <img src={objetivogeneral} />
+                <p className="legend">objetivos generales</p>
+              </div>
+              <div>
+                <img src={mapaconceptual1} />
+                <p className="legend">mapa conceptual</p>
+              </div>
+              <div>
+                <img src={mapaconceptual2} />
+                <p className="legend">mapa conceptual</p>
+              </div>
+            </Carousel>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
               ullam maxime, nobis et animi quis sit quia eveniet distinctio
@@ -110,52 +147,105 @@ export default function PublicHome() {
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  Arq. VANESA SAEZ
+                </span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Auxiliar Graduado
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  Arq. MARIANA LEGORBURU
+                </span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Auxiliar Graduado
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  Arq. IRENE FERREYRA
+                </span>
+                <span className="text-center text-yellow-600 mt-1">J.T.P</span>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <span className="text-center text-yellow-600 mt-1">
+                  Ing. ELIZABETH ARIAS
+                </span>
+                <span className="text-center text-yellow-600 mt-1"></span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Profesora Adjunta
+                </span>
+                <span className="text-center text-yellow-600 mt-1"></span>
+              </div>
+              <div className="flex flex-col items-center">
+                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <span className="text-center text-yellow-600 mt-1">
+                  Ing. CARLOS ALDERETE
+                </span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Profesor Adjunto
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  Arq. STELLA LATINA
+                </span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Profesora Adjunta
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  MSc. Arq. MIRTA SOSA
+                </span>
+                <span className="text-center text-yellow-600 mt-1">
+                  Profesora Asosiada
                 </span>
               </div>
               <div className="flex flex-col items-center">
                 <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  MSc. Arq. LUCIA TOPPA
                 </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
-                  nombres
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  nombres
+                  Profesora Titular
                 </span>
               </div>
             </div>
+          </div>
+        </div>
+        {/* metodologia */}
+        <div className="w-4/5 flex justify-center">
+        <div className="w-4/5 text-center text-yellow-600 my-20">
+        <Carousel>
+              <div>
+                <img src={metodologia1} />
+              </div>
+              <div>
+                <img src={metodologia2} />
+              </div>
+              <div>
+                <img src={metodologia3} />
+              </div>
+              <div>
+                <img src={metodologia4} />
+              </div>
+              <div>
+                <img src={metodologia5} />
+              </div>
+              <div>
+                <img src={metodologia6} />
+              </div>
+              <div>
+                <img src={metodologia7} />
+              </div>
+            
+            </Carousel>
           </div>
         </div>
         {/* seminars */}
@@ -164,7 +254,7 @@ export default function PublicHome() {
             <p className="mb-6">SEMINARIOS</p>
             <ul className="flex flex-wrap w-full">
               {seminarList.map((seminars) => (
-                <li className="p-2">
+                <li className="p-2" key={seminars._id}>
                   <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
                     <img
                       className="w-full"
@@ -190,8 +280,8 @@ export default function PublicHome() {
           <div className=" text-center text-yellow-600 my-20">
             <p>PUBLICIDAD</p>
             <ul className="flex flex-wrap w-full">
-            {publicityList.map((publicity) => (
-                <li className="p-2">
+              {publicityList.map((publicity) => (
+                <li className="p-2" key={publicity._id}>
                   <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
                     <img
                       className="w-full"
@@ -217,13 +307,12 @@ export default function PublicHome() {
           <div className="w-4/5 text-center text-yellow-600 my-20">
             <p>CARROUSEL</p>
             <Carousel>
-            {classPics.map((fotos) => (
-
-              <div>
-                <img src={fotos.image} />
-            <p className="legend">{fotos.title}</p>
-              </div>
-))}
+              {classPics.map((fotos) => (
+                <div key={fotos._id}>
+                  <img src={fotos.image} />
+                  <p className="legend">{fotos.title}</p>
+                </div>
+              ))}
             </Carousel>
           </div>
         </div>
@@ -236,10 +325,7 @@ export default function PublicHome() {
           />
         </div>
       </div>
-      <BottomBar />
+      {/* <BottomBar /> */}
     </div>
   );
 }
-
-
-

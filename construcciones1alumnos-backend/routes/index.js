@@ -16,6 +16,8 @@ const UserRouter = require('./users')
 const SeminarsRouter = require ('./Seminars')
 const PublicityRouter = require('./Publicity')
 const ClassRoomPicturesRouter = require('./Classroompictures')
+const TeachersRouter = require('./Teachers')
+
 
 
 
@@ -55,6 +57,9 @@ router.use('/Publicity', PublicityRouter);
 
 // CLASSPICTURES
 router.use('/Classroompictures', ClassRoomPicturesRouter);
+
+// TEACHERS
+router.use('/teachers', TeachersRouter);
 
 
 

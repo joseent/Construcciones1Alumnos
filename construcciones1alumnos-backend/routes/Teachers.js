@@ -13,7 +13,7 @@ return passwordEncriptado
 
 const compararPassword = (userPassword, hashPasswordDb) => bcryptjs.compareSync(userPassword, hashPasswordDb)
 
-const UsuarioSchema = new Schema({
+const TeachersSchema = new Schema({
   _id: ObjectID,
   usuario: {
     type: String,
@@ -36,7 +36,6 @@ const UsuarioSchema = new Schema({
     maxlength: 8,
     unique: true,
   },
-  libreta: { type: String, maxlength: 9, minlength: 9 },
   mail: {
     type: String,
     lowercase: true,
@@ -49,60 +48,59 @@ const UsuarioSchema = new Schema({
 
 
 // metodos
-const UsuarioModel = mongoose.model("users", UsuarioSchema);
+const TeachersModel = mongoose.model("teachers", TeachersSchema);
 
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
-    const respuesta = await UsuarioModel.findById(id);
-    res.json({ mensaje: "usuario", usuario: respuesta });
+    const respuesta = await TeachersModel.findById(id);
+    res.json({ mensaje: "teacher", teacher: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: error });
   }
 });
 
 
-// registrar usuario
+// registrar teacher
 router.post("/registrar", async (req, res) => {
    console.log("entrando a registrar");
    
-  const usuarioNuevo = {
+  const teacherNuevo = {
     _id: new ObjectID(),
     usuario:req.body.usuario,
     contrasena:req.body.contrasena,
     nombre: req.body.nombre || null,
     apellido: req.body.apellido || null,
     dni: req.body.dni,
-    libreta: req.body.libreta || null,
     mail: req.body.mail,
   };
 
-usuarioNuevo.contrasena = encriptarPassWord(req.body.contrasena);
-console.log(usuarioNuevo.contrasena);
+teacherNuevo.contrasena = encriptarPassWord(req.body.contrasena);
+console.log(teacherNuevo.contrasena);
 
 
 try {
-  const user = new UsuarioModel(usuarioNuevo);
+  const user = new TeachersModel(teacherNuevo);
     const respuesta = await user.save();
     res.json({
-      mensaje: "usuario registrado correctamente",
+      mensaje: "teacher registrado correctamente",
       documento: respuesta,
     });
   } catch (error) {
     console.log(error);
     
-    res.status(500).json({ mensaje: "error al crear usuario", tipo: error });
+    res.status(500).json({ mensaje: "error al crear teacher", tipo: error });
   }
 });
 
 
 
 
-// logear usuario
+// logear teacher
 router.post("/login", async (req, res) => {
   try {
     const {usuario,contrasena}= req.body;
-    const doc = await UsuarioModel.find({usuario});
+    const doc = await TeachersModel.find({usuario});
     const hashDb = doc[0].contrasena;
     const esContrasenaCorrecta = compararPassword(contrasena, hashDb)
    
@@ -113,7 +111,7 @@ router.post("/login", async (req, res) => {
     }
 
   } catch (error) {
-    res.status(500).json({ mensaje: "error al conectar usuario", tipo: error });
+    res.status(500).json({ mensaje: "error al conectar teacher", tipo: error });
   }
 });
 
@@ -124,7 +122,7 @@ router.put("/:id", async (req, res) => {
   const id = req.params.id;
   const informacionModificadas = req.body;
   try {
-    const respuesta = await UsuarioModel.findByIdAndUpdate(
+    const respuesta = await TeachersModel.findByIdAndUpdate(
       id,
       informacionModificadas
     );

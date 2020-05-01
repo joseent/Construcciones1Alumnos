@@ -1,0 +1,2 @@
+añadir dentro del index.html que esta dentro de la carpeta public para tener el logo del menu desplegable
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">

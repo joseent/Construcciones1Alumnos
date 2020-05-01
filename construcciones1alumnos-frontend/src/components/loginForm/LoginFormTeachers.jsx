@@ -1,4 +1,4 @@
-//@ts-check
+// @ts-check
 import React, { useState } from "react";
 import "../loginForm/LoginForm.css";
 import c1Logo from "../loginForm/c1Logo.jpg";
@@ -6,7 +6,7 @@ import { Link, useHistory } from "react-router-dom";
 import bgegipt from "../loginForm/bgegipt.jpg";
 import axios from "axios";
 
-export default function LoginForm() {
+export default function LoginFormTeachers() {
   const history = useHistory();
   const [usuario, setUsuario] = useState("");
   const [contrasena, setContrasena] = useState("");
@@ -25,7 +25,7 @@ export default function LoginForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users/login", {
+      .post("http://localhost:3000/Teachers/login", {
         usuario: usuario,
         contrasena: contrasena,
       })
@@ -35,7 +35,7 @@ export default function LoginForm() {
         console.log(idl);
         
         // localStorage.setItem('idusuario', idd)
-          history.push("/home");
+          history.push("/hometeachers");
         // const timer = setTimeout(() => {
 
         // },1000)
