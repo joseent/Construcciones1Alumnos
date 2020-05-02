@@ -12,12 +12,7 @@ import Info from "./pages/infoRelated/Info";
 import Forum from "./pages/forumRelated/Forum";
 import Login from "./pages/userRelated/LogIn";
 import Home from "./pages/Home";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
-} from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 import HomeTeachers from "./pagesTeachers/HomeTeachers";
 import PublicHomeTeachers from "./pagesTeachers/PublicHomeTeachers";
 import ForumTeachers from "./pagesTeachers/forumRelated/ForumTeachers";
@@ -28,12 +23,10 @@ import ForumByIDTeachers from "./pagesTeachers/forumRelated/ForumByIDTeachers";
 import UserInfoTeachers from "./pagesTeachers/userRelated/UserInfoTeachers";
 
 export default function App() {
-  
   return (
     <Router>
       <div className="bg-black">
-           
-           <Switch>
+        <Switch>
           <Route path="/userinfo/:id">
             <UserInfo />
           </Route>
@@ -91,7 +84,6 @@ export default function App() {
           <Route path="/">
             <PublicHome />
           </Route>
-
         </Switch>
         <BottomBar />
       </div>

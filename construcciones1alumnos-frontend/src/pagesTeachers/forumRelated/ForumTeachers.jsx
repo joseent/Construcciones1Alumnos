@@ -1,17 +1,15 @@
 //@ts-check
 import React from "react";
-import ForumList from "../../components/ForumRelated/ForumList/ForumList";
 import './Forum.css'
-import ForumBar from "../../components/ForumRelated/forumBar/ForumBar";
 import NavBarTeachers from "../../components/general/navBar/NavBarTeachers";
+import ForumListTeachers from "../../components/ForumRelated/ForumList/ForumListTeachers";
 
 export default function ForumTeachers() {
   return (
     <div >
       <div>
         <NavBarTeachers/>
-        <ForumBar/>
-        <ForumList/>
+        <ForumListTeachers/>
       </div>
     </div>
   );

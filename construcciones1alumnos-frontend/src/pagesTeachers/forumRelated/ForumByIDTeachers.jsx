@@ -1,7 +1,7 @@
 //@ts-check
 import React from "react";
-import ForumByID from "../../components/ForumRelated/forumByID/ForumByID";
 import NavBarTeachers from "../../components/general/navBar/NavBarTeachers";
+import ForumByIdTeachersComp from "../../components/ForumRelated/forumByID/ForumByIdTeachersComp";
 
 
 export default function ForumByIDTeachers() {
@@ -9,7 +9,7 @@ export default function ForumByIDTeachers() {
     <div >
       <div>
         <NavBarTeachers/>
-        <ForumByID/>
+        <ForumByIdTeachersComp/>
       </div>
     </div>
   );

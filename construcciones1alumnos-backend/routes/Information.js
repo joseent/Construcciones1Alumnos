@@ -40,34 +40,32 @@ router.get("/:id", async(req, res) => {
 
 // SOLO PARA DOCENTES
 
-// router.post("/", async (req, res) => {
-//   const informationNuevo = new InformationModel({
-//     _id: new ObjectID(),
-//     titulo: req.body.titulo,
-//     descripsion: req.body.descripsion,
-//     
-    
-//   });
+router.post("/", async (req, res) => {
+  const informationNuevo = new InformationModel({
+    _id: new ObjectID(),
+    titulo: req.body.titulo,
+    descripsion: req.body.descripsion,
+  });
 
-//   try {
-//     const respuesta = await informationNuevo.save();
-//     res.json({ mensaje: "informacion nueva creado", documento: respuesta });
-//   } catch (error) {
-//     res.status(500).json({ mensaje: "error al crear informacion", tipo: error });
-//   }
-// });
+  try {
+    const respuesta = await informationNuevo.save();
+    res.json({ mensaje: "informacion nueva creado", documento: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error al crear informacion", tipo: error });
+  }
+});
 
 // BORRAR SOLO UN ARCHIVO
 
-// router.delete("/:id", async(req, res) => {
-//   const id = req.params.id;
-//   try {
-//     const respuesta =  await InformationModel.findByIdAndDelete(id);
-//     res.json({ mensaje: "informacion borradas", informacion: respuesta });
-//   } catch (error) {
-//     res.status(500).json({ mensaje: "error", tipo: error });
-//   }
-// });
+router.delete("/:id", async(req, res) => {
+  const id = req.params.id;
+  try {
+    const respuesta =  await InformationModel.findByIdAndDelete(id);
+    res.json({ mensaje: "informacion borradas", informacion: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
 
 
 module.exports = router;
