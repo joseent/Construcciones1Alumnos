@@ -79,7 +79,7 @@ export default function PublicHome() {
         <div className="text-center">
           <span>No estas registrado?</span>
             <Link to="/login" className="font-bold tracking-tight">
-              LOGEAR!
+              LOGUEAR!
             </Link>
         </div>
       </div>

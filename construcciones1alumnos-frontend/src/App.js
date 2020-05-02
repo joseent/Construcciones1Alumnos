@@ -20,6 +20,12 @@ import {
 } from "react-router-dom";
 import HomeTeachers from "./pagesTeachers/HomeTeachers";
 import PublicHomeTeachers from "./pagesTeachers/PublicHomeTeachers";
+import ForumTeachers from "./pagesTeachers/forumRelated/ForumTeachers";
+import InfoTeachers from "./pagesTeachers/infoRelated/InfoTeachers";
+import InfoByIDTeachers from "./pagesTeachers/infoRelated/InfoByIDTeachers";
+import InscriptionsTeachers from "./pagesTeachers/inscriptionRelated/InscriptionsTeachers";
+import ForumByIDTeachers from "./pagesTeachers/forumRelated/ForumByIDTeachers";
+import UserInfoTeachers from "./pagesTeachers/userRelated/UserInfoTeachers";
 
 export default function App() {
   
@@ -31,8 +37,14 @@ export default function App() {
           <Route path="/userinfo/:id">
             <UserInfo />
           </Route>
+          <Route path="/userinfoteachers/:id">
+            <UserInfoTeachers />
+          </Route>
           <Route path="/forumbyid/:id">
             <ForumByIDPage />
+          </Route>
+          <Route path="/forumbyidteachers/:id">
+            <ForumByIDTeachers />
           </Route>
           <Route path="/forumnew">
             <ForumNew />
@@ -43,14 +55,26 @@ export default function App() {
           <Route path="/inscriptions">
             <Inscriptions />
           </Route>
+          <Route path="/inscriptionsteachers">
+            <InscriptionsTeachers />
+          </Route>
           <Route path="/info/:id">
             <InfoByIDPage />
+          </Route>
+          <Route path="/infoteachers/:id">
+            <InfoByIDTeachers />
           </Route>
           <Route path="/info">
             <Info />
           </Route>
+          <Route path="/infoteachers">
+            <InfoTeachers />
+          </Route>
           <Route path="/forum">
             <Forum />
+          </Route>
+          <Route path="/forumteachers">
+            <ForumTeachers />
           </Route>
           <Route path="/login">
             <Login />

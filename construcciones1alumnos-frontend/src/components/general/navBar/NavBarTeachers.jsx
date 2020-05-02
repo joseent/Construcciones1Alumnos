@@ -5,12 +5,12 @@ import "./NavBar.css";
 import c1Logo from "../../../images/c1Logo.jpg"
 const menu = [
   {
-    name: "PUBLICHOME",
-    to: "/publichometeachers",
-  },
-  {
     name: "HOME",
     to: "/hometeachers",
+  },
+  {
+    name: "PUBLICHOME",
+    to: "/publichometeachers",
   },
   {
     name: "INSCRIPCIONES",

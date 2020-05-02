@@ -1,14 +1,14 @@
 //@ts-check
 import React from 'react';
-import LoginForm from '../../components/loginForm/LoginForm';
-import LoginFormTeachers from '../../components/loginForm/LoginFormTeachers';
+import LoginGeneral from '../../components/logingeneral/LoginGeneral';
 
 
 export default function Login() {
   return (
-    <div>
-        <LoginForm/>
-        <LoginFormTeachers/>
+    <div className="w-full">
+      <div className="">
+        <LoginGeneral/>
+      </div>
       </div>
   );
 }
