@@ -65,7 +65,7 @@ const newPublicity = async (req, res) => {
   }
 };
 
-router.post("/", upload.single('imagen'), newPublicity)
+router.post("/", upload.single('image'), newPublicity)
 
 
 // BORRAR SOLO UN ARCHIVO

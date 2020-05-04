@@ -65,7 +65,7 @@ router.get("/:id", async(req, res) => {
     }
   };
 
-router.post("/", upload.single('imagen'), NewSeminar)
+router.post("/", upload.single('image'), NewSeminar)
 
 
 // BORRAR SOLO UN ARCHIVO

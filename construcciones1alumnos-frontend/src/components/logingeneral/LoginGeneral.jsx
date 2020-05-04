@@ -36,15 +36,11 @@ export default function LoginGeneral() {
         contrasena: contrasenaAlumno,
       })
       .then((res) => {
-        const idl = res.data.respuesta.mail;
-        // setId(res.data.respuesta._id);
-        console.log(idl);
+        setIdAlumno(res.data.respuesta._id);
 
-        // localStorage.setItem('idusuario', idd)
+        localStorage.setItem('idusuario', idAlumno)
         history.push("/home");
-        // const timer = setTimeout(() => {
-
-        // },1000)
+      
       })
       .catch((error) => {
         console.log(error.data);

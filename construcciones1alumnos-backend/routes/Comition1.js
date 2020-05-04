@@ -13,6 +13,7 @@ const AlumnoSchema = new Schema({
   mail: {
     type: String,
     },
+    
 });
 
 const AlumnoModel = mongoose.model("comition1", AlumnoSchema);
@@ -35,6 +36,7 @@ router.post("/", async (req, res) => {
     dni: req.body.dni,
     libreta: req.body.libreta,
     mail: req.body.mail,
+    
   });
 
   try {

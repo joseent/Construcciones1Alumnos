@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import userLogo from "../../images/userLogo.png"
 
 export default function UserInfoModify() {
   const { id } = useParams();
@@ -10,10 +11,11 @@ export default function UserInfoModify() {
   const [dni, setDni] = useState("");
   const [libreta, setlibreta] = useState("");
   const [mail, setmail] = useState("");
-  const [profilePic, setProfilePic] = useState("");
+  const [profilePic, setProfilePic] = useState(false);
 
   useEffect(() => {
     const getQuestionById = (e) => {
+      const id = window.localStorage.getItem("idusuario");
       axios
         .get(`http://localhost:3000/users/${id}`)
         .then((res) => {
@@ -37,28 +39,31 @@ export default function UserInfoModify() {
         {profilePic ? (
           <img src={profilePic} alt="" />
         ) : (
-          <button className="text-yellow-600 text-bold text-xl h-12 w-12 rounded-full border m-4">
-            <i className="far fa-user-circle"></i>
+          <div className="flex flex-col items-center p-4">
+            <img className="rounded w-1/2" src={userLogo} alt=""/>
+          <button className="text-yellow-600">
+            CAMBIAR FOTO DE PERFIL
           </button>
+          </div>
         )}
-        <div className="p-1">
-          <p>Nombre: </p>
+        <div className="p-1 flex text-yellow-600">
+          <p className="font-bold mr-2">Nombre: </p>
           <p>{nombre}</p>
         </div>
-        <div className="p-1">
-          <p>Apellido: </p>
+        <div className="p-1 flex text-yellow-600">
+          <p className="font-bold mr-2">Apellido: </p>
           <p>{apellido}</p>
         </div>
-        <div className="p-1">
-          <p>Dni: </p>
+        <div className="p-1 flex text-yellow-600">
+          <p className="font-bold mr-2">Dni: </p>
           <p>{dni}</p>
         </div>
-        <div className="p-1">
-          <p>Libreta: </p>
+        <div className="p-1 flex text-yellow-600">
+          <p className="font-bold mr-2">Libreta: </p>
           <p>{libreta}</p>
         </div>
-        <div className="p-1">
-          <p>Mail: </p>
+        <div className="p-1 flex text-yellow-600">
+          <p className="font-bold mr-2">Mail: </p>
           <p>{mail}</p>
         </div>
       </div>

@@ -15,6 +15,8 @@ export default function InscriptionToComition() {
   const [correctInscription5, setCorrectInscription5] = useState(false);
   const [correctInscription6, setCorrectInscription6] = useState(false);
   const [correctInscription7, setCorrectInscription7] = useState(false);
+  const [inscripted, setInscripted] = useState(false);
+  const [comition, setComition] = useState("");
 
   useEffect(() => {
     const id = window.localStorage.getItem("idusuario");
@@ -29,6 +31,8 @@ export default function InscriptionToComition() {
           setuserDNI(res.data.usuario.dni);
           setUserLibreta(res.data.usuario.libreta);
           setUserMail(res.data.usuario.mail);
+          setInscripted(res.data.usuario.inscripto);
+          setComition(res.data.usuario.comision);
         })
         .catch((error) => {
           console.log(error.data);
@@ -39,6 +43,7 @@ export default function InscriptionToComition() {
 
   // COMITION1
   const handleComition1 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition1", {
         nombre: userName,
@@ -53,9 +58,15 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+
+    axios.put(`http://localhost:3000/users/${id}`, {
+      comision: "COMISION 1",
+      inscripto: true,
+    });
   };
   // COMITION2
   const handleComition2 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition2", {
         nombre: userName,
@@ -70,9 +81,14 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 2",
+        inscripto: true,
+      });
   };
   // COMITION3
   const handleComition3 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition3", {
         nombre: userName,
@@ -87,9 +103,14 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 3",
+        inscripto: true,
+      });
   };
   // COMITION4
   const handleComition4 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition4", {
         nombre: userName,
@@ -104,9 +125,14 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 4",
+        inscripto: true,
+      });
   };
   // COMITION5
   const handleComition5 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition5", {
         nombre: userName,
@@ -121,9 +147,14 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 5",
+        inscripto: true,
+      });
   };
   // COMITION6
   const handleComition6 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition6", {
         nombre: userName,
@@ -138,9 +169,14 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 6",
+        inscripto: true,
+      });
   };
   // COMITION7
   const handleComition7 = () => {
+    const id = window.localStorage.getItem("idusuario");
     axios
       .post("http://localhost:3000/Comition7", {
         nombre: userName,
@@ -155,11 +191,22 @@ export default function InscriptionToComition() {
       .catch((error) => {
         console.log(error.tipo);
       });
+      axios.put(`http://localhost:3000/users/${id}`, {
+        comision: "COMISION 7",
+        inscripto: true,
+      });
   };
 
   return (
     <div className="w-full flex justify-center">
-      <div className="w-4/5 flex flex-col justify-center ">
+      <h2 className={`${inscripted ? "w-4/5 p-4 bg-yellow-600 font-bold text-center" : "hidden"}`}>
+        YA ESTA INSCRIPTO EN LA {comition}{" "}
+      </h2>
+      <div
+        className={`${
+          inscripted ? "hidden" : "w-4/5 flex flex-col justify-center"
+        }`}
+      >
         {/* COMITION1 */}
         <button
           className={`${

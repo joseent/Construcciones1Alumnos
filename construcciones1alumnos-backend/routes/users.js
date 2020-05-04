@@ -44,7 +44,9 @@ const UsuarioSchema = new Schema({
     match: [/\S+@\S+\.\S+/, "is invalid"],
     index: true,
   },
-  image: String
+  image: String,
+  comision: String,
+    inscripto: Boolean
 });
 
 
@@ -62,7 +64,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-// registrar usuario
+// // registrar usuario
 router.post("/registrar", async (req, res) => {
    console.log("entrando a registrar");
    
@@ -75,6 +77,9 @@ router.post("/registrar", async (req, res) => {
     dni: req.body.dni,
     libreta: req.body.libreta || null,
     mail: req.body.mail,
+
+    comision: "none",
+    inscripto: false
   };
 
 usuarioNuevo.contrasena = encriptarPassWord(req.body.contrasena);
@@ -94,8 +99,6 @@ try {
     res.status(500).json({ mensaje: "error al crear usuario", tipo: error });
   }
 });
-
-
 
 
 // logear usuario
