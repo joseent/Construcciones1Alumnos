@@ -30,11 +30,9 @@ export default function LoginForm() {
         contrasena: contrasena,
       })
       .then((res) => {
-        const idl = res.data.respuesta.mail;
         // setId(res.data.respuesta._id);
-        console.log(idl);
         
-        // localStorage.setItem('idusuario', idd)
+        localStorage.setItem('idusuario', '5eac4c0b7dbb581ce8b1e373')
           history.push("/home");
         // const timer = setTimeout(() => {
 

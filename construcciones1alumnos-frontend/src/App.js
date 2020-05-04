@@ -22,6 +22,7 @@ import InscriptionsTeachers from "./pagesTeachers/inscriptionRelated/Inscription
 import ForumByIDTeachers from "./pagesTeachers/forumRelated/ForumByIDTeachers";
 import UserInfoTeachers from "./pagesTeachers/userRelated/UserInfoTeachers";
 
+
 export default function App() {
   return (
     <Router>

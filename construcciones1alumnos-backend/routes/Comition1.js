@@ -12,11 +12,7 @@ const AlumnoSchema = new Schema({
   libreta: { type: String, required: true, maxlength: 9, minlength: 9 },
   mail: {
     type: String,
-    lowercase: true,
-    required: [true, "can't be blank"],
-    match: [/\S+@\S+\.\S+/, "is invalid"],
-    index: true,
-  },
+    },
 });
 
 const AlumnoModel = mongoose.model("comition1", AlumnoSchema);

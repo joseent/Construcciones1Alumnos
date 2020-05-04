@@ -10,7 +10,6 @@ export default function NewForumQuestion() {
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionSelector, setQuestionSelector] = useState("");
   const [usuarioNombre, setusuarioNombre] = useState("");
-  const [usuarioApellido, setusuarioApellido] = useState("");
 
   const handleChangeTitle = (e) => {
     const title = e.target.value;
@@ -32,8 +31,7 @@ export default function NewForumQuestion() {
       axios
         .get(`http://localhost:3000/users/${id}`)
         .then((res) => {
-          setusuarioNombre(res.data.usuario.nombre);
-          setusuarioApellido(res.data.usuario.apellido);
+          setusuarioNombre(res.data.usuario.nombre + " " + res.data.usuario.apellido);
         })
         .catch((error) => {
           console.log(error.data);
@@ -51,8 +49,7 @@ export default function NewForumQuestion() {
       titulo: questionTitle,
       descripsion: questionDescription,
       tema: questionSelector,
-      nombre: usuarioNombre,
-      apellido: usuarioApellido
+      usuario: usuarioNombre,
       
     })
     .then((res) => {
@@ -98,12 +95,12 @@ export default function NewForumQuestion() {
                       required
                     >
                       <option defaultValue>Temas</option>
-                      <option value={questionSelector}>General</option>
-                      <option value={questionSelector}>Madera</option>
-                      <option value={questionSelector}>Metal</option>
-                      <option value={questionSelector}>Hormigon</option>
-                      <option value={questionSelector}>Plastico</option>
-                      <option value={questionSelector}>Vidrio</option>
+                      <option value="general">General</option>
+                      <option value="madera">Madera</option>
+                      <option value="metal">Metal</option>
+                      <option value="hotmigon">Hormigon</option>
+                      <option value="plastico">Plastico</option>
+                      <option value="vidrio">Vidrio</option>
                     </select>
                   </div>
                 </div>

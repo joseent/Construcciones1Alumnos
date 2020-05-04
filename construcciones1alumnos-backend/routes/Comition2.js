@@ -8,15 +8,10 @@ const AlumnoSchema = new Schema({
   _id: ObjectID,
   nombre: String,
   apellido: String,
-  dni: { type: String, required: true, minlength: 8, maxlength: 8 },
+  dni: { type: String, required: true, minlength: 8, maxlength: 8, unique: true},
   libreta: { type: String, required: true, maxlength: 9, minlength: 9 },
-  mail: {
-    type: String,
-    lowercase: true,
-    required: [true, "can't be blank"],
-    match: [/\S+@\S+\.\S+/, "is invalid"],
-    index: true,
-  },
+  mail: String,
+   
 });
 
 const AlumnoModel = mongoose.model("comition2", AlumnoSchema);
@@ -28,7 +23,7 @@ router.get("/", async(req, res) => {
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: err });
   }
-  res.json("COMITION1");
+  res.json("COMITION2");
 });
 
 router.post("/", async (req, res) => {
@@ -38,13 +33,7 @@ router.post("/", async (req, res) => {
     apellido: req.body.apellido,
     dni: req.body.dni,
     libreta: req.body.libreta,
-    mail: {
-      type: String,
-      lowercase: true,
-      required: [true, "can't be blank"],
-      match: [/\S+@\S+\.\S+/, "is invalid"],
-      index: true,
-    },
+    mail: req.body.mail
   });
 
   try {

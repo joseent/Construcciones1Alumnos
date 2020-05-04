@@ -16,6 +16,17 @@ import metodologia5 from "../images/metodologia5.jpg";
 import metodologia6 from "../images/metodologia6.jpg";
 import metodologia7 from "../images/metodologia7.jpg";
 
+
+import teacher1 from "../images/teachers/toppa.jpg"
+import teacher2 from "../images/teachers/sosa.jpg"
+import teacher3 from "../images/teachers/latina.jpg"
+import teacher4 from "../images/teachers/alderete.jpg"
+import teacher5 from "../images/teachers/arias.jpg"
+import teacher6 from "../images/teachers/ferreyra.jpg"
+import teacher7 from "../images/teachers/legorburu.jpg"
+import teacher8 from "../images/teachers/saez.jpg"
+
+
 import "./PublicHome.css"
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -145,7 +156,7 @@ export default function PublicHome() {
             <p>INFO DOCENTES</p>
             <div className="flex justify-between">
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher8} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Arq. VANESA SAEZ
                 </span>
@@ -154,7 +165,7 @@ export default function PublicHome() {
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher7} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Arq. MARIANA LEGORBURU
                 </span>
@@ -163,14 +174,14 @@ export default function PublicHome() {
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher6} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Arq. IRENE FERREYRA
                 </span>
                 <span className="text-center text-yellow-600 mt-1">J.T.P</span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher5} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Ing. ELIZABETH ARIAS
                 </span>
@@ -181,7 +192,7 @@ export default function PublicHome() {
                 <span className="text-center text-yellow-600 mt-1"></span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher4} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Ing. CARLOS ALDERETE
                 </span>
@@ -190,7 +201,7 @@ export default function PublicHome() {
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher3} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   Arq. STELLA LATINA
                 </span>
@@ -199,7 +210,7 @@ export default function PublicHome() {
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher2} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   MSc. Arq. MIRTA SOSA
                 </span>
@@ -208,7 +219,7 @@ export default function PublicHome() {
                 </span>
               </div>
               <div className="flex flex-col items-center">
-                <img src={c1Logo} alt="" className="rounded-full w-20 " />
+                <img src={teacher1} alt="" className="rounded-full w-20 " />
                 <span className="text-center text-yellow-600 mt-1">
                   MSc. Arq. LUCIA TOPPA
                 </span>
