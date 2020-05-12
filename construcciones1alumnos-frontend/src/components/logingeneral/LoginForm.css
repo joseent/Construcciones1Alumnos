@@ -1,9 +1,22 @@
 @media (max-width: 600px) {
-    .loginmedia {
-      width: 60%;
-    }}
+  .loginmedia {
+    width: 60%;
+  }
+}
 
-        @media (max-width: 600px) {
-        .Bgegipt {
-         height: 100vh;
-        }}
+@media (max-width: 600px) {
+  .BgegiptLogin {
+   object-fit: cover;
+  }
+
+}
+
+.loginForm{
+  min-width: 250px;
+}
+
+.buttonLogin:hover{
+  background-color: #2c2c2c;
+  color: #f8cb00;
+  }
+

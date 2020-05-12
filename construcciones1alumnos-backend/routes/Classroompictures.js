@@ -50,7 +50,6 @@ const newClassPicture =  async (req, res) => {
   const fotoNuevo = new ClassPicModel({
     _id: new ObjectID(),
     title: req.body.title,
-    description: req.body.description,
     image: urlImage
   });
 

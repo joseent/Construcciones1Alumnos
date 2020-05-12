@@ -20,7 +20,6 @@ export default function ForumList() {
   };
 
   const GetListByTema = async () => {
-    console.log("estoy andando");
     const tema = forumSelector;
     axios
       .get(`http://localhost:3000/Forum/bytema/${tema}`)
@@ -74,7 +73,7 @@ export default function ForumList() {
           <div className="">
             <button
               onClick={GetListByTema}
-              className="ml-4 p-2 text-yellow-600 text-bold border border-yellow-600 rounded"
+              className="ml-4 p-2 text-black text-bold border-1 borderyellow bgyellow rounded"
               type="button"
             >
               BUSCAR
@@ -82,7 +81,7 @@ export default function ForumList() {
           </div>
         </div>
         <button
-          className="bg-yellow-600 text-bold text-xl h-12"
+          className="bgyellow text-bold text-xl h-12"
           onClick={newQuestion}
         >
           <i className="fa fa-plus m-2"></i>
@@ -93,10 +92,10 @@ export default function ForumList() {
           {forumQuestions.map((consultas) => (
             <li
               key={consultas._id}
-              className="flex items-center mb-1 p-2 cursor-pointer text-yellow-600 sm:min-w-full"
+              className="flex items-center mb-1 p-2 cursor-pointer textyellow sm:min-w-full"
               onClick={() => handleOnClick(consultas._id)}
             >
-              <div className="w-full p-4 flex justify-between items-center border border-yellow-600 rounded-md h-20 shadowColor">
+              <div className="w-full p-4 flex justify-between items-center border borderyellow rounded-md h-20 shadowColor">
                 {consultas.respondido ? (
                   <i className="fa fa-check"></i>
                   ) : (

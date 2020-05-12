@@ -27,12 +27,12 @@ const [description, setDescription] = useState("");
 
   return (
     <div className="flex justify-center items-center flex-col ">
-      <div className="w-1/2 ">
-        <div className="text-center bg-gray-900 rounded-md mb-2  p-4">
-          <p className="text-yellow-600 font-bold text-xl">{title}</p>
+      <div className="w-1/2 bglayer2 p-2 rounded-lg">
+        <div className="text-center bglayer3 rounded-md mb-2 p-4">
+          <p className="textyellow font-bold text-md">{title}</p>
         </div>
-        <div className="bg-gray-900 rounded-md mb-2 p-4">
-          <p className="text-yellow-600 text-bold text-lg">{description}</p>
+        <div className="bglayer3 rounded-md p-4">
+          <p className="text-bold text-sm">{description}</p>
         </div>
       </div>
     </div>

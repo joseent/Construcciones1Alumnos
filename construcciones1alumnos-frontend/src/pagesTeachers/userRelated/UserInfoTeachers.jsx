@@ -1,13 +1,13 @@
 // @ts-check
 import React from 'react'
-import UserInfoModify from '../../components/user/UserInfoModify'
 import NavBarTeachers from '../../components/general/navBar/NavBarTeachers'
+import UserInfoModifyTeachers from './UserInfoModifyTeachers'
 
 export default function UserInfoTeachers() {
     return (
         <div>
             <NavBarTeachers/>
-            <UserInfoModify/>
+            <UserInfoModifyTeachers/>
         </div>
     )
 }

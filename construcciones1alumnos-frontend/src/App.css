@@ -1,4 +1,110 @@
-.bgColor{
-    background-color: black;
+.bgColor {
+  background-color: #121212;
+}
+
+.bglayer1 {
+  background-color: #1d1d1d;
+}
+
+.bglayer2 {
+  background-color: #212121;
+}
+
+.bglayer3 {
+  background-color: #242424;
+}
+
+.bglayer4 {
+  background-color: #262626;
+}
+
+.bglayer5 {
+  background-color: #2c2c2c;
+}
+
+.bglayer6 {
+  background-color: #2d2d2d;
+}
+
+.bglayer7 {
+  background-color: #323232;
+}
+
+.bglayer8 {
+  background-color: #353535;
+}
+
+.bglayer9 {
+  background-color: #373737;
+}
+
+.bgyellow {
+  background-color: #f8cb00;
+}
+
+h1 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8cb00;
+  font-size: 40px;
+  font-weight: bold;
+}
+h3 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8cb00;
+  font-size: xx-large;
+}
+h4 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8cb00;
+  font-size: larger;
+}
+h5 {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #f8cb00;
+  font-size: large;
+}
+p {
+  font-family: Arial, Helvetica, sans-serif;
+  color: gray;
+}
+
+h6 {
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: large;
+}
+
+span{
+  color: gray;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: small;
+}
+.seemorebutton {
+  min-width: 149px;
+}
+
+.borderyellow {
+  border-style: solid;
+  border-color: #f8cb00;
+}
+
+.textyellow{
+  color: #f8cb00;
+}
+
+.inscriptionsbuttons:hover{
+background-color: #f8cb00;
+color: black;
+font-weight: bold;
+}
+
+.buttonhoverblack:hover{
+  background-color: #1d1d1d;
+  color: #f8cb00;
+}
+
+@media(max-width: 600px){
+  .widthmediafull{
+    width: 95%;
   }
-  
+}

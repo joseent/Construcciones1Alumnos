@@ -15,13 +15,13 @@ import teacher8 from "../images/teachers/saez.jpg";
 
 export default function Home() {
   return (
-    <div className="bg-black">
+    <div className="bgColor">
       <NavBar />
       <div className="w-full flex flex-col items-center ">
         {/* teachers info */}
         <div className="w-4/5 flex justify-center">
           <div className="w-full my-20 text-yellow-600 text-center">
-            <p>COMISIONES</p>
+            <h4>COMISIONES</h4>
             <div className="flex justify-between">
               {/* COMISION1*/}
               <div className="flex flex-col items-center">
@@ -101,7 +101,7 @@ export default function Home() {
           </div>
         </div>
         <div className="w-4/5 text-yellow-600">
-          <h1>ESTAMOS EN HOME</h1>
+          <h4>ESTAMOS EN HOME</h4>
           <p>
             2da ENTREGA de TP VIDEOS individuales: 5 de Mayo de 2020. EJECUCION
             DEL VIDEO: Para la ejecución del tema del video se anexaron las

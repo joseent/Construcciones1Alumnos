@@ -1,7 +1,11 @@
 .topnav {
   overflow: hidden;
-  background-color: black;
+  background-color: #121212;
 }
+.topnavpublic {
+  overflow: hidden;
+}
+
 
 .topnav a {
   float: left;
@@ -12,13 +16,27 @@
   text-decoration: none;
   font-size: 17px;
 }
-
-.topnav a:hover {
-  background-color: goldenrod;
-  color: black;
+.topnavpublic a {
+  float: left;
+  display: block;
+  color: rgb(253, 235, 190);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
 
+.topnav a:hover {
+  background-color: #f8cb00;
+  color: #121212;
+}
+
+
+
 .topnav .icon {
+  display: none;
+}
+.topnavpublic .icon {
   display: none;
 }
 
@@ -27,6 +45,17 @@
     display: none;
   }
   .topnav a.icon {
+    float: right;
+    display: block;
+    height: 100px;
+    /* margin-top: 20px; */
+  }
+}
+@media screen and (max-width: 600px) {
+  .topnavpublic a:not(:first-child) {
+    display: none;
+  }
+  .topnavpublic a.icon {
     float: right;
     display: block;
     height: 100px;
@@ -49,6 +78,26 @@
     text-align: left;
   }
 }
+@media screen and (max-width: 600px) {
+  .topnavpublic.responsive {
+    position: relative;
+  }
+  .topnavpublic.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  .topnavpublic.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+}
+
+.textNavPublicHome {
+  display: block;
+  
+}
 
 @media screen and (min-width: 600px) {
   .navContainer {
@@ -61,6 +110,12 @@
 @media screen and (max-width: 800px) {
   .textNav {
     display: none;
+  }
+  .textNavPublicHome {
+    font-size: medium;
+  }
+  .topnavpublic img {
+    width: 45px;
   }
 }
 

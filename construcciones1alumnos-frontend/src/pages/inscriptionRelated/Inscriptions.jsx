@@ -9,13 +9,13 @@ export default function Inscriptions() {
     <div>
       <NavBar />
       <div className="flex flex-col justify-center">
-        <h1 className="text-yellow-600 font-bold text-center p-4">
+        <h4 className="textyellow font-bold text-center p-4">
           INSCRIBIRSE POR COMISIONES
-        </h1>
+        </h4>
         <InscriptionToComition />
-        <h1 className="text-yellow-600 font-bold text-center p-4">
+        <h4 className="textyellow font-bold text-center p-4">
           Lista de inscriptos
-        </h1>
+        </h4>
         <InscriptionList />
       </div>
     </div>

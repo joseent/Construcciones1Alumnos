@@ -159,31 +159,31 @@ export default function InscriptionList() {
         onClick={handleComition1}
         className={`${
           comition1
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 1
       </button>
       <div className={`${comition1 ? "block w-4/5" : "hidden"}`}>
         <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition1List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
               <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -194,31 +194,31 @@ export default function InscriptionList() {
         onClick={handleComition2}
         className={`${
           comition2
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 2
       </button>
       <div className={`${comition2 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition2List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -229,31 +229,31 @@ export default function InscriptionList() {
         onClick={handleComition3}
         className={`${
           comition3
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 3
       </button>
       <div className={`${comition3 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition3List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
               <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -264,31 +264,31 @@ export default function InscriptionList() {
         onClick={handleComition4}
         className={`${
           comition4
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 4
       </button>
       <div className={`${comition4 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition4List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -299,31 +299,31 @@ export default function InscriptionList() {
         onClick={handleComition5}
         className={`${
           comition5
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 5
       </button>
       <div className={`${comition5 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition5List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
             <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -334,31 +334,31 @@ export default function InscriptionList() {
         onClick={handleComition6}
         className={`${
           comition6
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 6
       </button>
       <div className={`${comition6 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition6List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -369,31 +369,31 @@ export default function InscriptionList() {
         onClick={handleComition7}
         className={`${
           comition7
-            ? "w-4/5 h-12 font-bold bg-yellow-600"
-            : "w-4/5 h-12 border-2 border-yellow-600 text-yellow-600 font-bold hover:bg-yellow-600 hover:text-black hover:font-bold"
+            ? "w-4/5 h-12 font-bold bgyellow"
+            : "w-4/5 h-12 border-2 borderyellow textyellow font-bold inscriptionsbuttons"
         }`}
       >
         COMISION 7
       </button>
       <div className={`${comition7 ? "block w-4/5" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">imagen</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">nombre</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">apellido</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">dni</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">libreta</h4>
-          <h4 className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">mail</h4>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         <ul className="w-full">
           {comition7List.map((alumnos) => (
-            <li key={alumnos._id} className="w-full text-yellow-600">
+            <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">sin imagen</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.dni}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-yellow-600 text-center font-bold border border-yellow-600">{alumnos.mail}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}

@@ -21,12 +21,19 @@ import InfoByIDTeachers from "./pagesTeachers/infoRelated/InfoByIDTeachers";
 import InscriptionsTeachers from "./pagesTeachers/inscriptionRelated/InscriptionsTeachers";
 import ForumByIDTeachers from "./pagesTeachers/forumRelated/ForumByIDTeachers";
 import UserInfoTeachers from "./pagesTeachers/userRelated/UserInfoTeachers";
+import Publicity from "./pages/publicHomeInformation/Publicity";
+import Catedra from "./pages/publicHomeInformation/Catedra";
+import Seminars from "./pages/publicHomeInformation/Seminars";
+
+import "./App.css"
+import InfoFau from "./pages/publicHomeInformation/InfoFau";
+import Metodologia from "./pages/publicHomeInformation/Metodologia";
 
 
 export default function App() {
   return (
     <Router>
-      <div className="bg-black">
+      <div className="bgColor">
         <Switch>
           <Route path="/userinfo/:id">
             <UserInfo />
@@ -40,6 +47,27 @@ export default function App() {
           <Route path="/forumbyidteachers/:id">
             <ForumByIDTeachers />
           </Route>
+          <Route path="/info/:id">
+            <InfoByIDPage />
+          </Route>
+          <Route path="/infoteachers/:id">
+            <InfoByIDTeachers />
+          </Route>
+          <Route path="/publicity">
+            <Publicity />
+          </Route>
+          <Route path="/fau">
+            <InfoFau />
+          </Route>
+          <Route path="/catedra">
+            <Catedra />
+          </Route>
+          <Route path="/metodologia">
+            <Metodologia />
+          </Route>
+          <Route path="/seminars">
+            <Seminars />
+          </Route>
           <Route path="/forumnew">
             <ForumNew />
           </Route>
@@ -51,12 +79,6 @@ export default function App() {
           </Route>
           <Route path="/inscriptionsteachers">
             <InscriptionsTeachers />
-          </Route>
-          <Route path="/info/:id">
-            <InfoByIDPage />
-          </Route>
-          <Route path="/infoteachers/:id">
-            <InfoByIDTeachers />
           </Route>
           <Route path="/info">
             <Info />

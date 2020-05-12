@@ -1,340 +1,224 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  useHistory,
+} from "react-router-dom";
 import c1Logo from "../images/c1Logo.jpg";
 import bgegipt from "../images/bgegipt.jpg";
+import bgegiptsm from "../images/bgegipt2sm.jpg";
 import infofau from "../images/infoFau.jpeg";
 import areatecnica from "../images/areatecnica.jpg";
 import objetivogeneral from "../images/objetivosgenerales.jpg";
 import mapaconceptual1 from "../images/mapaconceptual1.jpg";
 import mapaconceptual2 from "../images/mapaconceptual2.jpg";
-import metodologia1 from "../images/metodologia1.jpg";
-import metodologia2 from "../images/metodologia2.jpg";
-import metodologia3 from "../images/metodologia3.jpg";
-import metodologia4 from "../images/metodologia4.jpg";
-import metodologia5 from "../images/metodologia5.jpg";
-import metodologia6 from "../images/metodologia6.jpg";
-import metodologia7 from "../images/metodologia7.jpg";
 
-
-import teacher1 from "../images/teachers/toppa.jpg"
-import teacher2 from "../images/teachers/sosa.jpg"
-import teacher3 from "../images/teachers/latina.jpg"
-import teacher4 from "../images/teachers/alderete.jpg"
-import teacher5 from "../images/teachers/arias.jpg"
-import teacher6 from "../images/teachers/ferreyra.jpg"
-import teacher7 from "../images/teachers/legorburu.jpg"
-import teacher8 from "../images/teachers/saez.jpg"
-
-
-import "./PublicHome.css"
-
+import "../pages/PublicHome.css";
+import "../components/general/navBar/NavBar.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
+import PublicHomeSeminars from "../components/publicHome/PublicHomeSeminars";
+import PublicHomePublicity from "../components/publicHome/PublicHomePublicity";
+import PublicHomeClassRoomPics from "../components/publicHome/PublicHomeClassRoomPics";
+import Teachers from "./publicHomeInformation/Teachers";
+const menu = [
+  {
+    name: "registrarse",
+    to: "/register",
+  },
+  {
+    name: "loguearse",
+    to: "/login",
+  },
+];
 
 export default function PublicHome() {
-  const [seminarList, setSeminarList] = useState([]);
-  const [publicityList, setPublicityList] = useState([]);
-  const [classPics, setClassPics] = useState([]);
+  const history = useHistory();
+  const [responsive, setResponsive] = useState(false);
 
-  useEffect(() => {
-    const GetSeminarList = async () => {
-      axios
-        .get("http://localhost:3000/Seminars/")
-        .then((res) => {
-          console.log(res.data);
-          setSeminarList(res.data.seminarios);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetSeminarList();
+  const toggleNavbar = () => setResponsive((state) => !state);
 
-    const GetPublicityList = async () => {
-      axios
-        .get("http://localhost:3000/Publicity/")
-        .then((res) => {
-          setPublicityList(res.data.publicidad);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetPublicityList();
-
-    const GetClassPics = async () => {
-      axios
-        .get("http://localhost:3000/Classroompictures/")
-        .then((res) => {
-          setClassPics(res.data.fotos);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetClassPics();
-  }, []);
-
+  const handleInfoFau = () => {
+    history.push("/fau");
+  };
+  const handleInfoCatedra = () => {
+    history.push("/catedra");
+  };
+  const handleMetodologia = () => {
+    history.push("/metodologia");
+  };
+  
   return (
-    <div className="flex flex-col items-center">
-      <div className="w-full bgColor p-6">
-        <p className="text-3xl text-center font-bold">CONSTRUCCIONES I</p>
-        <div className="text-center">
-          <span>No estas registrado?</span>
-            <Link to="/register" className="font-bold tracking-tight">
-              REGISTRATE AQUI!
-            </Link>
-        </div>
-        <div className="text-center">
-          <span>No estas registrado?</span>
-            <Link to="/login" className="font-bold tracking-tight">
-              LOGUEAR!
-            </Link>
-        </div>
-      </div>
+    <div className=" flex flex-col items-center bgColor">
       {/* FONDO */}
-      <div className="w-full flex justify-center items-center">
-        <img
-          className="Bgegipt bg-local w-full relative"
-          src={bgegipt}
-          alt="Bgegipt"
-        />
-        <div className="absolute w-full p-6 flex justify-center">
-          <img className="rounded-full w-3/12 mb-5" src={c1Logo} alt="" />
+      <div className="w-full relative">
+        <img className="Bgegipt w-full h-32 object-cover absolute " src={bgegipt} alt="Bgegipt" />
+             <div
+          className={`topnavpublic ${responsive ? "responsive" : "absolute"}`}
+          id="myTopnav"
+        >
+          <div className="navContainer">
+            <Link to="/" className="active">
+              <div className="flex items-center p-3">
+                <img className="w-20 rounded-full mr-2" src={c1Logo} alt="" />
+                <h3 className="textNavPublicHome text-black font-bold">CONSTRUCCIONES I</h3>
+              </div>
+            </Link>
+            {menu.map(({ name, to }) => (
+              <Link key={name} to={to}>
+               <p> {name}</p>
+              </Link>
+            ))}
+            <a className="icon" onClick={toggleNavbar}>
+              <i className="fa fa-bars mt-6"></i>
+            </a>
+          </div>
         </div>
       </div>
-      {/* CONTENT*/}
-      <div className="flex flex-col items-center divide-y divide-yellow-600">
-        {/* general info */}
-        <div className="w-4/5 flex justify-center">
-          <div className="w-4/5 text-center text-yellow-600  my-20">
-            <p>INFO FACUTLAD</p>
-            <img src={infofau} alt="" />
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              ullam maxime, nobis et animi quis sit quia eveniet distinctio
-              dignissimos? Est maiores provident aspernatur nobis eaque,
-              cupiditate ex quia quos?
-            </p>
+
+      {/* FONDO */}
+        {/* <div className="flex w-full items-center mediatitle shadow-lg bglayer2 p-4 rounded-md">
+          <img
+            className="logomedia rounded-full w-1/12 mr-6"
+            src={c1Logo}
+            alt=""
+          />
+          <div className="header w-full flex items-center">
+            <h1 className="text-center pagetitle font-bold">CONSTRUCCIONES 1</h1>
           </div>
-        </div>
-        {/* catedra info */}
-        <div className="w-4/5 flex justify-center">
-          <div className="w-4/5 text-center text-yellow-600 my-20">
-            <p>INFO CATEDRA</p>
-            <Carousel>
-              <div>
-                <img src={areatecnica} />
-                <p className="legend">area tecnica</p>
+          <div className=" flex justify-end">
+            <div className="flex">
+              <div className="text-center p-2">
+                <Link to="/register" className="font-bold text-xs tracking-tight">
+                  <h6>REGISTRARSE</h6>
+                </Link>
               </div>
-              <div>
-                <img src={objetivogeneral} />
-                <p className="legend">objetivos generales</p>
-              </div>
-              <div>
-                <img src={mapaconceptual1} />
-                <p className="legend">mapa conceptual</p>
-              </div>
-              <div>
-                <img src={mapaconceptual2} />
-                <p className="legend">mapa conceptual</p>
-              </div>
-            </Carousel>
-            <p>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Adipisci
-              ullam maxime, nobis et animi quis sit quia eveniet distinctio
-              dignissimos? Est maiores provident aspernatur nobis eaque,
-              cupiditate ex quia quos?
-            </p>
-          </div>
-        </div>
-        {/* teachers info */}
-        <div className="w-4/5 flex justify-center">
-          <div className="w-full my-20">
-            <p>INFO DOCENTES</p>
-            <div className="flex justify-between">
-              <div className="flex flex-col items-center">
-                <img src={teacher8} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Arq. VANESA SAEZ
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Auxiliar Graduado
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher7} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Arq. MARIANA LEGORBURU
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Auxiliar Graduado
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher6} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Arq. IRENE FERREYRA
-                </span>
-                <span className="text-center text-yellow-600 mt-1">J.T.P</span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher5} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Ing. ELIZABETH ARIAS
-                </span>
-                <span className="text-center text-yellow-600 mt-1"></span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Profesora Adjunta
-                </span>
-                <span className="text-center text-yellow-600 mt-1"></span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher4} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Ing. CARLOS ALDERETE
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Profesor Adjunto
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher3} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  Arq. STELLA LATINA
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Profesora Adjunta
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher2} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  MSc. Arq. MIRTA SOSA
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Profesora Asosiada
-                </span>
-              </div>
-              <div className="flex flex-col items-center">
-                <img src={teacher1} alt="" className="rounded-full w-20 " />
-                <span className="text-center text-yellow-600 mt-1">
-                  MSc. Arq. LUCIA TOPPA
-                </span>
-                <span className="text-center text-yellow-600 mt-1">
-                  Profesora Titular
-                </span>
+              <div className="text-center p-2">
+                <Link to="/login" className="font-bold text-xs tracking-tight">
+                  <h6>LOGUEAR</h6>
+                </Link>
               </div>
             </div>
           </div>
+        </div> */}
+      
+      {/* CONTENT*/}
+      <div className="mediafullwidth w-11/12 flex flex-col items-center divide-y divide-yellow-600">
+        {/* general info */}
+        <div className="flex my-20">
+          <img src={infofau} className="w-2/5 informativeimage" alt="" />
+          <div className="infofaumedia w-3/5 flex flex-col justify-center items-center">
+            <div className="w-4/5 text-center mt-20">
+              <h3>INFO FACULTAD</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
+                distinctio dignissimos? Est maiores provident aspernatur nobis
+                eaque, cupiditate ex quia quos?
+              </p>
+            </div>
+            <button
+              onClick={handleInfoFau}
+              className="bgyellow  shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold"
+            >
+              VER MAS
+            </button>
+          </div>
+        </div>
+        {/* {/* catedra info */}
+        <div className="mediafullwidth flex mb-20">
+          <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
+            <div className="w-4/5 text-center mt-20">
+              <h3>INFO CATEDRA</h3>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
+                distinctio dignissimos? Est maiores provident aspernatur nobis
+                eaque, cupiditate ex quia quos?
+              </p>
+            </div>
+            <button
+              onClick={handleInfoCatedra}
+              className="bgyellow  shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold"
+            >
+              VER MAS
+            </button>
+          </div>
+          <img
+            src={areatecnica}
+            className="w-2/5 mt-20 informativeimage"
+            alt=""
+          />
         </div>
         {/* metodologia */}
-        <div className="w-4/5 flex justify-center">
-        <div className="w-4/5 text-center text-yellow-600 my-20">
-        <Carousel>
-              <div>
-                <img src={metodologia1} />
-              </div>
-              <div>
-                <img src={metodologia2} />
-              </div>
-              <div>
-                <img src={metodologia3} />
-              </div>
-              <div>
-                <img src={metodologia4} />
-              </div>
-              <div>
-                <img src={metodologia5} />
-              </div>
-              <div>
-                <img src={metodologia6} />
-              </div>
-              <div>
-                <img src={metodologia7} />
-              </div>
-            
-            </Carousel>
+        <div className="mediafullwidth w-4/5 flex flex-col">
+          <h3 className="text-center mt-20">METODOLOGIA</h3>
+          <div className="flex w-full mediasm">
+            <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
+              <h4>PRESENCIAL</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
+                distinctio dignissimos? Est maiores provident aspernatur nobis
+                eaque, cupiditate ex quia quos?
+              </p>
+              <button
+                onClick={handleMetodologia}
+                className="bgyellow shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold"
+              >
+                VER MAS
+              </button>
+            </div>
+            <div className="metodologycol w-4/12 flex-col text-center mt-10">
+              <h4>SEMI-PRESENCIAL</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
+                distinctio dignissimos? Est maiores provident aspernatur nobis
+                eaque, cupiditate ex quia quos?
+              </p>
+              <button
+                onClick={handleMetodologia}
+                className="bgyellow shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold"
+              >
+                VER MAS
+              </button>
+            </div>
+            <div className="metodologycol w-4/12 flex-col text-center mt-10">
+              <h4>DISTANCIA</h4>
+              <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
+                distinctio dignissimos? Est maiores provident aspernatur nobis
+                eaque, cupiditate ex quia quos?
+              </p>
+              <button
+                onClick={handleMetodologia}
+                className="bgyellow shadow-lg seemorebutton rounded-md mt-8 mb-20 w-1/5 p-2 font-bold"
+              >
+                VER MAS
+              </button>
+            </div>
           </div>
         </div>
         {/* seminars */}
-        <div className="w-4/5 flex justify-center">
-          <div className=" text-center text-yellow-600 my-20">
-            <p className="mb-6">SEMINARIOS</p>
-            <ul className="flex flex-wrap w-full">
-              {seminarList.map((seminars) => (
-                <li className="p-2" key={seminars._id}>
-                  <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
-                    <img
-                      className="w-full"
-                      src={seminars.image}
-                      alt="Sunset in the mountains"
-                    />
-                    <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                        {seminars.title}
-                      </div>
-                      <p className="text-yellow-600 text-base">
-                        {seminars.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mediafullwidth w-4/5 flex justify-center">
+          <PublicHomeSeminars />
         </div>
         {/* publicity */}
-        <div className="w-4/5 flex justify-center">
-          <div className=" text-center text-yellow-600 my-20">
-            <p>PUBLICIDAD</p>
-            <ul className="flex flex-wrap w-full">
-              {publicityList.map((publicity) => (
-                <li className="p-2" key={publicity._id}>
-                  <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
-                    <img
-                      className="w-full"
-                      src={publicity.image}
-                      alt="Sunset in the mountains"
-                    />
-                    <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                        {publicity.title}
-                      </div>
-                      <p className="text-yellow-600 text-base">
-                        {publicity.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
+        <div className="mediafullwidth w-4/5 flex justify-center">
+          <PublicHomePublicity />
         </div>
         {/* pictures */}
-        <div className="w-4/5 flex justify-center">
-          <div className="w-4/5 text-center text-yellow-600 my-20">
-            <p>CARROUSEL</p>
-            <Carousel>
-              {classPics.map((fotos) => (
-                <div key={fotos._id}>
-                  <img src={fotos.image} />
-                  <p className="legend">{fotos.title}</p>
-                </div>
-              ))}
-            </Carousel>
-          </div>
+        <div className="mediafullwidth w-4/5 flex justify-center">
+          <PublicHomeClassRoomPics />
         </div>
-        {/* FONDO */}s
-        <div className="w-full flex justify-center items-center">
-          <img
-            className="Bgegipt bg-local w-full relative"
-            src={bgegipt}
-            alt="Bgegipt"
-          />
-        </div>
+        {/* teachers */}
+        <Teachers />
       </div>
       {/* <BottomBar /> */}
     </div>

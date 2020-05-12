@@ -1,0 +1,18 @@
+@media (max-width: 375px) {
+    .carrouselgroup {
+      display: none;
+    }
+    .carrouselindividual {
+      display: block;
+    }
+  }
+
+@media (min-width: 376px) {
+    .carrouselgroup {
+      display: block;
+    }
+    .carrouselindividual {
+      display: none;
+    }
+  }
+

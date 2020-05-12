@@ -199,7 +199,7 @@ export default function InscriptionToComition() {
 
   return (
     <div className="w-full flex justify-center">
-      <h2 className={`${inscripted ? "w-4/5 p-4 bg-yellow-600 font-bold text-center" : "hidden"}`}>
+      <h2 className={`${inscripted ? "w-4/5 p-4 bgyellow font-bold text-center" : "hidden"}`}>
         YA ESTA INSCRIPTO EN LA {comition}{" "}
       </h2>
       <div
@@ -211,8 +211,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription1
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition1}
         >
@@ -226,8 +226,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription2
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition2}
         >
@@ -241,8 +241,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription3
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition3}
         >
@@ -256,8 +256,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription4
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition4}
         >
@@ -271,8 +271,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription5
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition5}
         >
@@ -286,8 +286,8 @@ export default function InscriptionToComition() {
         <button
           className={`${
             correctInscription6
-              ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              ? "w-full font-bold bgyellow p-4 mb-2"
+              : "w-full text-yellow-600 border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition6}
         >
@@ -302,7 +302,7 @@ export default function InscriptionToComition() {
           className={`${
             correctInscription7
               ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 border-yellow-600 p-4 mb-2"
+              : "w-full text-yellow-600 border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition7}
         >

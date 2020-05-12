@@ -7,7 +7,7 @@ export default function Info() {
     return (
         <div>
             <NavBar/>
-            <h1>ESTAMOS EN INFO</h1>
+            <h4 className="text-center mb-6">ULTIMA INFORMACION</h4>
             <InformationList/>
         </div>
     )

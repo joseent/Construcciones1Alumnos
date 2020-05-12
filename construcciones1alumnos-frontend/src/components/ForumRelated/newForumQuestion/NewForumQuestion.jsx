@@ -11,6 +11,7 @@ export default function NewForumQuestion() {
   const [questionSelector, setQuestionSelector] = useState("");
   const [usuarioNombre, setusuarioNombre] = useState("");
 
+
   const handleChangeTitle = (e) => {
     const title = e.target.value;
     setQuestionTitle(title);
@@ -28,6 +29,7 @@ export default function NewForumQuestion() {
 
   useEffect(() => {
     const getUserBiId = (e) => {
+      const id = window.localStorage.getItem("idusuario");
       axios
         .get(`http://localhost:3000/users/${id}`)
         .then((res) => {
@@ -98,7 +100,7 @@ export default function NewForumQuestion() {
                       <option value="general">General</option>
                       <option value="madera">Madera</option>
                       <option value="metal">Metal</option>
-                      <option value="hotmigon">Hormigon</option>
+                      <option value="hormigon">Hormigon</option>
                       <option value="plastico">Plastico</option>
                       <option value="vidrio">Vidrio</option>
                     </select>
@@ -122,7 +124,7 @@ export default function NewForumQuestion() {
                   <div className="">
                     <button
                       type="submit"
-                      className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+                      className="w-full font-bold p-1 buttonhoverblack rounded-sm flex justify-center mb-4 bgyellow text-black border-solid border-2 borderyellow "
                     >
                       ENVIAR
                     </button>

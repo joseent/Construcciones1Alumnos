@@ -1,83 +1,39 @@
 // @ts-check
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link,
   useHistory,
 } from "react-router-dom";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
 import axios from "axios";
 import NavBarTeachers from "../components/general/navBar/NavBarTeachers";
+import PublicHomeSeminars from "../components/publicHome/PublicHomeSeminars";
+import PublicHomePublicity from "../components/publicHome/PublicHomePublicity";
+import PublicHomeClassRoomPics from "../components/publicHome/PublicHomeClassRoomPics";
 
 export default function PublicHomeTeachers() {
   const history = useHistory();
-  const [seminarList, setSeminarList] = useState([]);
-  const [publicityList, setPublicityList] = useState([]);
-  const [classPics, setClassPics] = useState([]);
   // seminarPost
   const [seminarTitle, setSeminarTitle] = useState("");
   const [seminardescription, setSeminarDescription] = useState("");
   const [seminarImage, setSeminarImage] = useState("");
-  const [seminarAnswer, setSeminarAnswer] = useState("")
+  const [seminarAnswer, setSeminarAnswer] = useState("");
   // publicityPost
   const [publicityTitle, setPublicityTitle] = useState("");
   const [publicitydescription, setPublicityDescription] = useState("");
   const [publicityImage, setPublicityImage] = useState("");
-  const [publicityAnswer, setPublicityAnswer] = useState("")
+  const [publicityAnswer, setPublicityAnswer] = useState("");
   // classroomPost
   const [classTitle, setClassTitle] = useState("");
-  const [classdescription, setClassDescription] = useState("");
   const [classImage, setClassImage] = useState("");
-  const [classAnswer, setClassAnswer] = useState("")
-  
-
-  useEffect(() => {
-    const GetSeminarList = async () => {
-      axios
-        .get("http://localhost:3000/Seminars/")
-        .then((res) => {
-          console.log(res.data);
-          setSeminarList(res.data.seminarios);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetSeminarList();
-
-    const GetPublicityList = async () => {
-      axios
-        .get("http://localhost:3000/Publicity/")
-        .then((res) => {
-          setPublicityList(res.data.publicidad);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetPublicityList();
-
-    const GetClassPics = async () => {
-      axios
-        .get("http://localhost:3000/Classroompictures/")
-        .then((res) => {
-          setClassPics(res.data.fotos);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetClassPics();
-  }, []);
+  const [classAnswer, setClassAnswer] = useState("");
 
   // control image input
-  const imageURLSeminar = seminarImage && URL.createObjectURL(seminarImage)
-  const imageURLPublicity = publicityImage && URL.createObjectURL(publicityImage)
-  const imageURLClass = classImage && URL.createObjectURL(classImage)
+  const imageURLSeminar = seminarImage && URL.createObjectURL(seminarImage);
+  const imageURLPublicity =
+    publicityImage && URL.createObjectURL(publicityImage);
+  const imageURLClass = classImage && URL.createObjectURL(classImage);
 
   //   post seminars
   const handleChangeSeminarTitle = (e) => {
@@ -92,27 +48,24 @@ export default function PublicHomeTeachers() {
 
   const handlePicture = (e) => {
     setSeminarImage(e.target.files[0]);
-    
   };
 
   const handleSubmitSeminar = async (e) => {
-    try{
-      
+    try {
       e.preventDefault();
       const payload = new FormData();
       payload.append("title", seminarTitle);
       payload.append("description", seminardescription);
       payload.append("image", seminarImage);
       const response = await axios.post(
-        "http://localhost:3000/Seminars/", 
-        
+        "http://localhost:3000/Seminars/",
+
         payload
-      )
-      setSeminarAnswer(response.data.mensaje)
+      );
+      setSeminarAnswer(response.data.mensaje);
+    } catch (error) {
+      console.log(error.data);
     }
-      catch(error) {
-        console.log(error.data);
-      };
   };
 
   //   post publicity
@@ -128,27 +81,24 @@ export default function PublicHomeTeachers() {
 
   const handlePublicityPicture = (e) => {
     setPublicityImage(e.target.files[0]);
-    
   };
 
   const handleSubmitPublicity = async (e) => {
-    try{
-      
+    try {
       e.preventDefault();
       const payload = new FormData();
       payload.append("title", publicityTitle);
       payload.append("description", publicitydescription);
       payload.append("image", publicityImage);
       const response = await axios.post(
-        "http://localhost:3000/Publicity/", 
-        
+        "http://localhost:3000/Publicity/",
+
         payload
-      )
-      setPublicityAnswer(response.data.mensaje)
+      );
+      setPublicityAnswer(response.data.mensaje);
+    } catch (error) {
+      console.log(error.data);
     }
-      catch(error) {
-        console.log(error.data);
-      };
   };
   //   post classimages
   const handleChangeClassTitle = (e) => {
@@ -156,67 +106,33 @@ export default function PublicHomeTeachers() {
     setClassTitle(classTitle);
   };
 
-  const handleChangeClassDescription = (e) => {
-    const classDescription = e.target.value;
-    setClassDescription(classDescription);
-  };
-
   const handleClassPicture = (e) => {
     setClassImage(e.target.files[0]);
-    
   };
 
   const handleSubmitClassroom = async (e) => {
-    try{
-      
+    try {
       e.preventDefault();
       const payload = new FormData();
       payload.append("title", classTitle);
-      payload.append("description", classdescription);
       payload.append("image", classImage);
       const response = await axios.post(
-        "http://localhost:3000/Classroompictures/", 
-        
+        "http://localhost:3000/Classroompictures/",
+
         payload
-      )
-      setClassAnswer(response.data.mensaje)
+      );
+      setClassAnswer(response.data.mensaje);
+    } catch (error) {
+      console.log(error.data);
     }
-      catch(error) {
-        console.log(error.data);
-      };
   };
 
   return (
     <div className="flex flex-col items-center">
       <div className="w-full bg-black p-6">
         <NavBarTeachers />
-          {/* seminars */}
-          <div className="w-4/5 flex justify-center">
-          <div className="w-full text-center text-yellow-600 my-20">
-            <p className="mb-6">SEMINARIOS</p>
-            <ul className="flex flex-wrap w-full">
-              {seminarList.map((seminars) => (
-                <li className="p-2" key={seminars._id}>
-                  <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
-                    <img
-                      className="w-full"
-                      src={seminars.image}
-                      alt="Sunset in the mountains"
-                    />
-                    <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                        {seminars.title}
-                      </div>
-                      <p className="text-yellow-600 text-base">
-                        {seminars.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        {/* seminars */}
+        <PublicHomeSeminars />
         {/* createSeminars */}
         <form onSubmit={handleSubmitSeminar}>
           <div>
@@ -252,7 +168,7 @@ export default function PublicHomeTeachers() {
                 </div>
                 <div className="mb-3">
                   <div className=" ">
-                    <img src={imageURLSeminar} alt="" className="w-22"/>
+                    <img src={imageURLSeminar} alt="" className="w-22" />
                     <input
                       onChange={handlePicture}
                       type="file"
@@ -277,37 +193,12 @@ export default function PublicHomeTeachers() {
             </div>
           </div>
         </form>
-      
+
         {/* publicity */}
-        
-        <div className="w-4/5 flex justify-center">
-          <div className=" text-center text-yellow-600 my-20">
-            <p>PUBLICIDAD</p>
-            <ul className="flex flex-wrap w-full">
-              {publicityList.map((publicity) => (
-                <li className="p-2" key={publicity._id}>
-                  <div className="max-w-sm min-w-sm rounded overflow-hidden shadow-lg bg-gray-900">
-                    <img
-                      className="w-full"
-                      src={publicity.image}
-                      alt="Sunset in the mountains"
-                    />
-                    <div className="px-6 py-4">
-                      <div className="font-bold text-xl mb-2">
-                        {publicity.title}
-                      </div>
-                      <p className="text-yellow-600 text-base">
-                        {publicity.description}
-                      </p>
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-         {/* createpUBLICITY */}
-         <form onSubmit={handleSubmitPublicity}>
+        <PublicHomePublicity />
+
+        {/* createpUBLICITY */}
+        <form onSubmit={handleSubmitPublicity}>
           <div>
             <div className="">
               <div className="flex flex-col">
@@ -341,7 +232,7 @@ export default function PublicHomeTeachers() {
                 </div>
                 <div className="mb-3">
                   <div className=" ">
-                    <img src={imageURLPublicity} alt="" className="w-22"/>
+                    <img src={imageURLPublicity} alt="" className="w-22" />
                     <input
                       onChange={handlePublicityPicture}
                       type="file"
@@ -366,23 +257,11 @@ export default function PublicHomeTeachers() {
             </div>
           </div>
         </form>
-      
+
         {/* pictures */}
-        <div className="w-4/5 flex justify-center">
-          <div className="w-4/5 text-center text-yellow-600 my-20">
-            <p>CARROUSEL</p>
-            <Carousel>
-              {classPics.map((fotos) => (
-                <div key={fotos._id}>
-                  <img src={fotos.image} />
-                  <p className="legend">{fotos.title}</p>
-                </div>
-              ))}
-            </Carousel>
-          </div>
-        </div>
-         {/* createClassRomPicture */}
-         <form onSubmit={handleSubmitClassroom}>
+       <PublicHomeClassRoomPics/>
+        {/* createClassRomPicture */}
+        <form onSubmit={handleSubmitClassroom}>
           <div>
             <div className="">
               <div className="flex flex-col">
@@ -400,23 +279,10 @@ export default function PublicHomeTeachers() {
                     />
                   </div>
                 </div>
+
                 <div className="mb-3">
                   <div className=" ">
-                    <input
-                      value={classdescription}
-                      onChange={handleChangeClassDescription}
-                      type="text"
-                      id="seminarDescription"
-                      name="seminarDescription"
-                      className=" w-full rounded-sm p-1 text-black"
-                      placeholder="Descripcion foto"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <div className=" ">
-                    <img src={imageURLClass} alt="" className="w-22"/>
+                    <img src={imageURLClass} alt="" className="w-22" />
                     <input
                       onChange={handleClassPicture}
                       type="file"
@@ -441,7 +307,6 @@ export default function PublicHomeTeachers() {
             </div>
           </div>
         </form>
-      
       </div>
     </div>
   );

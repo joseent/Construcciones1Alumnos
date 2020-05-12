@@ -29,17 +29,17 @@ export default function ForumByID() {
     return (
     <div className="flex justify-center items-center flex-col ">
       <div className="w-1/2 mediasm">
-      <div className="text-center bg-gray-900 rounded-md mb-2">
-        <p className="font-bold text-gray-700">Titulo</p>
+      <div className="text-center bglayer2 rounded-md mb-2">
+        <p className="font-bold">Titulo</p>
         <p className="text-white">{questionTitle}</p>
       </div>
-      <div className="text-center bg-gray-900 rounded-md mb-2">
-        <p className="font-bold text-gray-700">Descripcion</p>
+      <div className="text-center bglayer2 rounded-md mb-2">
+        <p className="font-bold">Descripcion</p>
         <p className="text-white">{questionDescription}</p>
       </div>
-      <div className="text-center bg-yellow-600 rounded-md text-black mb-2">
-        <p className="font-bold">Respuesta</p>
-        <p>{questionAnswer}</p>
+      <div className="text-center bgyellow rounded-md pb-2">
+        <p className="font-bold text-black">Respuesta</p>
+        <p className="text-black ">{questionAnswer}</p>
       </div>
       </div>
     </div>

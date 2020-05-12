@@ -74,58 +74,57 @@ export default function Register() {
     <div className="w-full flex justify-center items-center h-screen">
       <form
         onSubmit={handleSubmit}
-        className="w-1/2 max-w-lg  bg-yellow-600 rounded-md p-6"
+        className="widthmediafull w-1/2 bglayer1 rounded-md p-6 my-20"
       >
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               NOMBRE
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none block w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               value={nombre}
               onChange={handleChangeNombre}
               id="grid-first-name"
               type="text"
-              placeholder="Jane"
+              placeholder="Juan"
             />
-            <p className="text-red-500 text-xs italic">Llene el campo.</p>
+            
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className="block uppercase tracking-wide textyellow text-xs font-bold mb-2">
               APELLIDO
             </label>
             <input
-              className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none block w-full bg-gray-200 border rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={apellido}
               onChange={handleChangeApellido}
               id="grid-last-name"
               type="text"
-              placeholder="Doe"
+              placeholder="Perez"
             />
           </div>
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               DNI
             </label>
             <input
-              className="appearance-none  w-full bg-gray-200 text-gray-700 border border-red-500 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+              className="appearance-none  w-full bg-gray-200 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
               value={dni}
               onChange={handleChangDNI}
               id="grid-dni"
               type="text"
               placeholder="11111111"
             />
-            <p className="text-red-500 text-xs italic">Llene el campo.</p>
           </div>
           <div className="w-full md:w-1/2 px-3">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               LIBRETA
             </label>
             <input
-              className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none  w-full bg-gray-200 border  rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={libreta}
               onChange={handleChangeLibreta}
               id="grid-libreta"
@@ -136,11 +135,11 @@ export default function Register() {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               USUARIO
             </label>
             <input
-              className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none  w-full bg-gray-200 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={usuario}
               onChange={handleChangeusuario}
               id="grid-user"
@@ -151,11 +150,11 @@ export default function Register() {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               MAIL
             </label>
             <input
-              className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none  w-full bg-gray-200 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={mail}
               onChange={handleChangeMail}
               id="grid-user"
@@ -166,22 +165,22 @@ export default function Register() {
         </div>
         <div className="flex flex-wrap -mx-3 mb-6">
           <div className="w-full px-3">
-            <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2">
+            <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
               CONTRASEÑA
             </label>
             <input
-              className="appearance-none  w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+              className="appearance-none  w-full bg-gray-200 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
               value={contrasena}
               onChange={handleChangeContrasena}
               id="grid-password"
-              type="password"
+              type="contraseña"
               placeholder="**********"
             />
           </div>
         </div>
         <button
           type="submit"
-          className="w-full rounded-md font-bold button hover:bg-yellow-600 hover:text-black hover:border-black rounded-sm flex justify-center p-2 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+          className="w-full rounded-md font-bold buttonhoverblack rounded-sm flex justify-center p-2 bgyellow text-black border-solid border-2 borderyellow "
         >
           REGISTRAR
         </button>

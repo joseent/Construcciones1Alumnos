@@ -1,9 +1,9 @@
 // @ts-check
 import React, { useState } from "react";
-import "../loginForm/LoginForm.css";
-import c1Logo from "../loginForm/c1Logo.jpg";
+import "../logingeneral/LoginForm.css";
+import c1Logo from "../../images/c1Logo.jpg";
 import { Link, useHistory } from "react-router-dom";
-import bgegipt from "../loginForm/bgegipt.jpg";
+import bgegipt from "../../images/bgegipt.jpg";
 import axios from "axios";
 
 export default function LoginGeneral() {
@@ -12,11 +12,23 @@ export default function LoginGeneral() {
   const [contrasenaAlumno, setContrasenaAlumno] = useState("");
   const [idAlumno, setIdAlumno] = useState("");
   const [loginStudent, setloginStudent] = useState(true);
+  const [toLocalHost, setToLocalHost] = useState(false)
   //   TEACHERS
   const [usuarioTeachers, setUsuarioTeachers] = useState("");
   const [contrasenaTeachers, setContrasenaTeachers] = useState("");
   const [idTeachers, setIdTeachers] = useState("");
   const [loginTeachers, setLoginTeachers] = useState(false);
+  
+  
+  console.log("idAlumno");
+  console.log(idAlumno);
+
+  if (toLocalHost) {
+    localStorage.setItem("idusuario", idAlumno);
+  }else{
+    localStorage.setItem("idusuario", idTeachers);
+  }
+
   //   LOGIN STUDENTS
   const handleChangeUsuarioAlumno = (e) => {
     const usuarioAlumnoo = e.target.value;
@@ -36,11 +48,10 @@ export default function LoginGeneral() {
         contrasena: contrasenaAlumno,
       })
       .then((res) => {
-        setIdAlumno(res.data.respuesta._id);
-
-        localStorage.setItem('idusuario', idAlumno)
+        setIdAlumno(res.data.respuesta[0]._id);
+        setToLocalHost(true)
+        
         history.push("/home");
-      
       })
       .catch((error) => {
         console.log(error.data);
@@ -67,15 +78,9 @@ export default function LoginGeneral() {
         contrasena: contrasenaTeachers,
       })
       .then((res) => {
-        const idl = res.data.respuesta.mail;
-        // setId(res.data.respuesta._id);
-        console.log(idl);
-
-        // localStorage.setItem('idusuario', idd)
+        setIdTeachers(res.data.respuesta[0]._id);
         history.push("/hometeachers");
-        // const timer = setTimeout(() => {
-
-        // },1000)
+       
       })
       .catch((error) => {
         console.log(error.data);
@@ -85,39 +90,59 @@ export default function LoginGeneral() {
   const LoginStudent = () => {
     setloginStudent(true);
     setLoginTeachers(false);
-}
-const LoginTeachers = () => {
+  };
+  const LoginTeachers = () => {
     setLoginTeachers(true);
-      setloginStudent(false)
-}
+    setloginStudent(false);
+  };
 
   return (
     <div>
       {/* loginstudents */}
-      <div className="flex justify-center items-center">
+      <div className="flex justify-center items-center bgColor h-screen">
         <img
-          className="Bgegipt bg-local w-full relative"
+          className="BgegiptLogin bg-local overflow-hidden h-screen relative"
           src={bgegipt}
           alt="Bgegipt"
         />
 
-        <div className="absolute w-1/4  bg-gray-800 rounded-md p-6 loginmedia">
+        <div className="absolute loginForm w-4/12 bglayer2 rounded-md p-6 loginmedia ">
           <div className="w-full mt-1">
+            {/* switch buttons */}
             <div>
-              <button onClick={LoginStudent} className={`${loginStudent ? "bg-yellow-600 text-black font-bold" : "text-yellow-600"} w-1/2 border-2 border-yellow-600  p-2`}>
+              <button
+                onClick={LoginStudent}
+                className={`${
+                  loginStudent
+                    ? "bgyellow text-black font-bold shadow-lg"
+                    : "textyellow shadow-lg"
+                } w-1/2 border-2 borderyellow shadow-xl p-2`}
+              >
                 ALUMNO
               </button>
-              <button onClick={LoginTeachers} className={`${loginTeachers ? "bg-yellow-600 text-black font-bold" : "text-yellow-600"} w-1/2 border-2 border-yellow-600 p-2`}>
+              <button
+                onClick={LoginTeachers}
+                className={`${
+                  loginTeachers
+                    ? "bgyellow text-black font-bold"
+                    : "textyellow"
+                } w-1/2 border-2 borderyellow shadow-xl p-2`}
+              >
                 PROFESOR
               </button>
             </div>
-            <form className={`${loginStudent ? "block" : "hidden"}`} onSubmit={handleSubmitAlumno}>
+
+            {/* login students */}
+            <form
+              className={`${loginStudent ? "block" : "hidden"}`}
+              onSubmit={handleSubmitAlumno}
+            >
               <div>
                 <div className="mt-8">
                   <div className="flex flex-col">
                     <div className="flex justify-center">
                       <img
-                        className="rounded-full w-1/2  mb-5"
+                        className="rounded-full shadow-2xl w-1/2  mb-5"
                         src={c1Logo}
                         alt=""
                       />
@@ -154,7 +179,7 @@ const LoginTeachers = () => {
                     <div className="p1 mb-3">
                       <button
                         type="submit"
-                        className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+                        className="w-full font-bold p-1 buttonLogin rounded-md flex justify-center mb-4 p-1 bgyellow border-solid border-2 borderyellow "
                       >
                         ENTRAR
                       </button>
@@ -164,7 +189,10 @@ const LoginTeachers = () => {
               </div>
             </form>
             {/* loginTeachers */}
-            <form  className={`${loginTeachers ? "block" : "hidden"}`} onSubmit={handleSubmitTeachers}>
+            <form
+              className={`${loginTeachers ? "block" : "hidden"}`}
+              onSubmit={handleSubmitTeachers}
+            >
               <div>
                 <div className="mt-8">
                   <div className="flex flex-col">
@@ -207,7 +235,7 @@ const LoginTeachers = () => {
                     <div className="p1 mb-3">
                       <button
                         type="submit"
-                        className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+                        className="w-full font-bold p-1 buttonLogin rounded-md flex justify-center mb-4 p-1 bgyellow border-solid border-2 borderyellow "
                       >
                         ENTRAR
                       </button>
