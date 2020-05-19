@@ -28,6 +28,7 @@ import Seminars from "./pages/publicHomeInformation/Seminars";
 import "./App.css"
 import InfoFau from "./pages/publicHomeInformation/InfoFau";
 import Metodologia from "./pages/publicHomeInformation/Metodologia";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 export default function App() {
@@ -35,24 +36,24 @@ export default function App() {
     <Router>
       <div className="bgColor">
         <Switch>
-          <Route path="/userinfo/:id">
+          <PrivateRoute path="/userinfo/:id">
             <UserInfo />
-          </Route>
-          <Route path="/userinfoteachers/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/userinfoteachers/:id">
             <UserInfoTeachers />
-          </Route>
-          <Route path="/forumbyid/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/forumbyid/:id">
             <ForumByIDPage />
-          </Route>
-          <Route path="/forumbyidteachers/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/forumbyidteachers/:id">
             <ForumByIDTeachers />
-          </Route>
-          <Route path="/info/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/info/:id">
             <InfoByIDPage />
-          </Route>
-          <Route path="/infoteachers/:id">
+          </PrivateRoute>
+          <PrivateRoute path="/infoteachers/:id">
             <InfoByIDTeachers />
-          </Route>
+          </PrivateRoute>
           <Route path="/publicity">
             <Publicity />
           </Route>
@@ -68,39 +69,39 @@ export default function App() {
           <Route path="/seminars">
             <Seminars />
           </Route>
-          <Route path="/forumnew">
+          <PrivateRoute path="/forumnew">
             <ForumNew />
-          </Route>
+          </PrivateRoute>
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/inscriptions">
+          <PrivateRoute path="/inscriptions">
             <Inscriptions />
-          </Route>
-          <Route path="/inscriptionsteachers">
+          </PrivateRoute>
+          <PrivateRoute path="/inscriptionsteachers">
             <InscriptionsTeachers />
-          </Route>
-          <Route path="/info">
+          </PrivateRoute>
+          <PrivateRoute path="/info">
             <Info />
-          </Route>
-          <Route path="/infoteachers">
+          </PrivateRoute>
+          <PrivateRoute path="/infoteachers">
             <InfoTeachers />
-          </Route>
-          <Route path="/forum">
+          </PrivateRoute>
+          <PrivateRoute path="/forum">
             <Forum />
-          </Route>
-          <Route path="/forumteachers">
+          </PrivateRoute>
+          <PrivateRoute path="/forumteachers">
             <ForumTeachers />
-          </Route>
+          </PrivateRoute>
           <Route path="/login">
             <Login />
           </Route>
-          <Route path="/home">
+          <PrivateRoute path="/home">
             <Home />
-          </Route>
-          <Route path="/hometeachers">
+          </PrivateRoute>
+          <PrivateRoute path="/hometeachers">
             <HomeTeachers />
-          </Route>
+          </PrivateRoute>
           <Route path="/publichometeachers">
             <PublicHomeTeachers />
           </Route>

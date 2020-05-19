@@ -8,6 +8,7 @@ export default function InfoByIDTeachersComp() {
   const { id } = useParams();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [errorGeneral, setErrorGeneral] = useState(false)
 
   useEffect(() => {
     const getInfoById = (e) => {
@@ -19,6 +20,7 @@ export default function InfoByIDTeachersComp() {
         })
         .catch((error) => {
           console.log(error.data);
+          setErrorGeneral(true);
         });
     };
     getInfoById();
@@ -40,6 +42,8 @@ export default function InfoByIDTeachersComp() {
 
   return (
     <div className="flex justify-center items-center flex-col ">
+         {
+        errorGeneral ? <h2 className="text-red-600">UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.</h2> :   
       <div className="w-1/2 ">
         <div className="text-center bg-gray-900 rounded-md mb-2  p-4">
           <p className="text-yellow-600 font-bold text-xl">{titletoUpper}</p>
@@ -50,7 +54,7 @@ export default function InfoByIDTeachersComp() {
         <button onClick={handleDelete} className="w-full bg-yellow-600 rounded-md font-bold p-4">
           BORRAR
         </button>
-      </div>
+      </div>}
     </div>
   );
 }

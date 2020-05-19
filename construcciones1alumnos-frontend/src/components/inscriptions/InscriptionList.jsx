@@ -17,6 +17,7 @@ export default function InscriptionList() {
   const [comition5List, setcomition5List] = useState([]);
   const [comition6List, setcomition6List] = useState([]);
   const [comition7List, setcomition7List] = useState([]);
+  const [generalError, setGeneralError] = useState(false)
 
   // COMITION1
   const handleComition1 = () => {
@@ -35,6 +36,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION2
@@ -54,6 +56,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION3
@@ -73,6 +76,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION4
@@ -92,6 +96,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION5
@@ -111,6 +116,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION6
@@ -130,6 +136,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
   // COMITION7
@@ -149,6 +156,7 @@ export default function InscriptionList() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setGeneralError(true);
       });
   };
 
@@ -174,6 +182,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition1List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -188,6 +198,7 @@ export default function InscriptionList() {
             </li>
           ))}
         </ul>
+        }
       </div>
       {/* COMITION2 */}
       <button
@@ -209,6 +220,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition2List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -222,7 +235,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       {/* COMITION3 */}
       <button
@@ -244,6 +257,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition3List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -257,7 +272,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       {/* COMITION4 */}
       <button
@@ -279,6 +294,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition4List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -292,7 +309,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       {/* COMITION5 */}
       <button
@@ -314,6 +331,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition5List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -327,7 +346,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       {/* COMITION6 */}
       <button
@@ -349,6 +368,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition6List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -362,7 +383,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
       {/* COMITION7 */}
       <button
@@ -384,6 +405,8 @@ export default function InscriptionList() {
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
           <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
         </div>
+        {
+          generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
         <ul className="w-full">
           {comition7List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
@@ -397,7 +420,7 @@ export default function InscriptionList() {
               </div>
             </li>
           ))}
-        </ul>
+        </ul>}
       </div>
     </div>
   );

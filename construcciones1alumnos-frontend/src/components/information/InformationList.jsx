@@ -6,6 +6,7 @@ import { useHistory } from "react-router-dom";
 export default function InformationList() {
   const history = useHistory();
   const [InfoList, setInfoList] = useState([]);
+  const [errorGeneral, setErrorGeneral] = useState(false)
 
   useEffect(() => {
     const GetForumList = async () => {
@@ -17,6 +18,7 @@ export default function InformationList() {
         })
         .catch((error) => {
           console.log(error.data);
+          setErrorGeneral(true)
         });
     };
     GetForumList();
@@ -29,6 +31,8 @@ export default function InformationList() {
 
   return (
     <div className="container mx-auto flex justify-center">
+      {
+        errorGeneral ? <h2 className="text-red-600">UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.</h2> :   
       <ul className="w-1/2 list-group mb-5 ulmedia">
         {InfoList.map((informacion) => (
           <li
@@ -42,7 +46,7 @@ export default function InformationList() {
             <i className="fa fa-mail-forward"></i>
           </li>
         ))}
-      </ul>
+      </ul>}
     </div>
   );
 }

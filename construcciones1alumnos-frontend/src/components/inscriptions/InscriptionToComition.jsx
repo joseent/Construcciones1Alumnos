@@ -17,6 +17,7 @@ export default function InscriptionToComition() {
   const [correctInscription7, setCorrectInscription7] = useState(false);
   const [inscripted, setInscripted] = useState(false);
   const [comition, setComition] = useState("");
+  const [errorGeneral, setErrorGeneral] = useState(false)
 
   useEffect(() => {
     const id = window.localStorage.getItem("idusuario");
@@ -57,6 +58,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
 
     axios.put(`http://localhost:3000/users/${id}`, {
@@ -80,6 +82,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 2",
@@ -102,6 +105,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 3",
@@ -124,6 +128,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 4",
@@ -146,6 +151,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 5",
@@ -168,6 +174,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 6",
@@ -190,6 +197,7 @@ export default function InscriptionToComition() {
       })
       .catch((error) => {
         console.log(error.tipo);
+        setErrorGeneral(true);
       });
       axios.put(`http://localhost:3000/users/${id}`, {
         comision: "COMISION 7",
@@ -199,9 +207,10 @@ export default function InscriptionToComition() {
 
   return (
     <div className="w-full flex justify-center">
+      {errorGeneral ? <h2 className="text-red-600">UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.</h2> : 
       <h2 className={`${inscripted ? "w-4/5 p-4 bgyellow font-bold text-center" : "hidden"}`}>
         YA ESTA INSCRIPTO EN LA {comition}{" "}
-      </h2>
+      </h2>}
       <div
         className={`${
           inscripted ? "hidden" : "w-4/5 flex flex-col justify-center"
@@ -313,6 +322,7 @@ export default function InscriptionToComition() {
           }`}
         </button>
       </div>
+      
     </div>
   );
 }

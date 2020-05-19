@@ -6,3 +6,9 @@
     .ulmedia {
       width: 90%;
     }}
+
+    @media (max-width: 800px){
+      .mediaforumlist{
+          width: 80%;
+      }
+  }

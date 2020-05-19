@@ -12,33 +12,39 @@ import bgegipt from "../images/bgegipt.jpg";
 import bgegiptsm from "../images/bgegipt2sm.jpg";
 import infofau from "../images/infoFau.jpeg";
 import areatecnica from "../images/areatecnica.jpg";
-import objetivogeneral from "../images/objetivosgenerales.jpg";
-import mapaconceptual1 from "../images/mapaconceptual1.jpg";
-import mapaconceptual2 from "../images/mapaconceptual2.jpg";
 
 import "../pages/PublicHome.css";
 import "../components/general/navBar/NavBar.css";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from "react-responsive-carousel";
-import axios from "axios";
 import PublicHomeSeminars from "../components/publicHome/PublicHomeSeminars";
 import PublicHomePublicity from "../components/publicHome/PublicHomePublicity";
 import PublicHomeClassRoomPics from "../components/publicHome/PublicHomeClassRoomPics";
 import Teachers from "./publicHomeInformation/Teachers";
-const menu = [
-  {
-    name: "registrarse",
-    to: "/register",
-  },
-  {
-    name: "loguearse",
-    to: "/login",
-  },
-];
 
 export default function PublicHome() {
   const history = useHistory();
   const [responsive, setResponsive] = useState(false);
+  const [userLogged, setuserLogged] = useState(false);
+  const [student, setStudent] = useState(false);
+  const [teacher, setTeacher] = useState(false);
+
+  console.log(userLogged);
+  console.log(student);
+
+  const menu = [
+    {
+      name: "registrarse",
+      to: "/register",
+    },
+    {
+      name: "loguearse",
+      to: "/login",
+    },
+  ];
+
+  useEffect(() => {
+    setuserLogged(JSON.parse(localStorage.getItem("userLogged")));
+  }, []);
 
   const toggleNavbar = () => setResponsive((state) => !state);
 
@@ -51,13 +57,30 @@ export default function PublicHome() {
   const handleMetodologia = () => {
     history.push("/metodologia");
   };
+  useEffect(() => {
+    setStudent(JSON.parse(localStorage.getItem("studentLogged")));
+    setTeacher(JSON.parse(localStorage.getItem("teacherLogged")));
+    
+  }, []);
   
+  const handleStudent = () => {
+    history.push("/home");
+  };
+  const handleTeacher = () => {
+    history.push("/hometeachers");
+  };
+
   return (
     <div className=" flex flex-col items-center bgColor">
       {/* FONDO */}
+
       <div className="w-full relative">
-        <img className="Bgegipt w-full h-32 object-cover absolute " src={bgegipt} alt="Bgegipt" />
-             <div
+        <img
+          className="Bgegipt w-full h-32 object-cover absolute "
+          src={bgegipt}
+          alt="Bgegipt"
+        />
+        <div
           className={`topnavpublic ${responsive ? "responsive" : "absolute"}`}
           id="myTopnav"
         >
@@ -65,14 +88,26 @@ export default function PublicHome() {
             <Link to="/" className="active">
               <div className="flex items-center p-3">
                 <img className="w-20 rounded-full mr-2" src={c1Logo} alt="" />
-                <h3 className="textNavPublicHome text-black font-bold">CONSTRUCCIONES I</h3>
+                <h3 className="textNavPublicHome text-black font-bold">
+                  CONSTRUCCIONES I
+                </h3>
               </div>
             </Link>
-            {menu.map(({ name, to }) => (
-              <Link key={name} to={to}>
-               <p> {name}</p>
-              </Link>
-            ))}
+            {userLogged ? ( student ? <button className="text-black" onClick={handleStudent}>
+                INGRESAR
+              </button> : <button className="text-black" onClick={handleTeacher}>
+                INGRESAR TEACHER
+              </button>
+            ) : (
+              <>
+                {menu.map(({ name, to }) => (
+                  <Link key={name} to={to}>
+                    <p className="text-black"> {name}</p>
+                  </Link>
+                ))}
+              </>
+            )}
+
             <a className="icon" onClick={toggleNavbar}>
               <i className="fa fa-bars mt-6"></i>
             </a>
@@ -81,7 +116,7 @@ export default function PublicHome() {
       </div>
 
       {/* FONDO */}
-        {/* <div className="flex w-full items-center mediatitle shadow-lg bglayer2 p-4 rounded-md">
+      {/* <div className="flex w-full items-center mediatitle shadow-lg bglayer2 p-4 rounded-md">
           <img
             className="logomedia rounded-full w-1/12 mr-6"
             src={c1Logo}
@@ -105,7 +140,7 @@ export default function PublicHome() {
             </div>
           </div>
         </div> */}
-      
+
       {/* CONTENT*/}
       <div className="mediafullwidth w-11/12 flex flex-col items-center divide-y divide-yellow-600">
         {/* general info */}

@@ -12,22 +12,28 @@ export default function LoginGeneral() {
   const [contrasenaAlumno, setContrasenaAlumno] = useState("");
   const [idAlumno, setIdAlumno] = useState("");
   const [loginStudent, setloginStudent] = useState(true);
-  const [toLocalHost, setToLocalHost] = useState(false)
+  const [toLocalHost, setToLocalHost] = useState(false);
   //   TEACHERS
   const [usuarioTeachers, setUsuarioTeachers] = useState("");
   const [contrasenaTeachers, setContrasenaTeachers] = useState("");
   const [idTeachers, setIdTeachers] = useState("");
   const [loginTeachers, setLoginTeachers] = useState(false);
-  
-  
-  console.log("idAlumno");
-  console.log(idAlumno);
+  // GENERAL
+  const [loginError, setloginError] = useState(false);
+  const [viewPassword, setViewPassword] = useState(false);
 
   if (toLocalHost) {
     localStorage.setItem("idusuario", idAlumno);
-  }else{
+  } else {
     localStorage.setItem("idusuario", idTeachers);
   }
+
+  const handleviewPasswordOn = (e) => {
+    setViewPassword(true);
+  };
+  const handleviewPasswordOff = (e) => {
+    setViewPassword(false);
+  };
 
   //   LOGIN STUDENTS
   const handleChangeUsuarioAlumno = (e) => {
@@ -49,12 +55,15 @@ export default function LoginGeneral() {
       })
       .then((res) => {
         setIdAlumno(res.data.respuesta[0]._id);
-        setToLocalHost(true)
-        
+        setToLocalHost(true);
+        localStorage.setItem("userLogged", "true");
+        localStorage.setItem("studentLogged", "true");
+
         history.push("/home");
       })
       .catch((error) => {
         console.log(error.data);
+        setloginError(true);
       });
   };
 
@@ -79,11 +88,14 @@ export default function LoginGeneral() {
       })
       .then((res) => {
         setIdTeachers(res.data.respuesta[0]._id);
+        localStorage.setItem("userLogged", "true");
+        localStorage.setItem("teacherLogged", "true");
+
         history.push("/hometeachers");
-       
       })
       .catch((error) => {
         console.log(error.data);
+        setloginError(true);
       });
   };
 
@@ -114,8 +126,8 @@ export default function LoginGeneral() {
                 onClick={LoginStudent}
                 className={`${
                   loginStudent
-                    ? "bgyellow text-black font-bold shadow-lg"
-                    : "textyellow shadow-lg"
+                    ? "bgyellow text-black font-bold shadow-lg rounded-l-md"
+                    : "textyellow shadow-lg rounded-l-md"
                 } w-1/2 border-2 borderyellow shadow-xl p-2`}
               >
                 ALUMNO
@@ -124,9 +136,9 @@ export default function LoginGeneral() {
                 onClick={LoginTeachers}
                 className={`${
                   loginTeachers
-                    ? "bgyellow text-black font-bold"
+                    ? "bgyellow text-black font-bold  rounded-r-md"
                     : "textyellow"
-                } w-1/2 border-2 borderyellow shadow-xl p-2`}
+                } w-1/2 border-2 borderyellow shadow-xl p-2 rounded-r-md`}
               >
                 PROFESOR
               </button>
@@ -161,21 +173,45 @@ export default function LoginGeneral() {
                         />
                       </div>
                     </div>
-                    <div className="mb-3">
-                      <div className=" ">
-                        <input
-                          value={contrasenaAlumno}
-                          onChange={handleChangeContrasenaAlumno}
-                          type="password"
-                          id="contrasena"
-                          name="contrasena"
-                          className=" w-full rounded-sm p-1 text-black"
-                          placeholder="Contraseña"
-                          required
-                        />
+                    {viewPassword ? (
+                      <div className="mb-3">
+                        <div className="w-full bg-white rounded-sm p-1">
+                          <input
+                            value={contrasenaAlumno}
+                            onChange={handleChangeContrasenaAlumno}
+                            type="text"
+                            id="contrasena"
+                            name="contrasena"
+                            className="w-11/12 text-black"
+                            placeholder="Contraseña"
+                            required
+                          />
+                          <i
+                            onClick={handleviewPasswordOff}
+                            className="fas fa-eye-slash"
+                          ></i>
+                        </div>
                       </div>
-                    </div>
-
+                    ) : (
+                      <div className="mb-3">
+                        <div className="w-full bg-white rounded-sm p-1">
+                          <input
+                            value={contrasenaAlumno}
+                            onChange={handleChangeContrasenaAlumno}
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            className="w-11/12 text-black"
+                            placeholder="Contraseña"
+                            required
+                          />
+                          <i
+                            onClick={handleviewPasswordOn}
+                            className="fas fa-eye"
+                          ></i>
+                        </div>
+                      </div>
+                    )}
                     <div className="p1 mb-3">
                       <button
                         type="submit"
@@ -183,6 +219,13 @@ export default function LoginGeneral() {
                       >
                         ENTRAR
                       </button>
+                      {loginError ? (
+                        <p className="text-red-600">
+                          usuario o contraseña incorrecta
+                        </p>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </div>
@@ -211,25 +254,48 @@ export default function LoginGeneral() {
                           type="text"
                           id="usuario"
                           name="usuario"
-                          className=" w-full rounded-sm p-1 text-black"
+                          className="w-full rounded-sm p-1 text-black"
                           placeholder="Nombre de usuario profesor"
                           required
                         />
                       </div>
                     </div>
                     <div className="mb-3">
-                      <div className=" ">
-                        <input
-                          value={contrasenaTeachers}
-                          onChange={handleChangeContrasenaTeachers}
-                          type="password"
-                          id="contrasena"
-                          name="contrasena"
-                          className=" w-full rounded-sm p-1 text-black"
-                          placeholder="Contraseña"
-                          required
-                        />
-                      </div>
+                      {viewPassword ? (
+                        <div className="w-full bg-white rounded-sm p-1 ">
+                          <input
+                            value={contrasenaTeachers}
+                            onChange={handleChangeContrasenaTeachers}
+                            type="password"
+                            id="contrasena"
+                            name="contrasena"
+                            className="w-11/12 text-black"
+                            placeholder="Contraseña"
+                            required
+                          />
+                          <i
+                            onClick={handleviewPasswordOff}
+                            className="fas fa-eye-slash"
+                          ></i>
+                        </div>
+                      ) : (
+                        <div className="w-full bg-white rounded-sm p-1">
+                          <input
+                            value={contrasenaTeachers}
+                            onChange={handleChangeContrasenaTeachers}
+                            type="text"
+                            id="contrasena"
+                            name="contrasena"
+                            className="w-11/12 text-black"
+                            placeholder="Contraseña"
+                            required
+                          />
+                          <i
+                            onClick={handleviewPasswordOn}
+                            className="fas fa-eye"
+                          ></i>
+                        </div>
+                      )}
                     </div>
 
                     <div className="p1 mb-3">
@@ -239,6 +305,13 @@ export default function LoginGeneral() {
                       >
                         ENTRAR
                       </button>
+                      {loginError ? (
+                        <p className="text-red-600">
+                          usuario o contraseña incorrecta
+                        </p>
+                      ) : (
+                        <></>
+                      )}
                     </div>
                   </div>
                 </div>

@@ -13,7 +13,7 @@ export default function Register() {
   const [contrasena, setContrasena] = useState("");
   const [mail, setMail] = useState("");
   const [ProfilePic, setProfilePic] = useState("");
-
+  const [errorGeneral, setErrorGeneral] = useState(false);
   const handleChangeNombre = (e) => {
     const nombre = e.target.value;
     setNombre(nombre);
@@ -64,10 +64,11 @@ export default function Register() {
         setUsuario(res.data.documento.usuario);
         setContrasena(res.data.documento.contrasena);
         setMail(res.data.documento.mail);
-        history.push('/home')
+        history.push("/home");
       })
       .catch((error) => {
         console.log(error.data);
+        setErrorGeneral(true);
       });
   };
   return (
@@ -89,7 +90,6 @@ export default function Register() {
               type="text"
               placeholder="Juan"
             />
-            
           </div>
           <div className="w-full md:w-1/2 px-3">
             <label className="block uppercase tracking-wide textyellow text-xs font-bold mb-2">
@@ -184,6 +184,9 @@ export default function Register() {
         >
           REGISTRAR
         </button>
+        {
+          errorGeneral ? <span className="text-red-600">ERROR AL CREAR USUARIO</span> : <></>
+        }
       </form>
     </div>
   );

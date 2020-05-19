@@ -1,8 +1,9 @@
 // @ts-check
 import React, { useState } from 'react'
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
 import c1Logo from "../../../images/c1Logo.jpg"
+import { useEffect } from 'react';
 const menu = [
   {
     name: "HOME",
@@ -31,8 +32,19 @@ const menu = [
 ];
 
 export default function NavBarTeachers() {
+  const history = useHistory();
     const [responsive, setResponsive] = useState(false);
     const toggleNavbar = () => setResponsive((state) => !state);
+    const [userLogged, setUserLogged] = useState(false)
+
+    useEffect(() => {
+      setUserLogged(JSON.parse(localStorage.getItem("userLogged"))); 
+    
+    }, []);
+    const handleDesloguear = () => {
+      localStorage.clear();
+      history.push("/publichome")
+    }
   
     return (
         <div className="mb-6">
@@ -49,6 +61,9 @@ export default function NavBarTeachers() {
               {name}
             </Link>
           ))}
+          {
+            userLogged ? <button className="textyellow" onClick={handleDesloguear}>Desloguear</button> : <span></span>
+          }
           <a className="icon" onClick={toggleNavbar}>
             <i className="fa fa-bars mt-6"></i>
           </a>

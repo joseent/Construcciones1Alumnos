@@ -5,6 +5,7 @@ import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
 
 export default function NewForumQuestion() {
+  const history = useHistory();
   const { id } = useParams();
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
@@ -41,33 +42,31 @@ export default function NewForumQuestion() {
     };
     getUserBiId();
   }, []);
+ 
+     const handleSubmit = (e) => {
+      e.preventDefault();
+      axios
+      .post("http://localhost:3000/Forum/", {
+        titulo: questionTitle,
+        descripsion: questionDescription,
+        tema: questionSelector,
+        usuario: usuarioNombre,
+        
+      })
+      .then((res) => {
+        setQuestionTitle(res.data.consultas.titulo);
+        setQuestionDescription(res.data.consultas.descripsion);
+        setQuestionSelector(res.data.consultas.tema);
+        history.push('/forum')
+      })
+        .catch((error) => {
+          console.log(error.data);
+        });
+    };
 
-  const history = useHistory();
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    axios
-    .post("http://localhost:3000/Forum/", {
-      titulo: questionTitle,
-      descripsion: questionDescription,
-      tema: questionSelector,
-      usuario: usuarioNombre,
-      
-    })
-    .then((res) => {
-      setQuestionTitle(res.data.consultas.titulo);
-      setQuestionDescription(res.data.consultas.descripsion);
-      setQuestionSelector(res.data.consultas.tema);
-      history.push('/forum')
-    })
-      .catch((error) => {
-        console.log(error.data);
-      });
-  };
-
-  return (
+    return (
     <div className="flex justify-center">
-      <div className="w-1/2">
+      <div className="w-1/2 mediaForumQuestion">
         <form onSubmit={handleSubmit}>
           <div>
             <div className="">
@@ -123,7 +122,7 @@ export default function NewForumQuestion() {
 
                   <div className="">
                     <button
-                      type="submit"
+                     type="submit"
                       className="w-full font-bold p-1 buttonhoverblack rounded-sm flex justify-center mb-4 bgyellow text-black border-solid border-2 borderyellow "
                     >
                       ENVIAR
