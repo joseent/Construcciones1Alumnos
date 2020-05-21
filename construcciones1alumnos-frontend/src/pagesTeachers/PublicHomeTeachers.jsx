@@ -11,14 +11,11 @@ import NavBarTeachers from "../components/general/navBar/NavBarTeachers";
 import PublicHomeSeminars from "../components/publicHome/PublicHomeSeminars";
 import PublicHomePublicity from "../components/publicHome/PublicHomePublicity";
 import PublicHomeClassRoomPics from "../components/publicHome/PublicHomeClassRoomPics";
+import SeminarsEdit from "../components/publicHomeEdit/SeminarsEdit";
 
 export default function PublicHomeTeachers() {
   const history = useHistory();
-  // seminarPost
-  const [seminarTitle, setSeminarTitle] = useState("");
-  const [seminardescription, setSeminarDescription] = useState("");
-  const [seminarImage, setSeminarImage] = useState("");
-  const [seminarAnswer, setSeminarAnswer] = useState("");
+ 
   // publicityPost
   const [publicityTitle, setPublicityTitle] = useState("");
   const [publicitydescription, setPublicityDescription] = useState("");
@@ -30,44 +27,12 @@ export default function PublicHomeTeachers() {
   const [classAnswer, setClassAnswer] = useState("");
 
   // control image input
-  const imageURLSeminar = seminarImage && URL.createObjectURL(seminarImage);
   const imageURLPublicity =
     publicityImage && URL.createObjectURL(publicityImage);
   const imageURLClass = classImage && URL.createObjectURL(classImage);
 
   //   post seminars
-  const handleChangeSeminarTitle = (e) => {
-    const seminarTitle = e.target.value;
-    setSeminarTitle(seminarTitle);
-  };
-
-  const handleChangeSeminarDescription = (e) => {
-    const seminarDescription = e.target.value;
-    setSeminarDescription(seminarDescription);
-  };
-
-  const handlePicture = (e) => {
-    setSeminarImage(e.target.files[0]);
-  };
-
-  const handleSubmitSeminar = async (e) => {
-    try {
-      e.preventDefault();
-      const payload = new FormData();
-      payload.append("title", seminarTitle);
-      payload.append("description", seminardescription);
-      payload.append("image", seminarImage);
-      const response = await axios.post(
-        "http://localhost:3000/Seminars/",
-
-        payload
-      );
-      setSeminarAnswer(response.data.mensaje);
-    } catch (error) {
-      console.log(error.data);
-    }
-  };
-
+  
   //   post publicity
   const handleChangePublicityTitle = (e) => {
     const publicityTitle = e.target.value;
@@ -131,69 +96,9 @@ export default function PublicHomeTeachers() {
     <div className="flex flex-col items-center">
       <div className="w-full bg-black p-6">
         <NavBarTeachers />
+        
         {/* seminars */}
-        <PublicHomeSeminars />
-        {/* createSeminars */}
-        <form onSubmit={handleSubmitSeminar}>
-          <div>
-            <div className="">
-              <div className="flex flex-col">
-                <div className="mb-3">
-                  <div className=" ">
-                    <input
-                      value={seminarTitle}
-                      onChange={handleChangeSeminarTitle}
-                      type="text"
-                      id="seminarTitle"
-                      name="seminarTitle"
-                      className=" w-full rounded-sm p-1 text-black"
-                      placeholder="Titulo Seminario "
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <div className=" ">
-                    <input
-                      value={seminardescription}
-                      onChange={handleChangeSeminarDescription}
-                      type="text"
-                      id="seminarDescription"
-                      name="seminarDescription"
-                      className=" w-full rounded-sm p-1 text-black"
-                      placeholder="Descripcion seminario"
-                      required
-                    />
-                  </div>
-                </div>
-                <div className="mb-3">
-                  <div className=" ">
-                    <img src={imageURLSeminar} alt="" className="w-22" />
-                    <input
-                      onChange={handlePicture}
-                      type="file"
-                      id="seminarImage"
-                      name="seminarImage"
-                      className=" w-full rounded-sm p-1 text-black"
-                      placeholder="Insertar Imagen"
-                      required
-                    />
-                  </div>
-                </div>
-
-                <div className="p1 mb-3">
-                  <button
-                    type="submit"
-                    className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
-                  >
-                    CARGAR SEMINARIOS
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </form>
-
+        <SeminarsEdit/>
         {/* publicity */}
         <PublicHomePublicity />
 

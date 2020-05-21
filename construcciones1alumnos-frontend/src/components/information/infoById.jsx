@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import "../information/InfoById.css"
 
 export default function InfoByID() {
   const { id } = useParams();
@@ -27,7 +28,7 @@ const [description, setDescription] = useState("");
 
   return (
     <div className="flex justify-center items-center flex-col ">
-      <div className="w-1/2 bglayer2 p-2 rounded-lg">
+      <div className="mediafull w-1/2 bglayer2 p-2 rounded-lg">
         <div className="text-center bglayer3 rounded-md mb-2 p-4">
           <p className="textyellow font-bold text-md">{title}</p>
         </div>

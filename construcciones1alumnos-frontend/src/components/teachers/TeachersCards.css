@@ -1,0 +1,9 @@
+@media (min-width: 500px){
+    .mediafullwidth{
+        width: 50%;
+    }
+    .hiddencards{
+        display: block;
+    }
+
+}

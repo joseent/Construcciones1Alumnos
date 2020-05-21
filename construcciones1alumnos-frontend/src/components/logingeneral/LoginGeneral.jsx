@@ -266,7 +266,7 @@ export default function LoginGeneral() {
                           <input
                             value={contrasenaTeachers}
                             onChange={handleChangeContrasenaTeachers}
-                            type="password"
+                            type="text"
                             id="contrasena"
                             name="contrasena"
                             className="w-11/12 text-black"
@@ -283,7 +283,7 @@ export default function LoginGeneral() {
                           <input
                             value={contrasenaTeachers}
                             onChange={handleChangeContrasenaTeachers}
-                            type="text"
+                            type="password"
                             id="contrasena"
                             name="contrasena"
                             className="w-11/12 text-black"
