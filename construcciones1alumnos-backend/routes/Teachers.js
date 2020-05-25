@@ -43,6 +43,7 @@ const TeachersSchema = new Schema({
     match: [/\S+@\S+\.\S+/, "is invalid"],
     index: true,
   },
+  admin: Boolean,
   image: String
 });
 
@@ -69,10 +70,11 @@ router.post("/registrar", async (req, res) => {
     _id: new ObjectID(),
     usuario:req.body.usuario,
     contrasena:req.body.contrasena,
-    nombre: req.body.nombre || null,
-    apellido: req.body.apellido || null,
+    nombre: req.body.nombre,
+    apellido: req.body.apellido,
     dni: req.body.dni,
     mail: req.body.mail,
+    admin: req.body.admin
   };
 
 teacherNuevo.contrasena = encriptarPassWord(req.body.contrasena);

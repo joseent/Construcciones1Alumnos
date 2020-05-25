@@ -41,7 +41,6 @@ export default function UserInfoModify() {
         {errorGeneral ? (
           <div className="w-full flex flex-col justify-center align-center">
             <h3>UN ERROR OCURRIO</h3>
-            <h3>404</h3>
             <h3>VUELVA A INTENTARLO MAS TARDE</h3>
           </div>
         ) : (
@@ -49,7 +48,7 @@ export default function UserInfoModify() {
             <img src={profilePic} alt="" />
           ) : (
             <img className="rounded w-1/2" src={userLogo} alt="" /> )}
-            <button className="textyellow">CAMBIAR FOTO DE PERFIL</button>
+            {/* <button className="textyellow">CAMBIAR FOTO DE PERFIL</button> */}
           </div>
         )}
         <div className="p-1 flex">

@@ -33,7 +33,7 @@ export default function SeminarsEdit() {
     GetSeminarList();
   }, []);
 
-  //
+  //post seminars
   const handleChangeSeminarTitle = (e) => {
     const seminarTitle = e.target.value;
     setSeminarTitle(seminarTitle);
@@ -91,7 +91,7 @@ const handleRefresh = (e) => {
   };
   return (
     <div>
-      <h4 className="font-bold"> GESTOR DE SEMINARIOS</h4>
+      <h4 className="font-bold text-center mb-6"> GESTOR DE SEMINARIOS</h4>
       {deleteError ? (
         <p className="bg-red-600 rounded-sm p-2 text-white text-center">error al borrar elemento</p>
       ) : deleteOk ? (
@@ -99,12 +99,12 @@ const handleRefresh = (e) => {
       ) : (
         <></>
       )}
-      <div>
-        <ul className="w-full">
+      <div className="flex justify-center">
+        <ul className="w-11/12 mb-6">
           {seminarList.map((seminars) => (
-            <li className="" key={seminars._id}>
+            <li className="my-4" key={seminars._id}>
               <div className="flex">
-                <div className="flex my-2 w-11/12">
+                <div className="flex w-11/12">
                   <img
                     className="w-1/12 rounded-sm "
                     src={seminars.image}
@@ -113,17 +113,18 @@ const handleRefresh = (e) => {
                   <p className="textyellow p-2 w-3/12"> {seminars.title}</p>
                   <p className="p-2 w-8/12 ">{seminars.description}</p>
                 </div>
-                <div className="w-1/12">
-                  <button className="bgyellow font-bold rounded-sm p-2 w-full mb-2">
+                <div className="w-1/12 ">
+                  <button className="bgyellow font-bold rounded-sm p-1 w-full mb-2">
                     EDITAR
                   </button>
                   <button
                     onClick={() => handleDelete(seminars._id)}
-                    className="bgyellow font-bold rounded-sm p-2 w-full"
+                    className="bgyellow font-bold rounded-sm p-1 w-full"
                   >
                     BORRAR
                   </button>
                 </div>
+             
               </div>
             </li>
           ))}

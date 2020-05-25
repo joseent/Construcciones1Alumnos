@@ -26,17 +26,6 @@ export default function InfoByIDTeachersComp() {
     getInfoById();
   }, []);
 
-  const handleDelete = (e) => {
-    axios
-      .delete(`http://localhost:3000/information/${id}`)
-      .then((res) => {
-        console.log("elemento borrado");
-        history.push("/infoteachers");
-      })
-      .catch((error) => {
-        console.log(error.tipo);
-      });
-  };
 
   const titletoUpper = title.toUpperCase();
 
@@ -44,16 +33,13 @@ export default function InfoByIDTeachersComp() {
     <div className="flex justify-center items-center flex-col ">
          {
         errorGeneral ? <h2 className="text-red-600">UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.</h2> :   
-      <div className="w-1/2 ">
-        <div className="text-center bg-gray-900 rounded-md mb-2  p-4">
-          <p className="text-yellow-600 font-bold text-xl">{titletoUpper}</p>
+      <div className="w-1/2 bglayer1 p-2 rounded-md ">
+        <div className="text-center bglayer2 rounded-md mb-2 p-4 shadow-md">
+          <p className="textyellow font-bold text-xl">{titletoUpper}</p>
         </div>
-        <div className="bg-gray-900 rounded-md mb-2 p-4">
-          <p className="text-yellow-600 text-bold text-lg">{description}</p>
+        <div className="bglayer2 rounded-md mb-2 p-4 shadow-md">
+          <p className="textyellow text-bold text-md">{description}</p>
         </div>
-        <button onClick={handleDelete} className="w-full bg-yellow-600 rounded-md font-bold p-4">
-          BORRAR
-        </button>
       </div>}
     </div>
   );

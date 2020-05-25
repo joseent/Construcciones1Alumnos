@@ -11,21 +11,28 @@ export default function LoginGeneral() {
   const [usuarioAlumno, setUsuarioAlumno] = useState("");
   const [contrasenaAlumno, setContrasenaAlumno] = useState("");
   const [idAlumno, setIdAlumno] = useState("");
+  const [StudentObject, setStudentObject] = useState({})
   const [loginStudent, setloginStudent] = useState(true);
   const [toLocalHost, setToLocalHost] = useState(false);
   //   TEACHERS
   const [usuarioTeachers, setUsuarioTeachers] = useState("");
   const [contrasenaTeachers, setContrasenaTeachers] = useState("");
   const [idTeachers, setIdTeachers] = useState("");
+  const [TeacherObjetct, setTeacherObjetct] = useState({});
   const [loginTeachers, setLoginTeachers] = useState(false);
   // GENERAL
   const [loginError, setloginError] = useState(false);
   const [viewPassword, setViewPassword] = useState(false);
 
+  const student = JSON.stringify(StudentObject);
+  const teacher = JSON.stringify(TeacherObjetct);
+
   if (toLocalHost) {
     localStorage.setItem("idusuario", idAlumno);
+    localStorage.setItem("alumno", student);
   } else {
     localStorage.setItem("idusuario", idTeachers);
+    localStorage.setItem("usuario", teacher);
   }
 
   const handleviewPasswordOn = (e) => {
@@ -55,6 +62,7 @@ export default function LoginGeneral() {
       })
       .then((res) => {
         setIdAlumno(res.data.respuesta[0]._id);
+        setStudentObject(res.data.respuesta[0]);
         setToLocalHost(true);
         localStorage.setItem("userLogged", "true");
         localStorage.setItem("studentLogged", "true");
@@ -88,6 +96,7 @@ export default function LoginGeneral() {
       })
       .then((res) => {
         setIdTeachers(res.data.respuesta[0]._id);
+        setTeacherObjetct(res.data.respuesta[0]);
         localStorage.setItem("userLogged", "true");
         localStorage.setItem("teacherLogged", "true");
 

@@ -1,5 +1,5 @@
 //@ts-check
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useLayoutEffect } from "react";
 import "./NewForumQuestion.css";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
@@ -11,36 +11,39 @@ export default function NewForumQuestion() {
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionSelector, setQuestionSelector] = useState("");
   const [usuarioNombre, setusuarioNombre] = useState("");
-
-
+  const [user, setUser] = useState({});
+  
   const handleChangeTitle = (e) => {
     const title = e.target.value;
     setQuestionTitle(title);
   };
-
+  
   const handleChangeDescription = (e) => {
     const description = e.target.value;
     setQuestionDescription(description);
   };
-
+  
   const handleChangeSelector = (e) => {
     const selector = e.target.value;
     setQuestionSelector(selector);
   };
 
   useEffect(() => {
+    setUser(JSON.parse(localStorage.getItem("alumno")));     
+    
     const getUserBiId = (e) => {
-      const id = window.localStorage.getItem("idusuario");
       axios
-        .get(`http://localhost:3000/users/${id}`)
-        .then((res) => {
-          setusuarioNombre(res.data.usuario.nombre + " " + res.data.usuario.apellido);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
+      .get(`http://localhost:3000/users/${user._id}`)
+      .then((res) => {
+        setusuarioNombre(res.data.usuario.nombre + " " + res.data.usuario.apellido);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
     };
-    getUserBiId();
+      getUserBiId();
+      
+
   }, []);
  
      const handleSubmit = (e) => {

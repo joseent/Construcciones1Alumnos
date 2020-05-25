@@ -27,19 +27,18 @@ export default function BottomBar() {
               <p>Publicidad</p>
             </Link>
           </div>
-          <div className="mediacolfastlinks flex flex-col w-4/12 text-left py-4">
-            <h5>link rapido</h5>
-            <p>HOME</p>
-            <p>HOME</p>
-            <p>HOME</p>
-            <p>HOME</p>
-          </div>
+
           <div className="mediacolfastlinks flex flex-col justify-center w-4/12 py-4">
             <h5>CONTACTANOS</h5>
             <a href="https://www.facebook.com/Construcciones-Uno-Fau-Unt-455294904841225/">
-              <i className="fab fa-facebook-square textcoloruniversity"></i>
+              <i
+                class="fa fa-facebook-square textyellow "
+                aria-hidden="true"
+              ></i>
+              <p>CONSTRUCCIONES UNO FAU UNT</p>
             </a>
-            <i className="fas fa-envelope textcoloruniversity"></i>
+            <i className="fa fa-envelope textyellow" aria-hidden="true"></i>
+              <p className="text-center">construccionesunofauunt@gmail.com</p>
           </div>
         </div>
         <div className="w-full flex justify-between">

@@ -8,7 +8,7 @@ export default function InfoTeachers() {
     return (
         <div>
             <NavBarTeachers/>
-            <h1>ESTAMOS EN INFO</h1>
+            <h4 className="text-center mb-6 font-bold">GESTOR DE INFORMACION</h4>
             <NewInfo/>
             <InformationListTeachers/>
         </div>

@@ -7,6 +7,8 @@ export default function NewInfo() {
   const history = useHistory();
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [createdOk, setCreatedOk] = useState(false);
+  const [generalError, setGeneralError] = useState(false);
 
   const handleTitle = (e) => {
     const title = e.target.value;
@@ -18,24 +20,31 @@ export default function NewInfo() {
   };
 
   const handleSubmit = (e) => {
-    // e.preventDefault();
+    e.preventDefault();
     axios
       .post("http://localhost:3000/Information/", {
         titulo: title,
         descripsion: description,
       })
       .then((res) => {
-console.log("informacion subida correctamente");
-
+        console.log("informacion subida correctamente");
+        setCreatedOk(true);
+        setTimeout(() => {
+          setCreatedOk(false);
+        }, 3000);
       })
       .catch((error) => {
         console.log(error.data);
+        setGeneralError(true);
       });
   };
   return (
     <div className="flex justify-center mb-8">
-      <div className="w-1/2">
-        <form onSubmit={handleSubmit}>
+      <div className="w-1/2 bglayer1 rounded-md p-2">
+        <form
+          onSubmit={handleSubmit}
+          className="bglayer2 p-2 shadow-md rounded-md"
+        >
           <div className="mb-3">
             <div className=" ">
               <input
@@ -56,7 +65,7 @@ console.log("informacion subida correctamente");
                 value={description}
                 onChange={handleDescrption}
                 className=" w-full rounded-sm p-1 text-black"
-                rows="8"
+                rows="6"
                 id="textarea"
                 placeholder="Descripcion de tu consulta "
                 required
@@ -67,11 +76,22 @@ console.log("informacion subida correctamente");
           <div className="p1 mb-3">
             <button
               type="submit"
-              className="w-full font-bold p-1 button hover:bg-yellow-600 hover:text-black rounded-sm flex justify-center mb-4 p-1 bg-black text-yellow-600 border-solid border-2 border-yellow-600 "
+              className="w-full font-bold p-1 rounded-sm flex justify-center mb-2 border-2 borderyellow bgyellow "
             >
               ENVIAR
             </button>
           </div>
+          {generalError ? (
+            <p className="bg-red-700 p-2 text-black rounded-sm">
+              Error al crear informacion. Intentelo mas tarde nuevamente.
+            </p>
+          ) : createdOk ? (
+            <p className="bg-green-700 p-2 text-black rounded-sm">
+              Informacion creada con exito.
+            </p>
+          ) : (
+            <></>
+          )}
         </form>
       </div>
     </div>

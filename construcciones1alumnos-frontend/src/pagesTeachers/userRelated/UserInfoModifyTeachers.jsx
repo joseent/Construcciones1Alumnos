@@ -39,9 +39,9 @@ export default function UserInfoModifyTeachers() {
         ) : (
           <div className="flex flex-col items-center p-4">
             <img className="rounded w-1/2" src={userLogo} alt=""/>
-          <button className="text-yellow-600">
+          {/* <button className="text-yellow-600">
             CAMBIAR FOTO DE PERFIL
-          </button>
+          </button> */}
           </div>
         )}
         <div className="p-1 flex text-yellow-600">
