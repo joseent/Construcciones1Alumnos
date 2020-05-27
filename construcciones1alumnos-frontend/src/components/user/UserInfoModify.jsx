@@ -1,11 +1,12 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useHistory } from "react-router-dom";
 import axios from "axios";
 import userLogo from "../../images/userLogo.png";
 
 export default function UserInfoModify() {
   const { id } = useParams();
+  const [user, setUser] = useState({});
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [dni, setDni] = useState("");
@@ -13,12 +14,12 @@ export default function UserInfoModify() {
   const [mail, setmail] = useState("");
   const [profilePic, setProfilePic] = useState(false);
   const [errorGeneral, seterrorGeneral] = useState(false);
+  const [teacherId, setTeacherId] = useState("")
 
-  useEffect(() => {
-    const getQuestionById = (e) => {
-      const id = window.localStorage.getItem("idusuario");
-      axios
-        .get(`http://localhost:3000/users/${id}`)
+ 
+    const getQuestionById = (userLocal) => {
+            axios
+        .get(`http://localhost:3000/Teachers/${userLocal}`)
         .then((res) => {
           setNombre(res.data.usuario.nombre);
           setApellido(res.data.usuario.apellido);
@@ -32,7 +33,12 @@ export default function UserInfoModify() {
           seterrorGeneral(true);
         });
     };
-    getQuestionById();
+      
+
+  useEffect(() => {
+    const userLocal = JSON.parse(localStorage.getItem("usuario"))
+    setUser(userLocal);
+    getQuestionById(userLocal);
   }, []);
 
   return (

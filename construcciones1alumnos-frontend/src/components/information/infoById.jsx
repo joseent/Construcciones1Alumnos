@@ -30,7 +30,7 @@ const [description, setDescription] = useState("");
     <div className="flex justify-center items-center flex-col ">
       <div className="mediafull w-1/2 bglayer2 p-2 rounded-lg">
         <div className="text-center bglayer3 rounded-md mb-2 p-4">
-          <p className="textyellow font-bold text-md">{title}</p>
+          <p className="textyellow font-bold text-md">{titletoUpper}</p>
         </div>
         <div className="bglayer3 rounded-md p-4">
           <p className="text-bold text-sm">{description}</p>

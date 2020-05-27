@@ -1,8 +1,11 @@
 // @ts-check
 import React, { useState } from "react";
 import axios from "axios";
+import '../inscriptions/InscriptionList.css'
+import imageLogo from '../../images/userLogo.png'
 
 export default function InscriptionList() {
+  const [userLogo, setUserLogo] = useState(imageLogo)
   const [comition1, setcomition1] = useState(false);
   const [comition2, setcomition2] = useState(false);
   const [comition3, setcomition3] = useState(false);
@@ -173,14 +176,14 @@ export default function InscriptionList() {
       >
         COMISION 1
       </button>
-      <div className={`${comition1 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition1 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
         <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -188,12 +191,12 @@ export default function InscriptionList() {
           {comition1List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
               <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12  medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -211,14 +214,14 @@ export default function InscriptionList() {
       >
         COMISION 2
       </button>
-      <div className={`${comition2 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition2 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -226,12 +229,12 @@ export default function InscriptionList() {
           {comition2List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -248,14 +251,14 @@ export default function InscriptionList() {
       >
         COMISION 3
       </button>
-      <div className={`${comition3 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition3 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -263,12 +266,12 @@ export default function InscriptionList() {
           {comition3List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
               <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -285,14 +288,14 @@ export default function InscriptionList() {
       >
         COMISION 4
       </button>
-      <div className={`${comition4 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition4 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -300,12 +303,12 @@ export default function InscriptionList() {
           {comition4List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -322,14 +325,14 @@ export default function InscriptionList() {
       >
         COMISION 5
       </button>
-      <div className={`${comition5 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition5 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -337,12 +340,12 @@ export default function InscriptionList() {
           {comition5List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
             <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -359,14 +362,14 @@ export default function InscriptionList() {
       >
         COMISION 6
       </button>
-      <div className={`${comition6 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition6 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -374,12 +377,12 @@ export default function InscriptionList() {
           {comition6List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}
@@ -396,14 +399,14 @@ export default function InscriptionList() {
       >
         COMISION 7
       </button>
-      <div className={`${comition7 ? "block w-4/5" : "hidden"}`}>
+      <div className={`${comition7 ? "block w-4/5 overflow-x-scroll" : "hidden"}`}>
       <div className="w-full flex justify-between">
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">imagen</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">nombre</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">apellido</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">dni</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">libreta</span>
-          <span className="w-2/12 textyellow text-center font-bold border borderyellow">mail</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">imagen</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">nombre</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">apellido</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">dni</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">libreta</span>
+          <span className="w-2/12 medialist textyellow text-center font-bold border borderyellow">mail</span>
         </div>
         {
           generalError ? <p className="text-red-600">Error al buscar la informacion vuelva a intentarlo mas tarde</p> : 
@@ -411,12 +414,12 @@ export default function InscriptionList() {
           {comition7List.map((alumnos) => (
             <li key={alumnos._id} className="w-full textyellow">
              <div className="w-full flex justify-between">
-                  <span className="w-2/12 text-center font-bold border borderyellow">sin imagen</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.apellido}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.nombre}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.dni}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.libreta}</span>
-                  <span className="w-2/12 text-center font-bold border borderyellow">{alumnos.mail}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow"><img className="w-10 ml-8" src={userLogo} alt="userlogo"/></span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.apellido}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.nombre}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.dni}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.libreta}</span>
+                  <span className="w-2/12 medialist text-center font-bold border borderyellow">{alumnos.mail}</span>
               </div>
             </li>
           ))}

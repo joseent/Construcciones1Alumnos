@@ -43,8 +43,9 @@ export default function Home() {
           <TeachersCards />
         </div>
         <div className="w-4/5 text-yellow-600">
-          <h4 className="text-center uppercase">{info.titulo}</h4>     
-          <p className="truncate">{info.descripsion}</p>               
+          <h4 className="text-center uppercase">{info.titulo}</h4>    
+          
+          <p className="overflow-hidden h-24">{info.descripsion}</p>            
           <br />
           <div className="flex justify-center items-center">
           <button onClick={() => handleOnClick(info._id)} className="bgyellow text-black font-bold p-2 my-6 rounded-sm m-1 ">

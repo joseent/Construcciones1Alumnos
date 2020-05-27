@@ -21,7 +21,7 @@ const TeachersSchema = new Schema({
     required: [true, "can't be blank"],
     match: [/^[a-zA-Z0-9]+$/, "is invalid"],
     index: true,
-    unique: true,
+    
   },
   contrasena: {
     type:String,
@@ -34,7 +34,7 @@ const TeachersSchema = new Schema({
     required: true,
     minlength: 8,
     maxlength: 8,
-    unique: true,
+    
   },
   mail: {
     type: String,
@@ -51,19 +51,29 @@ const TeachersSchema = new Schema({
 // metodos
 const TeachersModel = mongoose.model("teachers", TeachersSchema);
 
+
+
 router.get("/:id", async (req, res) => {
   const id = req.params.id;
   try {
     const respuesta = await TeachersModel.findById(id);
-    res.json({ mensaje: "teacher", teacher: respuesta });
+    res.json({ mensaje: "profesor", profesor: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: error });
   }
 });
 
+router.get("/", async (req, res) => {
+  try {
+    const respuesta = await TeachersModel.find();
+    res.json({ mensaje: "listado profesores", profesores: respuesta });
+  } catch (error) {
+    res.status(500).json({ mensaje: "error", tipo: error });
+  }
+});
 
 // registrar teacher
-router.post("/registrar", async (req, res) => {
+router.post("/", async (req, res) => {
    console.log("entrando a registrar");
    
   const teacherNuevo = {
@@ -82,8 +92,8 @@ console.log(teacherNuevo.contrasena);
 
 
 try {
-  const user = new TeachersModel(teacherNuevo);
-    const respuesta = await user.save();
+  const teacher = new TeachersModel(teacherNuevo);
+    const respuesta = await teacher.save();
     res.json({
       mensaje: "teacher registrado correctamente",
       documento: respuesta,

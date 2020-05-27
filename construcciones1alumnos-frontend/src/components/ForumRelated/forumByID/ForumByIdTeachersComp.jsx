@@ -10,26 +10,34 @@ export default function ForumByIdTeachersComp() {
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionAnswer, setquestionAnswer] = useState("");
+  const [user, setUser] = useState({});
+  const [teacherAdmin, setTeacherAdmin] = useState(false);
 
   const handleChangeQuestionAnswer = (e) => {
     const questionAnswer = e.target.value;
     setquestionAnswer(questionAnswer);
   };
 
-  useEffect(() => {
-    const getQuestionById = (e) => {
+  
+    const getQuestionById = (userLocal) => {
       axios
         .get(`http://localhost:3000/Forum/${id}`)
         .then((res) => {
           setQuestionTitle(res.data.consultas.titulo);
           setQuestionDescription(res.data.consultas.descripsion);
           setquestionAnswer(res.data.consultas.respuesta);
+          setTeacherAdmin(userLocal.admin);
         })
         .catch((error) => {
           console.log(error.data);
         });
     };
-    getQuestionById();
+   
+
+  useEffect(() => {
+    const userLocal = JSON.parse(localStorage.getItem("usuario"));
+    setUser(userLocal);
+    getQuestionById(userLocal);
   }, []);
 
   const handlePut = (e) => {
@@ -92,14 +100,17 @@ export default function ForumByIdTeachersComp() {
             MODIFICAR
           </button>
         </div>
+        {
+          teacherAdmin ?
         <div>
-          <button
+                <button
             onClick={handleDelete}
             className="w-full bg-yellow-600 rounded-md font-bold p-4"
           >
             BORRAR
           </button>
-        </div>
+        </div> :  <></> 
+        }
       </div>
     </div>
   );

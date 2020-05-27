@@ -197,7 +197,7 @@ export default function LoginGeneral() {
                           />
                           <i
                             onClick={handleviewPasswordOff}
-                            className="fas fa-eye-slash"
+                            className="fa fa-eye-slash"
                           ></i>
                         </div>
                       </div>
@@ -216,7 +216,7 @@ export default function LoginGeneral() {
                           />
                           <i
                             onClick={handleviewPasswordOn}
-                            className="fas fa-eye"
+                            className="fa fa-eye"
                           ></i>
                         </div>
                       </div>
@@ -284,7 +284,7 @@ export default function LoginGeneral() {
                           />
                           <i
                             onClick={handleviewPasswordOff}
-                            className="fas fa-eye-slash"
+                            className="fa fa-eye-slash"
                           ></i>
                         </div>
                       ) : (
@@ -301,7 +301,7 @@ export default function LoginGeneral() {
                           />
                           <i
                             onClick={handleviewPasswordOn}
-                            className="fas fa-eye"
+                            className="fa fa-eye"
                           ></i>
                         </div>
                       )}

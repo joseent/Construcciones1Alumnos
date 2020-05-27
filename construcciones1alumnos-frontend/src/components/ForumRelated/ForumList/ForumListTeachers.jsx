@@ -9,6 +9,8 @@ export default function ForumListTeachers() {
   const [forumQuestions, setForumQuestions] = useState([]);
   const [respondida, setRespondida] = useState(false);
   const [forumSelector, setForumSelector] = useState("");
+  const [user, setUser] = useState({});
+  const [teacherAdmin, setTeacherAdmin] = useState(false);
 
   const handleChangeSelector = (e) => {
     const selector = e.target.value;
@@ -33,20 +35,24 @@ export default function ForumListTeachers() {
     history.push(`/forumbyidteachers/${id}`);
   };
 
+  const GetForumList = async (userLocal) => {
+    axios
+      .get("http://localhost:3000/Forum/")
+      .then((res) => {
+        console.log(res.data);
+        setForumQuestions(res.data.consultas);
+        setRespondida(res.data.consultas.respondido);
+        setTeacherAdmin(userLocal.admin);
+      })
+      .catch((error) => {
+        console.log(error.data);
+      });
+  };
+
   useEffect(() => {
-    const GetForumList = async () => {
-      axios
-        .get("http://localhost:3000/Forum/")
-        .then((res) => {
-          console.log(res.data);
-          setForumQuestions(res.data.consultas);
-          setRespondida(res.data.consultas.respondido);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
-    };
-    GetForumList();
+    const userLocal = JSON.parse(localStorage.getItem("usuario"));
+    setUser(userLocal);
+    GetForumList(userLocal);
   }, []);
 
   return (
@@ -67,15 +73,14 @@ export default function ForumListTeachers() {
             <option value="plastico">Plastico</option>
             <option value="vidrio">Vidrio</option>
           </select>
-          
-            <button
-              onClick={GetListByTema}
-              className="w-3/12 p-2 text-yellow-600 text-bold border border-yellow-600 rounded"
-              type="button"
-            >
-              BUSCAR
-            </button>
-        
+
+          <button
+            onClick={GetListByTema}
+            className="w-3/12 p-2 text-yellow-600 text-bold border border-yellow-600 rounded"
+            type="button"
+          >
+            BUSCAR
+          </button>
         </div>
       </div>
       <div className="w-full mx-auto items-center">
@@ -89,8 +94,8 @@ export default function ForumListTeachers() {
               <div className="p-4 flex justify-between items-center border border-yellow-600 rounded-md h-20 w-4/5 shadowColor">
                 {consultas.respondido ? (
                   <i className="fa fa-check"></i>
-                  ) : (
-                    <span> </span>
+                ) : (
+                  <span> </span>
                 )}
                 <div className="flex-col text-center">
                   <p>titulo: {consultas.titulo}</p>{" "}

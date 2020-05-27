@@ -26,7 +26,7 @@ const menu = [
     to: "/forumteachers",
   },
   {
-    name: "USUARIOS",
+    name: "USUARIO",
     to: "/userinfoteachers/:id",
   },
 ];
@@ -52,17 +52,16 @@ export default function NavBarTeachers() {
           <div className="navContainer">
           <Link to="/" className="active">
             <div className="flex items-center p-3">
-            <img className="w-12 rounded-full mr-3" src={c1Logo} alt=""/>
-            <span className="textNav font-bold">CONSTRUCCIONES I</span>
+            <img className="w-12 rounded-full" src={c1Logo} alt=""/>
             </div>
           </Link>
           {menu.map(({ name, to }) => (
             <Link key={name} to={to}>
-              {name}
+              <p className="textyellow hover:text-black">{name}</p>
             </Link>
           ))}
           {
-            userLogged ? <button className="textyellow" onClick={handleDesloguear}>Desloguear</button> : <span></span>
+            userLogged ? <button className="textyellow" onClick={handleDesloguear}>DESLOGUEAR</button> : <span></span>
           }
           <a className="icon" onClick={toggleNavbar}>
             <i className="fa fa-bars mt-6"></i>

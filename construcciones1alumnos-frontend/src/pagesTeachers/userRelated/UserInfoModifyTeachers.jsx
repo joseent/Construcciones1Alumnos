@@ -5,30 +5,30 @@ import axios from "axios";
 import userLogo from "../../images/userLogo.png"
 
 export default function UserInfoModifyTeachers() {
-  const { id } = useParams();
+
   const [nombre, setNombre] = useState("");
   const [apellido, setApellido] = useState("");
   const [dni, setDni] = useState("");
   const [mail, setmail] = useState("");
   const [profilePic, setProfilePic] = useState(false);
+  const [user, setUser] = useState({});
 
-  useEffect(() => {
-    const getQuestionById = (e) => {
-      const id = window.localStorage.getItem("idusuario");
-      axios
-        .get(`http://localhost:3000/teachers/${id}`)
-        .then((res) => {
-          setNombre(res.data.teacher.nombre);
-          setApellido(res.data.teacher.apellido);
-          setDni(res.data.teacher.dni);
-          setmail(res.data.teacher.mail);
-          setProfilePic(res.data.teacher.image);
-        })
-        .catch((error) => {
-          console.log(error.data);
-        });
+
+    const setUserInfo = (userLocal) => {
+     
+          setNombre(userLocal.nombre);
+          setApellido(userLocal.apellido);
+          setDni(userLocal.dni);
+          setmail(userLocal.mail);
+          setProfilePic(userLocal.image);
+     
     };
-    getQuestionById();
+
+  
+ useEffect(() => {
+    const userLocal = JSON.parse(localStorage.getItem("usuario"))
+    setUser(userLocal);
+    setUserInfo(userLocal);
   }, []);
 
   return (

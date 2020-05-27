@@ -25,14 +25,14 @@ const ConsultaSchema = new Schema({
   } ,
   respondido: Boolean,
 },
-{timestamps: { createdAt: 'created_at' }},
+{timestamps: true},
 );
 
 const ConsultaModel = mongoose.model("forum", ConsultaSchema);
 
 router.get("/", async(req, res) => {
   try {
-    const respuesta =  await ConsultaModel.find()
+    const respuesta =  await ConsultaModel.find().sort({createdAt: 'desc'})
     res.json({ mensaje: "listado consultas", consultas: respuesta });
   } catch (error) {
     res.status(500).json({ mensaje: "error", tipo: err });

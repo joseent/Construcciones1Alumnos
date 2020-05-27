@@ -10,7 +10,7 @@
 .topnav a {
   float: left;
   display: block;
-  color: rgb(253, 235, 190);
+  color: #f8cb00;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -19,7 +19,7 @@
 .topnavpublic a {
   float: left;
   display: block;
-  color: rgb(253, 235, 190);
+  color: #f8cb00;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -27,11 +27,8 @@
 }
 
 .topnav a:hover {
-  background-color: #f8cb00;
-  color: #121212;
+  background-color: #f8cb00;  
 }
-
-
 
 .topnav .icon {
   display: none;
@@ -50,6 +47,7 @@
     height: 100px;
     /* margin-top: 20px; */
   }
+  
 }
 @media screen and (max-width: 600px) {
   .topnavpublic a:not(:first-child) {
@@ -61,6 +59,7 @@
     height: 100px;
     /* margin-top: 20px; */
   }
+ 
 }
 
 @media screen and (max-width: 600px) {
@@ -77,6 +76,7 @@
     display: block;
     text-align: left;
   }
+ 
 }
 @media screen and (max-width: 600px) {
   .topnavpublic.responsive {
@@ -92,6 +92,7 @@
     display: block;
     text-align: left;
   }
+  
 }
 
 .textNavPublicHome {
@@ -105,7 +106,7 @@
     flex-direction: row;
     align-items: center;
   }
-}
+  }
 
 @media screen and (max-width: 800px) {
   .textNav {
@@ -123,4 +124,13 @@
   .textNav {
     display: block;
   }
+       
+}
+
+.iconblack{
+  color: black
+}
+
+.hegipt{
+  height: 120px;
 }

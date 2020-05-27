@@ -6,13 +6,12 @@ import { useParams, useHistory } from "react-router-dom";
 
 export default function NewForumQuestion() {
   const history = useHistory();
-  const { id } = useParams();
+  const [user, setUser] = useState({});
   const [questionTitle, setQuestionTitle] = useState("");
   const [questionDescription, setQuestionDescription] = useState("");
   const [questionSelector, setQuestionSelector] = useState("");
   const [usuarioNombre, setusuarioNombre] = useState("");
-  const [user, setUser] = useState({});
-  
+   
   const handleChangeTitle = (e) => {
     const title = e.target.value;
     setQuestionTitle(title);
@@ -27,25 +26,19 @@ export default function NewForumQuestion() {
     const selector = e.target.value;
     setQuestionSelector(selector);
   };
-
-  useEffect(() => {
-    setUser(JSON.parse(localStorage.getItem("alumno")));     
     
-    const getUserBiId = (e) => {
-      axios
-      .get(`http://localhost:3000/users/${user._id}`)
-      .then((res) => {
-        setusuarioNombre(res.data.usuario.nombre + " " + res.data.usuario.apellido);
-      })
-      .catch((error) => {
-        console.log(error.data);
-      });
+    const setUserInfo = (userLocal) => {
+      setusuarioNombre(userLocal.nombre + " " + userLocal.apellido )
+     
     };
-      getUserBiId();
-      
-
-  }, []);
+    
  
+  useEffect(() => {
+    const userLocal = JSON.parse(localStorage.getItem("alumno"))
+    setUser(userLocal);
+    setUserInfo(userLocal);
+  }, []);
+
      const handleSubmit = (e) => {
       e.preventDefault();
       axios

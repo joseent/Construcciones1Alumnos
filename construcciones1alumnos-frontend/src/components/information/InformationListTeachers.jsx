@@ -16,7 +16,6 @@ export default function InformationListTeachers() {
       .then((res) => {
         console.log(res.data);
         setInfoList(res.data.informacion);
-        GetForumList();
       })
       .catch((error) => {
         console.log(error.data);
@@ -57,10 +56,10 @@ export default function InformationListTeachers() {
       ) : (
         <ul className="w-7/12 list-group mb-5 ulmedia">
           {InfoList.map((informacion) => (
-            <div className="flex border borderyellow shadowColor rounded-md mb-3">
+            <div className="flex border borderyellow shadowColor rounded-md mb-3" key={informacion._id}>
               <div className="flex">
                 <li
-                  key={informacion._id}
+                  
                   className="flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
                   onClick={() => handleOnClick(informacion._id)}
                 >

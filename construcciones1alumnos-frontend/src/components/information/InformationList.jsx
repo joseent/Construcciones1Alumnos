@@ -41,7 +41,7 @@ export default function InformationList() {
             onClick={() => handleOnClick(informacion._id)}
           >
             <div className="flex-col text-center ml-4">
-              <p>titulo: {informacion.titulo}</p> <p>creado: {informacion.created_at}</p>
+              <p>titulo: {informacion.titulo}</p> 
             </div>
             <i className="fa fa-mail-forward"></i>
           </li>

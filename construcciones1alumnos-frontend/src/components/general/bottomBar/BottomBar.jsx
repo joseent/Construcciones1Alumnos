@@ -32,7 +32,7 @@ export default function BottomBar() {
             <h5>CONTACTANOS</h5>
             <a href="https://www.facebook.com/Construcciones-Uno-Fau-Unt-455294904841225/">
               <i
-                class="fa fa-facebook-square textyellow "
+                className="fa fa-facebook-square textyellow "
                 aria-hidden="true"
               ></i>
               <p>CONSTRUCCIONES UNO FAU UNT</p>
