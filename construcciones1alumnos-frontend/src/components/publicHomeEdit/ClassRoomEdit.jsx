@@ -1,6 +1,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./PublicHomeEdit.css"
 
 export default function ClassRoomEdit() {
   // classroomPost
@@ -97,7 +98,7 @@ export default function ClassRoomEdit() {
       <div className="flex justify-center">
         <ul className="w-10/12 mb-6 overflow-x-scroll">
           {classPics.map((fotos) => (
-            <li className="my-4" key={fotos._id}>
+            <li className="my-4  listsizemedia" key={fotos._id}>
               <div className="flex">
                 <div className="flex w-11/12">
                   <img

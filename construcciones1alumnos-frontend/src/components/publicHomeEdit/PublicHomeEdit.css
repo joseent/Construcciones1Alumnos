@@ -1,5 +1,8 @@
 @media (min-width: 600px) {
     .widthmedia{
         width: 95%;
+    };
+    .listsizemedia{
+        width: 800px;
     }
 }

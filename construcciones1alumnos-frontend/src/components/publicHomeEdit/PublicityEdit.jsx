@@ -1,7 +1,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-
+import "./PublicHomeEdit.css"
 export default function PublicityEdit() {
   // publicityPost
   const [publicityTitle, setPublicityTitle] = useState("");
@@ -107,7 +107,7 @@ export default function PublicityEdit() {
       <div className="flex justify-center">
         <ul className="w-10/12 mb-6 overflow-x-scroll">
           {publicityList.map((publicity) => (
-            <li className="my-4" key={publicity._id}>
+            <li className="my-4 listsizemedia" key={publicity._id}>
               <div className="flex">
                 <div className="flex w-11/12">
                   <img

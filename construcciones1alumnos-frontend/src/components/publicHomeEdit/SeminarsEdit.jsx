@@ -1,6 +1,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import "./PublicHomeEdit.css"
 
 export default function SeminarsEdit() {
   // seminarPost
@@ -102,7 +103,7 @@ const handleRefresh = (e) => {
       <div className="flex justify-center">
         <ul className="w-11/12 mb-6 overflow-x-scroll">
           {seminarList.map((seminars) => (
-            <li className="my-4" key={seminars._id}>
+            <li className="my-4  listsizemedia" key={seminars._id}>
               <div className="flex">
                 <div className="flex w-11/12">
                   <img
