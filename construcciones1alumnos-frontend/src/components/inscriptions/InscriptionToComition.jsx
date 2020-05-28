@@ -64,7 +64,10 @@ export default function InscriptionToComition() {
     axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
       comision: "COMISION 1",
       inscripto: true,
-    });
+    })
+    .then(() => {
+      window.location.reload(false);
+    })
   };
   // COMITION2
   const handleComition2 = () => {
@@ -87,7 +90,10 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 2",
         inscripto: true,
-      });
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
   };
   // COMITION3
   const handleComition3 = () => {
@@ -110,7 +116,9 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 3",
         inscripto: true,
-      });
+      }) .then(() => {
+        window.location.reload(false);
+      })
   };
   // COMITION4
   const handleComition4 = () => {
@@ -133,7 +141,10 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 4",
         inscripto: true,
-      });
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
   };
   // COMITION5
   const handleComition5 = () => {
@@ -156,7 +167,10 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 5",
         inscripto: true,
-      });
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
   };
   // COMITION6
   const handleComition6 = () => {
@@ -179,7 +193,10 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 6",
         inscripto: true,
-      });
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
   };
   // COMITION7
   const handleComition7 = () => {
@@ -202,7 +219,10 @@ export default function InscriptionToComition() {
       axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 7",
         inscripto: true,
-      });
+      })
+      .then(() => {
+        window.location.reload(false);
+      })
   };
 
   return (
@@ -221,7 +241,7 @@ export default function InscriptionToComition() {
           className={`${
             correctInscription1
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition1}
         >
@@ -231,12 +251,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 1"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION2 */}
         <button
           className={`${
             correctInscription2
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition2}
         >
@@ -246,12 +266,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 2"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION3 */}
         <button
           className={`${
             correctInscription3
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition3}
         >
@@ -261,12 +281,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 3"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION4 */}
         <button
           className={`${
             correctInscription4
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition4}
         >
@@ -276,12 +296,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 4"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION5 */}
         <button
           className={`${
             correctInscription5
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition5}
         >
@@ -291,12 +311,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 5"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION6 */}
         <button
           className={`${
             correctInscription6
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full text-yellow-600 border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow-600 border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition6}
         >
@@ -306,12 +326,12 @@ export default function InscriptionToComition() {
               : "INSCRIBIRSE EN COMISION 6"
           }`}
         </button>
-        {/* COMITION1 */}
+        {/* COMITION7 */}
         <button
           className={`${
             correctInscription7
               ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full text-yellow-600 border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow-600 border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition7}
         >

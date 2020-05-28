@@ -61,7 +61,7 @@ export default function NavBarTeachers() {
             </Link>
           ))}
           {
-            userLogged ? <button className="textyellow" onClick={handleDesloguear}>DESLOGUEAR</button> : <span></span>
+            userLogged ? <button className="textyellow" onClick={handleDesloguear}>CERRAR SESION</button> : <span></span>
           }
           <a className="icon" onClick={toggleNavbar}>
             <i className="fa fa-bars mt-6"></i>

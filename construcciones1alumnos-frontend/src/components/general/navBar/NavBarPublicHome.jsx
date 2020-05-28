@@ -22,7 +22,7 @@ export default function NavBarPublicHome() {
       to: "/register",
     },
     {
-      name: "loguearse",
+      name: "INICIAR SESION",
       to: "/login",
     },
   ];

@@ -89,6 +89,7 @@ export default function Register() {
               id="grid-first-name"
               type="text"
               placeholder="Juan"
+              required
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -102,6 +103,7 @@ export default function Register() {
               id="grid-last-name"
               type="text"
               placeholder="Perez"
+              required
             />
           </div>
         </div>
@@ -117,6 +119,7 @@ export default function Register() {
               id="grid-dni"
               type="text"
               placeholder="11111111"
+              required
             />
           </div>
           <div className="w-full md:w-1/2 px-3">
@@ -130,6 +133,7 @@ export default function Register() {
               id="grid-libreta"
               type="text"
               placeholder="AQ1202020"
+              required
             />
           </div>
         </div>
@@ -145,6 +149,7 @@ export default function Register() {
               id="grid-user"
               type="text"
               placeholder="construcciones1usuario"
+              required
             />
           </div>
         </div>
@@ -173,7 +178,7 @@ export default function Register() {
               value={contrasena}
               onChange={handleChangeContrasena}
               id="grid-password"
-              type="contraseña"
+              type="password"
               placeholder="**********"
             />
           </div>
