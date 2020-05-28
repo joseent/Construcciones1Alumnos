@@ -25,7 +25,7 @@ export default function InscriptionToComition() {
 
     const getUserBiId = (e) => {
       axios
-        .get(`http://localhost:3000/users/${id}`)
+        .get(`https://construcciones1backend.herokuapp.com/users/${id}`)
         .then((res) => {
           setUserName(res.data.usuario.nombre);
           setUserLastName(res.data.usuario.apellido);
@@ -46,7 +46,7 @@ export default function InscriptionToComition() {
   const handleComition1 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition1", {
+      .post("https://construcciones1backend.herokuapp.com/Comition1", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -61,7 +61,7 @@ export default function InscriptionToComition() {
         setErrorGeneral(true);
       });
 
-    axios.put(`http://localhost:3000/users/${id}`, {
+    axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
       comision: "COMISION 1",
       inscripto: true,
     });
@@ -70,7 +70,7 @@ export default function InscriptionToComition() {
   const handleComition2 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition2", {
+      .post("https://construcciones1backend.herokuapp.com/Comition2", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -84,7 +84,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 2",
         inscripto: true,
       });
@@ -93,7 +93,7 @@ export default function InscriptionToComition() {
   const handleComition3 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition3", {
+      .post("https://construcciones1backend.herokuapp.com/Comition3", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -107,7 +107,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 3",
         inscripto: true,
       });
@@ -116,7 +116,7 @@ export default function InscriptionToComition() {
   const handleComition4 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition4", {
+      .post("https://construcciones1backend.herokuapp.com/Comition4", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -130,7 +130,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 4",
         inscripto: true,
       });
@@ -139,7 +139,7 @@ export default function InscriptionToComition() {
   const handleComition5 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition5", {
+      .post("https://construcciones1backend.herokuapp.com/Comition5", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -153,7 +153,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 5",
         inscripto: true,
       });
@@ -162,7 +162,7 @@ export default function InscriptionToComition() {
   const handleComition6 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition6", {
+      .post("https://construcciones1backend.herokuapp.com/Comition6", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -176,7 +176,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 6",
         inscripto: true,
       });
@@ -185,7 +185,7 @@ export default function InscriptionToComition() {
   const handleComition7 = () => {
     const id = window.localStorage.getItem("idusuario");
     axios
-      .post("http://localhost:3000/Comition7", {
+      .post("https://construcciones1backend.herokuapp.com/Comition7", {
         nombre: userName,
         apellido: userLastName,
         dni: userDNI,
@@ -199,7 +199,7 @@ export default function InscriptionToComition() {
         console.log(error.tipo);
         setErrorGeneral(true);
       });
-      axios.put(`http://localhost:3000/users/${id}`, {
+      axios.put(`https://construcciones1backend.herokuapp.com/users/${id}`, {
         comision: "COMISION 7",
         inscripto: true,
       });

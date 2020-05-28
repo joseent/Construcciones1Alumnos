@@ -45,7 +45,7 @@ export default function AdminsCreateUser() {
     const handleSubmit = (e) => {
       e.preventDefault();
       axios
-        .post("http://localhost:3000/Teachers", {
+        .post("https://construcciones1backend.herokuapp.com/Teachers", {
           nombre: nombre,
           apellido: apellido,
           dni: dni,

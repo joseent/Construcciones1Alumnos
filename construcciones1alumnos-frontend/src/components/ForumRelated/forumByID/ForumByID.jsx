@@ -13,7 +13,7 @@ export default function ForumByID() {
   useEffect(() => {
     const getQuestionById = (e) => {
       axios
-        .get(`http://localhost:3000/Forum/${id}`)
+        .get(`https://construcciones1backend.herokuapp.com/Forum/${id}`)
         .then((res) => {
           setQuestionTitle(res.data.consultas.titulo);
           setQuestionDescription(res.data.consultas.descripsion);

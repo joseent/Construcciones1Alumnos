@@ -56,7 +56,7 @@ export default function LoginGeneral() {
   const handleSubmitAlumno = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users/login", {
+      .post("https://construcciones1backend.herokuapp.com/users/login", {
         usuario: usuarioAlumno,
         contrasena: contrasenaAlumno,
       })
@@ -90,7 +90,7 @@ export default function LoginGeneral() {
   const handleSubmitTeachers = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/Teachers/login", {
+      .post("https://construcciones1backend.herokuapp.com/Teachers/login", {
         usuario: usuarioTeachers,
         contrasena: contrasenaTeachers,
       })

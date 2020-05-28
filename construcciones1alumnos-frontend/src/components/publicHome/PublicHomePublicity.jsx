@@ -8,7 +8,7 @@ export default function PublicHomePublicity() {
   useEffect(() => {
     const GetPublicityList = async () => {
       axios
-        .get("http://localhost:3000/Publicity/")
+        .get("https://construcciones1backend.herokuapp.com/Publicity/")
         .then((res) => {
           setPublicityList(res.data.publicidad);
         })

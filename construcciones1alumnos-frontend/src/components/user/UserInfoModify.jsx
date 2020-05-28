@@ -19,7 +19,7 @@ export default function UserInfoModify() {
  
     const getQuestionById = (userLocal) => {
             axios
-        .get(`http://localhost:3000/Teachers/${userLocal}`)
+        .get(`https://construcciones1backend.herokuapp.com/Teachers/${userLocal}`)
         .then((res) => {
           setNombre(res.data.usuario.nombre);
           setApellido(res.data.usuario.apellido);

@@ -21,7 +21,7 @@ export default function PublicityEdit() {
   // get publicity list
   const GetPublicityList = async () => {
     axios
-      .get("http://localhost:3000/Publicity/")
+      .get("https://construcciones1backend.herokuapp.com/Publicity/")
       .then((res) => {
         setPublicityList(res.data.publicidad);
       })
@@ -58,7 +58,7 @@ export default function PublicityEdit() {
       payload.append("description", publicitydescription);
       payload.append("image", publicityImage);
       const response = await axios.post(
-        "http://localhost:3000/Publicity/",
+        "https://construcciones1backend.herokuapp.com/Publicity/",
 
         payload
       );
@@ -76,7 +76,7 @@ export default function PublicityEdit() {
   };
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/Publicity/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/Publicity/${id}`)
       .then((res) => {
         setDeleteOk(true);
         GetPublicityList();

@@ -18,7 +18,7 @@ export default function AdminHomeInfoCreate() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/homeTeachers/", {
+      .post("https://construcciones1backend.herokuapp.com/homeTeachers/", {
         titulo: title,
         descripsion: description,
       })

@@ -10,7 +10,7 @@ export default function PublicHomeSeminars() {
   useEffect(() => {
     const GetSeminarList = async () => {
       axios
-        .get("http://localhost:3000/Seminars/")
+        .get("https://construcciones1backend.herokuapp.com/Seminars/")
         .then((res) => {
           console.log(res.data);
           setSeminarList(res.data.seminarios);

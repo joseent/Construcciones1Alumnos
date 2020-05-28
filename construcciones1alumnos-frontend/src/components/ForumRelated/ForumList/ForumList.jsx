@@ -24,7 +24,7 @@ export default function ForumList() {
   const GetListByTema = async () => {
     const tema = forumSelector;
     axios
-      .get(`http://localhost:3000/Forum/bytema/${tema}`)
+      .get(`https://construcciones1backend.herokuapp.com/Forum/bytema/${tema}`)
       .then((res) => {
         setForumQuestions(res.data.resultados);
       })
@@ -41,7 +41,7 @@ export default function ForumList() {
   useEffect(() => {
     const GetForumList = async () => {
       axios
-        .get("http://localhost:3000/Forum/")
+        .get("https://construcciones1backend.herokuapp.com/Forum/")
         .then((res) => {
           console.log(res.data);
           setForumQuestions(res.data.consultas);

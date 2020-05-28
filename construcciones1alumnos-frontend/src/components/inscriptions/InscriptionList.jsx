@@ -33,7 +33,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition1")
+      .get("https://construcciones1backend.herokuapp.com/Comition1")
       .then((res) => {
         setcomition1List(res.data.alumnos);
       })
@@ -53,7 +53,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition2")
+      .get("https://construcciones1backend.herokuapp.com/Comition2")
       .then((res) => {
         setcomition2List(res.data.alumnos);
       })
@@ -73,7 +73,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition3")
+      .get("https://construcciones1backend.herokuapp.com/Comition3")
       .then((res) => {
         setcomition3List(res.data.alumnos);
       })
@@ -93,7 +93,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition4")
+      .get("https://construcciones1backend.herokuapp.com/Comition4")
       .then((res) => {
         setcomition4List(res.data.alumnos);
       })
@@ -113,7 +113,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition5")
+      .get("https://construcciones1backend.herokuapp.com/Comition5")
       .then((res) => {
         setcomition5List(res.data.alumnos);
       })
@@ -133,7 +133,7 @@ export default function InscriptionList() {
     setcomition7(false);
 
     axios
-      .get("http://localhost:3000/Comition6")
+      .get("https://construcciones1backend.herokuapp.com/Comition6")
       .then((res) => {
         setcomition6List(res.data.alumnos);
       })
@@ -153,7 +153,7 @@ export default function InscriptionList() {
     setcomition7(true);
 
     axios
-      .get("http://localhost:3000/Comition7")
+      .get("https://construcciones1backend.herokuapp.com/Comition7")
       .then((res) => {
         setcomition7List(res.data.alumnos);
       })

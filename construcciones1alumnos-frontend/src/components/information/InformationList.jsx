@@ -11,7 +11,7 @@ export default function InformationList() {
   useEffect(() => {
     const GetForumList = async () => {
       axios
-        .get("http://localhost:3000/information/")
+        .get("https://construcciones1backend.herokuapp.com/information/")
         .then((res) => {
           console.log(res.data);
           setInfoList(res.data.informacion);

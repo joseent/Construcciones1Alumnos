@@ -42,7 +42,7 @@ export default function NewForumQuestion() {
      const handleSubmit = (e) => {
       e.preventDefault();
       axios
-      .post("http://localhost:3000/Forum/", {
+      .post("https://construcciones1backend.herokuapp.com/Forum/", {
         titulo: questionTitle,
         descripsion: questionDescription,
         tema: questionSelector,

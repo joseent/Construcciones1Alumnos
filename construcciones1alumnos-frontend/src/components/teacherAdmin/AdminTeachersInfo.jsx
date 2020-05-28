@@ -8,7 +8,7 @@ export default function AdminTeachersInfo() {
 
   const GetTeachersList = async () => {
     axios
-      .get("http://localhost:3000/Teachers/")
+      .get("https://construcciones1backend.herokuapp.com/Teachers/")
       .then((res) => {
         console.log(res.data);
         setTeachersList(res.data.profesores);
@@ -23,7 +23,7 @@ export default function AdminTeachersInfo() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/Teachers/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/Teachers/${id}`)
       .then((res) => {
         GetTeachersList();
       })

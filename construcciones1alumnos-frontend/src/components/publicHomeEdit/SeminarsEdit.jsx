@@ -20,7 +20,7 @@ export default function SeminarsEdit() {
   // get seminar list
   const GetSeminarList = async () => {
     axios
-      .get("http://localhost:3000/Seminars/")
+      .get("https://construcciones1backend.herokuapp.com/Seminars/")
       .then((res) => {
         console.log(res.data);
         setSeminarList(res.data.seminarios);
@@ -58,7 +58,7 @@ const handleRefresh = (e) => {
       payload.append("description", seminardescription);
       payload.append("image", seminarImage);
       const response = await axios.post(
-        "http://localhost:3000/Seminars/",
+        "https://construcciones1backend.herokuapp.com/Seminars/",
 
         payload
       );
@@ -76,7 +76,7 @@ const handleRefresh = (e) => {
   };
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/Seminars/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/Seminars/${id}`)
       .then((res) => {
         setDeleteOk(true);
         GetSeminarList();

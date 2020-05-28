@@ -9,7 +9,7 @@ export default function PublicHomeClassRoomPics() {
   useEffect(() => {
     const GetClassPics = async () => {
       axios
-        .get("http://localhost:3000/Classroompictures/")
+        .get("https://construcciones1backend.herokuapp.com/Classroompictures/")
         .then((res) => {
           setClassPics(res.data.fotos);
         })

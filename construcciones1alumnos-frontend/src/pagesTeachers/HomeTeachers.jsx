@@ -19,7 +19,7 @@ export default function HomeTeachers() {
   // GET TEACHERS INFORMATION
   const GetTeachersInfo = (userLocal) => {
     axios
-      .get("http://localhost:3000/homeTeachers")
+      .get("https://construcciones1backend.herokuapp.com/homeTeachers")
       .then((res) => {
         console.log(res.data);
         setTeachersInfo(res.data.informacion);
@@ -35,7 +35,7 @@ export default function HomeTeachers() {
   // GET TEACHERS INFORMATION
   const DeleteTeachersInfo = (id) => {
     axios
-      .delete(`http://localhost:3000/homeTeachers/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/homeTeachers/${id}`)
       .then((res) => {
         GetTeachersInfo();
       })

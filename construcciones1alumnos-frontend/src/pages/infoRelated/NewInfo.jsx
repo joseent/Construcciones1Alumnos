@@ -22,7 +22,7 @@ export default function NewInfo() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/Information/", {
+      .post("https://construcciones1backend.herokuapp.com/Information/", {
         titulo: title,
         descripsion: description,
       })

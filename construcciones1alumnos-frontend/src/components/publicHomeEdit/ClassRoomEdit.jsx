@@ -18,7 +18,7 @@ export default function ClassRoomEdit() {
 
   const GetClassPics = async () => {
     axios
-      .get("http://localhost:3000/Classroompictures/")
+      .get("https://construcciones1backend.herokuapp.com/Classroompictures/")
       .then((res) => {
         setClassPics(res.data.fotos);
       })
@@ -49,7 +49,7 @@ export default function ClassRoomEdit() {
       payload.append("title", classTitle);
       payload.append("image", classImage);
       const response = await axios.post(
-        "http://localhost:3000/Classroompictures/",
+        "https://construcciones1backend.herokuapp.com/Classroompictures/",
 
         payload
       );
@@ -67,7 +67,7 @@ export default function ClassRoomEdit() {
   };
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/Classroompictures/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/Classroompictures/${id}`)
       .then((res) => {
         setDeleteOk(true);
         GetClassPics();

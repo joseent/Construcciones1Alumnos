@@ -21,7 +21,7 @@ export default function ForumByIdTeachersComp() {
   
     const getQuestionById = (userLocal) => {
       axios
-        .get(`http://localhost:3000/Forum/${id}`)
+        .get(`https://construcciones1backend.herokuapp.com/Forum/${id}`)
         .then((res) => {
           setQuestionTitle(res.data.consultas.titulo);
           setQuestionDescription(res.data.consultas.descripsion);
@@ -42,7 +42,7 @@ export default function ForumByIdTeachersComp() {
 
   const handlePut = (e) => {
     axios
-      .put(`http://localhost:3000/Forum/${id}`, {
+      .put(`https://construcciones1backend.herokuapp.com/Forum/${id}`, {
       respuesta: questionAnswer,
       respondido: true
     }
@@ -59,7 +59,7 @@ export default function ForumByIdTeachersComp() {
 
   const handleDelete = (e) => {
     axios
-      .delete(`http://localhost:3000/Forum/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/Forum/${id}`)
       .then((res) => {
         console.log("elemento borrado");
         history.push("/forumteachers");

@@ -12,7 +12,7 @@ export default function InformationListTeachers() {
 
   const GetForumList = async () => {
     axios
-      .get("http://localhost:3000/information/")
+      .get("https://construcciones1backend.herokuapp.com/information/")
       .then((res) => {
         console.log(res.data);
         setInfoList(res.data.informacion);
@@ -33,7 +33,7 @@ export default function InformationListTeachers() {
 
   const handleDelete = (id) => {
     axios
-      .delete(`http://localhost:3000/information/${id}`)
+      .delete(`https://construcciones1backend.herokuapp.com/information/${id}`)
       .then((res) => {
         setDeleteOk(true);
         GetForumList();

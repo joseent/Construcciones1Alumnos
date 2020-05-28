@@ -12,7 +12,7 @@ const [description, setDescription] = useState("");
   useEffect(() => {
     const getInfoById = (e) => {
       axios
-        .get(`http://localhost:3000/information/${id}`)
+        .get(`https://construcciones1backend.herokuapp.com/information/${id}`)
         .then((res) => {
             setTitle(res.data.informacion.titulo);
             setDescription(res.data.informacion.descripsion);

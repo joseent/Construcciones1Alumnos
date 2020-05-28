@@ -46,7 +46,7 @@ export default function Register() {
   const handleSubmit = (e) => {
     e.preventDefault();
     axios
-      .post("http://localhost:3000/users/registrar", {
+      .post("https://construcciones1backend.herokuapp.com/users/registrar", {
         nombre: nombre,
         apellido: apellido,
         dni: dni,
