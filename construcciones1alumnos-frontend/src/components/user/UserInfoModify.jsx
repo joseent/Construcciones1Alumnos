@@ -1,6 +1,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
 import userLogo from "../../images/userLogo.png";
+import "../../pages/PublicHome.css"
 
 export default function UserInfoModify() {
   const [user, setUser] = useState({});
