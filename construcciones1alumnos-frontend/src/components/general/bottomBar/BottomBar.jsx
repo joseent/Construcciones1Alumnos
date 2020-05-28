@@ -40,6 +40,12 @@ export default function BottomBar() {
             <i className="fa fa-envelope textyellow" aria-hidden="true"></i>
               <p className="text-center">construccionesunofauunt@gmail.com</p>
           </div>
+          <div className="mediacolfastlinks flex flex-col w-4/12 text-left py-4">
+            <h5>LINK RAPIDOS</h5>
+            <Link to="https://www.facebook.com/Construcciones-Uno-Fau-Unt-455294904841225/">
+              <p>Info FAU</p>
+            </Link>           
+          </div>
         </div>
         <div className="w-full flex justify-between">
           <div className="w-10">
