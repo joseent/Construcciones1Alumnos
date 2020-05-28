@@ -65,8 +65,7 @@ export default function InformationListTeachers() {
                 >
                   <div className="flex-col text-center">
                     <p>titulo: {informacion.titulo}</p>{" "}
-                    <p>creado: {informacion.createdAt}</p>
-                  </div>
+                                     </div>
                   <div className="flex items-center">
                     <i className="fa fa-mail-forward"></i>
                   </div>
@@ -75,7 +74,7 @@ export default function InformationListTeachers() {
                   onClick={() => {
                     handleDelete(informacion._id);
                   }}
-                  className="bgyellow font-bold text-black p-2 rounded-r-sm"
+                  className="w-2/12 bgyellow font-bold text-black p-2 rounded-r-sm"
                 >
                   BORRAR
                 </button>

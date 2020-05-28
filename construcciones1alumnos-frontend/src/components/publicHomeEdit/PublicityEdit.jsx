@@ -105,7 +105,7 @@ export default function PublicityEdit() {
         <></>
       )}
       <div className="flex justify-center">
-        <ul className="w-10/12 mb-6">
+        <ul className="w-10/12 mb-6 overflow-x-scroll">
           {publicityList.map((publicity) => (
             <li className="my-4" key={publicity._id}>
               <div className="flex">
@@ -135,7 +135,7 @@ export default function PublicityEdit() {
         </ul>
       </div>
       <div className=" flex justify-center">
-        <form onSubmit={handleSubmitPublicity} className="w-1/2">
+        <form onSubmit={handleSubmitPublicity} className="w-1/2 widthmedia">
           <div className="bglayer1 p-1 rounded-sm">
             <div className="bglayer3 p-4 rounded-sm">
               <div className="flex flex-col">

@@ -100,7 +100,7 @@ const handleRefresh = (e) => {
         <></>
       )}
       <div className="flex justify-center">
-        <ul className="w-11/12 mb-6">
+        <ul className="w-11/12 mb-6 overflow-x-scroll">
           {seminarList.map((seminars) => (
             <li className="my-4" key={seminars._id}>
               <div className="flex">
@@ -131,7 +131,7 @@ const handleRefresh = (e) => {
         </ul>
       </div>
       <div className=" flex justify-center">
-        <form onSubmit={handleSubmitSeminar} className="w-1/2">
+        <form onSubmit={handleSubmitSeminar} className="w-1/2 widthmedia">
           <div className="bglayer1 p-1 rounded-sm">
             <div className="bglayer3 p-4 rounded-sm">
               <div className="flex flex-col">

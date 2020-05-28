@@ -67,7 +67,7 @@ export default function HomeTeachers() {
         <ul className="mb-20 flex-col">
           {teachersInfo.map((information) => (
             <div className="w-10/12 bglayer1 rounded-md p-2 flex mb-2">
-              <div className="w-full bglayer2 rounded-md                p-2">
+              <div className="w-full bglayer2 rounded-md p-2">
                 <h4>{information.titulo}</h4>
                 <p>{information.descripsion}</p>
               </div>
@@ -92,20 +92,25 @@ export default function HomeTeachers() {
             <>
               <AdminTeachersInfo />
               <AdminsCreateUser />
+              <div className="w-full flex justify-center">
               <button
                 onClick={handleTeachersModifyStop}
-                className="bgyellow text-black font-bold rounded-md"
+                className="bgyellow text-black font-bold rounded-md p-2"
               >
                 DEJAR DE MODIFICAR
               </button>
+              </div>
             </>
           ) : (
+            <div className="w-full flex justify-center">
+
             <button
               onClick={handleTeachersModify}
-              className="bgyellow text-black font-bold rounded-md"
-            >
+              className="bgyellow text-black font-bold rounded-md p-2"
+              >
               GESTIONAR USUARIOS
             </button>
+              </div>
           )
         ) : (
           <></>
