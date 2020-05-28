@@ -1,9 +1,5 @@
-@media (max-width: 600px){
-    .mediaform{
-        width: 95%;
-        height: 90vh;
-            margin-top: 8rem;
-            margin-bottom: 8rem;
-
-    }
+@media (max-width: 600px) {
+  .mediaform {
+    width: 95%; 
+  }
 }
