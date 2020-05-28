@@ -1,8 +1,8 @@
 @media (max-width: 600px) {
-    .widthmedia{
-        width: 95%;
-    };
-    .listsizemedia{
-        width: 800px;
-    }
+  .widthmedia {
+    width: 95%;
+  }
+}
+.listsizemedia {
+  width: 1080px;
 }

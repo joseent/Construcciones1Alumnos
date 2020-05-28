@@ -44,10 +44,10 @@ export default function BottomBar() {
           <div className="mediacolfastlinks flex flex-col w-4/12 text-right py-4">
             <h5>NUESTRA APP</h5>
             <a href="https://jose-nie.outsystemscloud.com/NativeAppBuilder/App?AppKey=41b70661-557c-4787-85d3-27acd8ddaa7a">
-              <div className="flex justify-end" >
+              <p>CONSTRUCCIONES 1</p>
+              <div className="mediacolfastlinks flex justify-end" >
              <img className="w-10" src={c1logo} alt=""/>
               </div>
-              <p>CONSTRUCCIONES 1</p>
             </a>          
           </div>
         </div>
