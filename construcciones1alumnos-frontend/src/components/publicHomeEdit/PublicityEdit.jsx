@@ -105,7 +105,7 @@ export default function PublicityEdit() {
         <></>
       )}
       <div className="flex justify-center">
-        <ul className="w-10/12 mb-6 overflow-x-scroll">
+        <ul className="w-11/12 mb-6 overflow-x-scroll">
           {publicityList.map((publicity) => (
             <li className="my-4 listsizemedia" key={publicity._id}>
               <div className="flex">

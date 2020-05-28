@@ -96,7 +96,7 @@ export default function ClassRoomEdit() {
         <></>
       )}
       <div className="flex justify-center">
-        <ul className="w-10/12 mb-6 overflow-x-scroll">
+        <ul className="w-11/12 mb-6 overflow-x-scroll">
           {classPics.map((fotos) => (
             <li className="my-4  listsizemedia" key={fotos._id}>
               <div className="flex">
