@@ -54,13 +54,13 @@ export default function InformationListTeachers() {
           UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.
         </h2>
       ) : (
-        <ul className="w-7/12 list-group mb-5 ulmedia">
+        <ul className="w-6/12 list-group mb-5 ulmedia">
           {InfoList.map((informacion) => (
             <div className="flex border borderyellow shadowColor rounded-md mb-3" key={informacion._id}>
               <div className="flex">
                 <li
                   
-                  className="flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
+                  className="w-10/12 flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
                   onClick={() => handleOnClick(informacion._id)}
                 >
                   <div className="flex-col text-center">

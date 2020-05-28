@@ -85,10 +85,7 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
               <h4>PRESENCIAL</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
-                distinctio dignissimos? Est maiores provident aspernatur nobis
-                eaque, cupiditate ex quia quos?
+              Los alumnos asistirán, en forma presencial, todos los días de clase según se prevea en el cronograma. 
               </p>
               <button
                 onClick={handleMetodologia}
@@ -100,10 +97,7 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
               <h4>SEMI-PRESENCIAL</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
-                distinctio dignissimos? Est maiores provident aspernatur nobis
-                eaque, cupiditate ex quia quos?
+              Los alumnos asistirán, en forma presencial, el 50% de los días de clase de la modalidad presencial, según se prevea el cronograma. 
               </p>
               <button
                 onClick={handleMetodologia}
@@ -115,10 +109,7 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
               <h4>DISTANCIA</h4>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
-                distinctio dignissimos? Est maiores provident aspernatur nobis
-                eaque, cupiditate ex quia quos?
+              Los alumnos asistirán, en forma presencial, 4 días de clase según se prevea en el calendario.
               </p>
               <button
                 onClick={handleMetodologia}

@@ -11,6 +11,7 @@ export default function HomeTeachers() {
   const [user, setUser] = useState({});
   const [teacherAdmin, setTeacherAdmin] = useState(false);
   const [generalError, setGeneralError] = useState(false);
+  const [teachersModify, setTeachersModify] = useState(false);
 
   console.log(user);
   console.log(teacherAdmin);
@@ -51,16 +52,18 @@ export default function HomeTeachers() {
     GetTeachersInfo(userLocal);
   }, []);
 
+  const handleTeachersModify = () => {
+    setTeachersModify(true);
+  };
+  const handleTeachersModifyStop = () => {
+    setTeachersModify(false);
+  };
+
   return (
     <div className="w-full">
-    <NavBarTeachers />
-      {
-        teacherAdmin ? 
-              (<><AdminTeachersInfo/>
-        <AdminsCreateUser /></>) : (<></>)
-      }
+      <NavBarTeachers />
       <div className="w-full flex-col items-center">
-        <h4 className="font-bold">ULTIMA INFORMACION IMPORTANTE</h4>
+        <h4 className="font-bold text-center">ULTIMA INFORMACION IMPORTANTE</h4>
         <ul className="mb-20 flex-col">
           {teachersInfo.map((information) => (
             <div className="w-10/12 bglayer1 rounded-md p-2 flex mb-2">
@@ -84,6 +87,29 @@ export default function HomeTeachers() {
           ))}
         </ul>
         {teacherAdmin ? <AdminHomeInfoCreate /> : <></>}
+        {teacherAdmin ? (
+          teachersModify ? (
+            <>
+              <AdminTeachersInfo />
+              <AdminsCreateUser />
+              <button
+                onClick={handleTeachersModifyStop}
+                className="bgyellow text-black font-bold rounded-md"
+              >
+                DEJAR DE MODIFICAR
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={handleTeachersModify}
+              className="bgyellow text-black font-bold rounded-md"
+            >
+              GESTIONAR USUARIOS
+            </button>
+          )
+        ) : (
+          <></>
+        )}
       </div>
     </div>
   );

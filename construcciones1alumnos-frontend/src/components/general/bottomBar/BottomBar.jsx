@@ -2,6 +2,7 @@ import React from "react";
 import "./BottomBar.css";
 import untLogo from "../../../images/logo-universidad-nacional-de-tucuman.png";
 import fauUntLogo from "../../../images/fau-unt.png";
+import c1logo from "../../../images/c1Logo.jpg"
 import { Link } from "react-router-dom";
 
 export default function BottomBar() {
@@ -40,11 +41,12 @@ export default function BottomBar() {
             <i className="fa fa-envelope textyellow" aria-hidden="true"></i>
               <p className="text-center">construccionesunofauunt@gmail.com</p>
           </div>
-          <div className="mediacolfastlinks flex flex-col w-4/12 text-left py-4">
-            <h5>LINK RAPIDOS</h5>
-            <Link to="https://www.facebook.com/Construcciones-Uno-Fau-Unt-455294904841225/">
-              <p>Info FAU</p>
-            </Link>           
+          <div className="mediacolfastlinks flex flex-col w-4/12 text-right py-4">
+            <h5>NUESTRA APP PARA ESTUDIANTES</h5>
+            <a href="https://jose-nie.outsystemscloud.com/NativeAppBuilder/App?AppKey=41b70661-557c-4787-85d3-27acd8ddaa7a">
+             <img className="w-10" src={c1logo} alt=""/>
+              <p>CONSTRUCCIONES 1</p>
+            </a>          
           </div>
         </div>
         <div className="w-full flex justify-between">
