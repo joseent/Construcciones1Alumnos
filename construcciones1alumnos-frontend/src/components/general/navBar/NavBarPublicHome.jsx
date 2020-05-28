@@ -18,11 +18,11 @@ export default function NavBarPublicHome() {
 
   const menu = [
     {
-      name: "registrarse",
+      name: "Registrarse",
       to: "/register",
     },
     {
-      name: "INICIAR SESION",
+      name: "Iniciar Sesion",
       to: "/login",
     },
   ];

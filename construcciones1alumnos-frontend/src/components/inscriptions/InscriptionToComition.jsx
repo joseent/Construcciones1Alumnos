@@ -316,7 +316,7 @@ export default function InscriptionToComition() {
           className={`${
             correctInscription6
               ? "w-full font-bold bgyellow p-4 mb-2"
-              : "w-full textyellow-600 border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition6}
         >
@@ -331,7 +331,7 @@ export default function InscriptionToComition() {
           className={`${
             correctInscription7
               ? "w-full font-bold bg-yellow-600 p-4 mb-2"
-              : "w-full textyellow-600 border-2 borderyellow p-4 mb-2"
+              : "w-full textyellow border-2 borderyellow p-4 mb-2"
           }`}
           onClick={handleComition7}
         >

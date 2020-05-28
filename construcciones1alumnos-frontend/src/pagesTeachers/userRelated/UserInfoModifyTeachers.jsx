@@ -1,7 +1,5 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
-import axios from "axios";
 import userLogo from "../../images/userLogo.png"
 
 export default function UserInfoModifyTeachers() {
@@ -13,17 +11,13 @@ export default function UserInfoModifyTeachers() {
   const [profilePic, setProfilePic] = useState(false);
   const [user, setUser] = useState({});
 
-
     const setUserInfo = (userLocal) => {
-     
-          setNombre(userLocal.nombre);
+               setNombre(userLocal.nombre);
           setApellido(userLocal.apellido);
           setDni(userLocal.dni);
           setmail(userLocal.mail);
           setProfilePic(userLocal.image);
-     
-    };
-
+         };
   
  useEffect(() => {
     const userLocal = JSON.parse(localStorage.getItem("usuario"))
