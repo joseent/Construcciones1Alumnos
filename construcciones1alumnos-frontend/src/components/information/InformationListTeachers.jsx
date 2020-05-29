@@ -61,7 +61,7 @@ export default function InformationListTeachers() {
               <div className="flex w-11/12">
                 <li
                   
-                  className="flex-grow flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
+                  className="w-10/12 flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
                   onClick={() => handleOnClick(informacion._id)}
                 >
                   <div className="flex-col text-center">

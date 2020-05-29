@@ -31,7 +31,7 @@ export default function UserInfoModify() {
 
   return (
     <div className="mediafullwidth container flex justify-center items-center flex-col">
-      <div className="w-1/2 text-center bglayer1 rounded-md p-6">
+      <div className="w-1/2 text-center bglayer1 rounded-md p-6 widthmediafull">
         {errorGeneral ? (
           <div className="w-full flex flex-col justify-center align-center">
             <h3>UN ERROR OCURRIO</h3>

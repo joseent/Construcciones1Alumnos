@@ -1,6 +1,7 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
-import userLogo from "../../images/userLogo.png"
+import userLogo from "../../images/userLogo.png";
+
 
 export default function UserInfoModifyTeachers() {
 
@@ -27,7 +28,7 @@ export default function UserInfoModifyTeachers() {
 
   return (
     <div className="container flex justify-center items-center flex-col">
-      <div className="w-1/2 text-center bg-gray-900 rounded-md p-6">
+      <div className="w-1/2 text-center bg-gray-900 rounded-md p-6 widthmediafull">
         {profilePic ? (
           <img src={profilePic} alt="" />
         ) : (

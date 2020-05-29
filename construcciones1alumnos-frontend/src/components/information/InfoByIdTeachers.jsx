@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
+import './infoById.css'
 
 export default function InfoByIDTeachersComp() {
   const history = useHistory();
@@ -33,7 +34,7 @@ export default function InfoByIDTeachersComp() {
     <div className="flex justify-center items-center flex-col ">
          {
         errorGeneral ? <h2 className="text-red-600">UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.</h2> :   
-      <div className="w-1/2 bglayer1 p-2 rounded-md ">
+      <div className="w-1/2 bglayer1 p-2 rounded-md mediafull">
         <div className="text-center bglayer2 rounded-md mb-2 p-4 shadow-md">
           <p className="textyellow font-bold text-xl">{titletoUpper}</p>
         </div>
