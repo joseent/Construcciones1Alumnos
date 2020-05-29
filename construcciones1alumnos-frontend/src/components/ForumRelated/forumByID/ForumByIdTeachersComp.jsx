@@ -71,21 +71,21 @@ export default function ForumByIdTeachersComp() {
 
   return (
     <div className="flex justify-center items-center flex-col ">
-      <div className="w-1/2 mediasm">
-        <div className="text-center bg-gray-900 rounded-md mb-2 p-4">
-          <p className="font-bold text-gray-700">Titulo</p>
+      <div className="w-1/2 mediasm bglayer1 p-2">
+        <div className="text-center bglayer2 rounded-md mb-2 p-4">
+          <p className="font-bold">Titulo</p>
           <p className="text-white">{questionTitle}</p>
         </div>
-        <div className="text-center bg-gray-900 rounded-md mb-2 p-4">
-          <p className="font-bold text-gray-700">Descripcion</p>
+        <div className="text-center bglayer2 rounded-md mb-2 p-4">
+          <p className="font-bold">Descripcion</p>
           <p className="text-white">{questionDescription}</p>
         </div>
-        <div className="text-center bg-yellow-600 rounded-md text-black mb-2 p-4">
+        <div className="text-center bgyellow rounded-md text-black mb-2 p-4">
           <p className="font-bold">Respuesta</p>
           <textarea
             value={questionAnswer}
             onChange={handleChangeQuestionAnswer}
-            className="w-10/12 rounded-sm text-black"
+            className="w-11/12 rounded-sm text-black"
             rows="4"
             id="exampleFormControlTextarea1"
             placeholder="Descripcion de tu consulta "
@@ -95,7 +95,7 @@ export default function ForumByIdTeachersComp() {
         <div>
           <button
             onClick={handlePut}
-            className="w-full bg-yellow-600 rounded-md font-bold p-4 mb-2"
+            className="w-full bgyellow rounded-md font-bold p-4 mb-2"
           >
             MODIFICAR
           </button>
@@ -105,7 +105,7 @@ export default function ForumByIdTeachersComp() {
         <div>
                 <button
             onClick={handleDelete}
-            className="w-full bg-yellow-600 rounded-md font-bold p-4"
+            className="w-full bgyellow rounded-md font-bold p-4"
           >
             BORRAR
           </button>
