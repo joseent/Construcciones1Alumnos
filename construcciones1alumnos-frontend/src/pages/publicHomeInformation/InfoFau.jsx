@@ -7,6 +7,7 @@ export default function InfoFau() {
     <div className="w-full flex justify-center">
       <div className="w-10/12 mt-16">
         <h4 className="text-center">FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
+        <br/>
       <p>
         Plan de Estudios 2008 (PE-08) aprobado en la FAU, plantea el desarrollo
         de la carrera, básicamente en tres ciclos o estadios formativos de
@@ -35,7 +36,7 @@ export default function InfoFau() {
           </button>
         </a>
       </div>
-<div className="w-full">
+<div className="w-full mt-6">
       <img src={infoFau} alt="plan de estudio"/>
 </div>
     </div>
