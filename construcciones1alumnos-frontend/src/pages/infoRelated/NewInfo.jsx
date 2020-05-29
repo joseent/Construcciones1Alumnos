@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./Info.css"
 
 export default function NewInfo() {
   const history = useHistory();
@@ -40,7 +41,7 @@ export default function NewInfo() {
   };
   return (
     <div className="flex justify-center mb-8">
-      <div className="w-1/2 bglayer1 rounded-md p-2">
+      <div className="w-1/2 infocreatemedia bglayer1 rounded-md p-2">
         <form
           onSubmit={handleSubmit}
           className="bglayer2 p-2 shadow-md rounded-md"

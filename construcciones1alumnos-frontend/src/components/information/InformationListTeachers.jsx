@@ -2,6 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
+import "./InfoTeachers.css"
 
 export default function InformationListTeachers() {
   const history = useHistory();
@@ -54,7 +55,7 @@ export default function InformationListTeachers() {
           UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.
         </h2>
       ) : (
-        <ul className="w-6/12 list-group mb-5 ulmedia">
+        <ul className="w-6/12 list-group mb-5 ulmediainfo">
           {InfoList.map((informacion) => (
             <div className="flex border borderyellow shadowColor rounded-md mb-3" key={informacion._id}>
               <div className="flex">

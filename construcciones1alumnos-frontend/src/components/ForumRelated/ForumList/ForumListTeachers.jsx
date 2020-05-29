@@ -76,7 +76,7 @@ export default function ForumListTeachers() {
 
           <button
             onClick={GetListByTema}
-            className="w-3/12 p-2 textyellow text-bold border borderyellow rounded"
+            className="w-3/12 p-2 text-black text-bold bgyellow border borderyellow rounded"
             type="button"
           >
             BUSCAR
