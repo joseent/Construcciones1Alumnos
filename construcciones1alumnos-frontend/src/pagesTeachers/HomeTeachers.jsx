@@ -95,7 +95,7 @@ export default function HomeTeachers() {
               <div className="w-full flex justify-center">
               <button
                 onClick={handleTeachersModifyStop}
-                className="bgyellow text-black font-bold rounded-md p-2"
+                className="bgyellow text-black font-bold rounded-md p-2 mt-8"
               >
                 DEJAR DE MODIFICAR
               </button>
@@ -106,7 +106,7 @@ export default function HomeTeachers() {
 
             <button
               onClick={handleTeachersModify}
-              className="bgyellow text-black font-bold rounded-md p-2"
+              className="bgyellow text-black font-bold rounded-md p-2 mt-8"
               >
               GESTIONAR USUARIOS
             </button>
