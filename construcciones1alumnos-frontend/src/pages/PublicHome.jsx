@@ -1,7 +1,7 @@
 // @ts-check
 import React from "react";
 
-import infofau from "../images/infoFau.jpeg";
+import infofau from "../images/universidadFoto.jpg";
 import areatecnica from "../images/areatecnica.jpg";
 
 import "../pages/PublicHome.css";
@@ -39,10 +39,7 @@ export default function PublicHome() {
             <div className="w-4/5 text-center mt-20">
               <h3>INFO FACULTAD</h3>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
-                distinctio dignissimos? Est maiores provident aspernatur nobis
-                eaque, cupiditate ex quia quos?
+              Desde hace más de 60 años la Facultad de Arquitectura y Urbanismo, de la Universidad Nacional de Tucumán, forma talentos comprometidos con su comunidad y con su tiempo.
               </p>
             </div>
             <button

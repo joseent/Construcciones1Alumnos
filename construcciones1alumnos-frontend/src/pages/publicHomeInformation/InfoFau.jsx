@@ -1,10 +1,40 @@
 // @ts-check
-import React from 'react'
+import React from "react";
+import infoFau from '../../images/infoFau.jpeg'
 
 export default function InfoFau() {
-    return (
-        <div>
-            
-        </div>
-    )
+  return (
+    <div>
+        <h4>FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
+      <p>
+        Plan de Estudios 2008 (PE-08) aprobado en la FAU, plantea el desarrollo
+        de la carrera, básicamente en tres ciclos o estadios formativos de
+        grado:
+      </p>
+      <br />
+      <p>1º Ciclo introductorio (propedéutico-holístico) </p>
+      <p>2º Ciclo básico (analítico-conceptual) </p>
+      <p>3º Ciclo superior (sintético-integrador). </p>
+      <p>
+        En ellos se definen cuatro áreas de conocimiento, conformando en su
+        conjunto una trama estructural a fin de coordinar los objetivos y
+        contenidos particulares de cada asignatura:
+      </p>
+      <br />
+      <p>a- Comunicación y forma </p>
+      <p>b- Proyecto y planeamiento </p>
+      <p>c- Ciencias básicas, tecnología, producción y gestión</p>
+      <p>d- Historia y teoría de la arquitectura</p>
+
+      <div className="mt-2">
+        <a href="https://www.fau.unt.edu.ar/wp-content/uploads/plan2008.pdf">
+          <button className="bgyellow text-black font-bold p-2 rounded-md">
+            DESCARGAR PLAN DE ESTUDIO
+          </button>
+        </a>
+      </div>
+
+      <img className="w-10/12" src={infoFau} alt="plan de estudio"/>
+    </div>
+  );
 }
