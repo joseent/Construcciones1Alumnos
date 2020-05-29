@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useParams, useHistory } from "react-router-dom";
-import './InfoById.css'
+import "./InfoById.css"
 
 export default function InfoByIDTeachersComp() {
   const history = useHistory();
