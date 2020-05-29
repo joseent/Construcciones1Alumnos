@@ -88,7 +88,7 @@ export default function ForumListTeachers() {
           {forumQuestions.map((consultas) => (
             <li
               key={consultas._id}
-              className="flex items-center mb-4 p-2 cursor-pointer textyellow sm:min-w-full"
+              className="flex items-center mb-4 p-2 cursor-pointer textyellow sm:min-w-full  ulmedia"
               onClick={() => handleOnClick(consultas._id)}
             >
               <div className="p-4 flex justify-between items-center border borderyellow rounded-md h-20 w-4/5 shadowColor">

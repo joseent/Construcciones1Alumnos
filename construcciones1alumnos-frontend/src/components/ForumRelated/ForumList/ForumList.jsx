@@ -100,11 +100,11 @@ export default function ForumList() {
             <div className="borderyellow shadowColor h-16 mb-4 border-2 rounded-md p-6"></div>
           </div>
         ) : (
-          <ul className="w-full list-group mb-5 ulmedia">
+          <ul className="w-full list-group mb-5">
             {forumQuestions.map((consultas) => (
               <li
                 key={consultas._id}
-                className="w-full flex items-center mb-1 p-2 cursor-pointer textyellow sm:min-w-full"
+                className="w-full flex items-center mb-1 p-2 cursor-pointer textyellow sm:min-w-full  ulmedia"
                 onClick={() => handleOnClick(consultas._id)}
               >
                 <div className="w-full p-4 flex justify-between items-center border borderyellow rounded-md h-20 shadowColor">
