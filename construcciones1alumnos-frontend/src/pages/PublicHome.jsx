@@ -76,7 +76,7 @@ export default function PublicHome() {
           />
         </div>
         {/* metodologia */}
-        <div className="mediafullwidth w-4/5 flex flex-col">
+        <div className="mediafullwidth flex flex-col">
           <h3 className="text-center mt-20">METODOLOGIA</h3>
           <div className="flex w-full mediasm">
             <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
@@ -118,15 +118,15 @@ export default function PublicHome() {
           </div>
         </div>
         {/* seminars */}
-        <div className="mediafullwidth w-4/5 flex justify-center">
+        <div className="mediafullwidth flex justify-center">
           <PublicHomeSeminars />
         </div>
         {/* publicity */}
-        <div className="mediafullwidth w-4/5 flex justify-center">
+        <div className="mediafullwidth flex justify-center">
           <PublicHomePublicity />
         </div>
         {/* pictures */}
-        <div className="mediafullwidth w-4/5 flex justify-center">
+        <div className="mediafullwidth flex justify-center">
           <PublicHomeClassRoomPics />
         </div>
         {/* teachers */}
