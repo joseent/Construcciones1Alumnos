@@ -49,7 +49,7 @@ export default function InformationListTeachers() {
   };
 
   return (
-    <div className="container mx-auto flex justify-center">
+    <div className="mx-auto flex justify-center">
       {errorGeneral ? (
         <h2 className="text-red-600">
           UN ERROR OCURRIO. VUELVA A INTENTARLO MAS TARDE.
@@ -58,10 +58,10 @@ export default function InformationListTeachers() {
         <ul className="w-6/12 list-group mb-5 ulmediainfo">
           {InfoList.map((informacion) => (
             <div className="flex border borderyellow shadowColor rounded-md mb-3" key={informacion._id}>
-              <div className="flex">
+              <div className="flex w-11/12">
                 <li
                   
-                  className="w-10/12 flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
+                  className="flex-grow flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
                   onClick={() => handleOnClick(informacion._id)}
                 >
                   <div className="flex-col text-center">
@@ -75,7 +75,7 @@ export default function InformationListTeachers() {
                   onClick={() => {
                     handleDelete(informacion._id);
                   }}
-                  className="w-2/12 bgyellow font-bold text-black p-2 rounded-r-sm"
+                  className="bgyellow font-bold text-black p-2 rounded-r-sm"
                 >
                   BORRAR
                 </button>
