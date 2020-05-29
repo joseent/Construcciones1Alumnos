@@ -14,7 +14,7 @@ export default function ForumBar() {
     <div className="w-1/2 mx-auto flex justify-between items-center mb-5 barmedia">
       <div className="flex">
         <select
-          className="w-full rounded-sm p-1 text-black"
+          className="w-full rounded-l-md p-1 text-black"
           id="inputGroupSelect04"
           aria-label="Example select with button addon"
         >
@@ -27,12 +27,12 @@ export default function ForumBar() {
           <option value="6">Vidrio</option>
         </select>
         <div className="">
-          <button className="ml-4 p-2 text-yellow-600 text-bold border borderyellow rounded" type="button">
+          <button className="p-2 bgyellow text-bold border borderyellow rounded-r-md" type="button">
             BUSCAR
           </button>
         </div>
       </div>
-      <button className="bg-yellow-600 text-bold text-xl h-12" onClick={newQuestion}>
+      <button className="bgyellow rounded-md text-bold text-xl h-12 " onClick={newQuestion}>
         <i className="fa fa-plus m-2"></i>
       </button> 
     </div>
