@@ -2,6 +2,7 @@
 import React from "react";
 // @ts-ignore
 import infoFau from '../../images/infoFau.jpeg'
+import areaTecnica from '../../images/areatecnica.jpg'
 
 export default function InfoFau() {
   return (
@@ -39,6 +40,9 @@ export default function InfoFau() {
       </div>
 <div className="w-full mt-6">
       <img src={infoFau} alt="plan de estudio"/>
+</div>
+<div className="w-full mt-6">
+      <img src={areaTecnica} alt="area tecnica"/>
 </div>
     </div>
       </div>

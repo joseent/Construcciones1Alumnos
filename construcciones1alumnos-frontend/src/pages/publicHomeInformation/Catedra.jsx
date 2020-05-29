@@ -22,8 +22,7 @@ export default function Catedra() {
         </p>
         <br />
         <img src={mapaconceptual1} />
-        <br />
-        <p className="text-sm">
+        <p className="text-xs">
           Mapa conceptual de la asignatura: descomposición de la obra de
           arquitectura.
         </p>
@@ -35,6 +34,9 @@ export default function Catedra() {
         </p>
         <br />
         <img src={mapaconceptual2} />
+        <p className="text-xs">
+          Enfoque didáctico para el dictado: composicíon de la obra de arquitectura.
+        </p>
         <br />
         <p>
           Enfoque didáctico COMPOSICIÓN del objeto: del estudio conceptual,

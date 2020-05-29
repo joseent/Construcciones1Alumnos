@@ -52,12 +52,15 @@ export default function NavBar() {
             </div>
           </Link>
           {menu.map(({ name, to }) => (
-            <Link key={name} to={to} className="hover:text-black">
+            <Link key={name} to={to} className="texthover">
              <p className="textyellow"> {name}</p>
             </Link>
           ))}
            {
-            userLogged ? <button className="textyellow" onClick={handleDesloguear}>CERRAR SESION</button> : <span></span>
+            userLogged && 
+            <Link to="" className="texthover" onClick={handleDesloguear}>
+             <p className="textyellow"> CERRAR SESION</p>
+            </Link>
           }
           <a className="icon" onClick={toggleNavbar}>
             <i className="fa fa-bars mt-6"></i>

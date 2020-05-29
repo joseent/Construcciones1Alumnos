@@ -20,7 +20,7 @@ import { Carousel } from "react-responsive-carousel";
 export default function Teachers() {
   return (
     <div className="w-full flex flex-col justify-center">
-         <h3 className="my-20 texttitles text-center">DOCENTES</h3>
+         <h4 className="my-20 texttitles text-2xl text-center">DOCENTES</h4>
       
       <Carousel className="w-full carrouselindividual">
         <div>

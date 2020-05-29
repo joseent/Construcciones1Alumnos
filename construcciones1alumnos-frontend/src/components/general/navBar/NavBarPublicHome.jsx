@@ -2,15 +2,18 @@
 import React, { useState, useEffect } from "react";
 import { useHistory, Link } from "react-router-dom";
 
+// @ts-ignore
 import c1Logo from "../../../images/c1Logo.jpg";
+// @ts-ignore
 import bgegipt from "../../../images/bgegipt.jpg";
-import bgegiptsm from "../../../images/bgegipt2sm.jpg";
+
 
 export default function NavBarPublicHome() {
   const history = useHistory();
   const [responsive, setResponsive] = useState(false);
   const [userLogged, setuserLogged] = useState(false);
   const [student, setStudent] = useState(false);
+  // @ts-ignore
   const [teacher, setTeacher] = useState(false);
 
   console.log(userLogged);
@@ -46,7 +49,7 @@ export default function NavBarPublicHome() {
   };
   return (
     <div className="w-full">
-      <div className="w-full relative">
+      <div className="w-full relative" style={{height: 70}}>
         <img
           className="Bgegipt w-full hegipt object-cover absolute "
           src={bgegipt}
@@ -58,11 +61,11 @@ export default function NavBarPublicHome() {
         >
           <div className="navContainer">
             <Link to="/" className="active">
-              <div className="flex items-center p-3">
-                <img className="w-20 rounded-full mr-2" src={c1Logo} alt="" />
-                <h3 className="textNavPublicHome text-black font-bold">
+              <div className="flex items-center">
+                <img style={{height: 50, width: 50}} className="rounded-full mr-2" src={c1Logo} alt="" />
+                <h4 className="textNavPublicHome text-black font-bold">
                   CONSTRUCCIONES I
-                </h3>
+                </h4>
               </div>
             </Link>
             {userLogged ? (
@@ -79,7 +82,7 @@ export default function NavBarPublicHome() {
               <>
                 {menu.map(({ name, to }) => (
                   <Link className="" key={name} to={to}>
-                    <p className="bgyellow rounded-md p-2 text-black"> {name}</p>
+                    <p className="bgyellow rounded-md p-1 text-black"> {name}</p>
                   </Link>
                 ))}
             <a className="icon" onClick={toggleNavbar}>

@@ -132,5 +132,9 @@
 }
 
 .hegipt{
-  height: 120px;
+  height: 70px;
+}
+
+.texthover :hover{
+  color: #121212;
 }

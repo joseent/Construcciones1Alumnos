@@ -39,7 +39,7 @@ export default function PublicHome() {
           <img src={infofau} className="w-2/5 informativeimage" alt="" />
           <div className="infofaumedia w-3/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h3>FACULTAD</h3>
+              <h4 className="text-2xl">FACULTAD</h4>
               <p>
                 Desde hace más de 60 años la Facultad de Arquitectura y
                 Urbanismo, de la Universidad Nacional de Tucumán, forma talentos
@@ -58,8 +58,8 @@ export default function PublicHome() {
         <div className="mediafullwidth flex mb-20">
           <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h3>CONSTRUCCIONES I</h3>
-              <p>QUE? CON QUE? COMO? se construye un edificio</p>
+              <h4 className="text-2xl">CONSTRUCCIONES I</h4>
+              <p>¿QUE? ¿CON ¿QUE? ¿COMO? se construye un edificio</p>
               <br/>
               <p>
                 Se pretende orientar al estudiante para que desarrolle
@@ -84,10 +84,10 @@ export default function PublicHome() {
         </div>
         {/* metodologia */}
         <div className="mediafullwidth flex flex-col">
-          <h3 className="text-center mt-20">METODOLOGIA</h3>
+          <h4 className="text-center text-2xl mt-20">METODOLOGIA</h4>
           <div className="flex w-full mediasm">
             <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
-              <h4>PRESENCIAL</h4>
+              <h4 className="text-2xl">PRESENCIAL</h4>
               <p>
                 Los alumnos asistirán, en forma presencial, todos los días de
                 clase según se prevea en el cronograma.
@@ -100,7 +100,7 @@ export default function PublicHome() {
               </button>
             </div>
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
-              <h4>SEMI-PRESENCIAL</h4>
+              <h4 className="text-2xl">SEMI-PRESENCIAL</h4>
               <p>
                 Los alumnos asistirán, en forma presencial, el 50% de los días
                 de clase de la modalidad presencial, según se prevea el
@@ -114,7 +114,7 @@ export default function PublicHome() {
               </button>
             </div>
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
-              <h4>DISTANCIA</h4>
+              <h4 className="text-2xl">DISTANCIA</h4>
               <p>
                 Los alumnos asistirán, en forma presencial, 4 días de clase
                 según se prevea en el calendario.

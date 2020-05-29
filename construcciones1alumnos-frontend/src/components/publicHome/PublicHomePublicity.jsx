@@ -21,7 +21,7 @@ export default function PublicHomePublicity() {
   return (
     <div className="w-full flex justify-center">
       <div className="w-full text-center my-20 bglayer1 rounded-lg">
-        <h3 className="mt-8">PUBLICIDAD</h3>
+        <h4 className="mt-8 text-2xl">PUBLICIDAD</h4>
         <ul className="flex flex-wrap w-full">
           {publicityList.map((publicity) => (
             <li className="p-4 w-1/2" key={publicity._id}>
