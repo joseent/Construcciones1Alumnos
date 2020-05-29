@@ -4,7 +4,8 @@ import infoFau from '../../images/infoFau.jpeg'
 
 export default function InfoFau() {
   return (
-    <div className="w-10/12 mt-16">
+    <div className="w-full flex justify-center">
+      <div className="w-10/12 mt-16">
         <h4 className="text-center">FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
       <p>
         Plan de Estudios 2008 (PE-08) aprobado en la FAU, plantea el desarrollo
@@ -34,8 +35,10 @@ export default function InfoFau() {
           </button>
         </a>
       </div>
-
-      <img className="w-10/12" src={infoFau} alt="plan de estudio"/>
+<div className="w-full">
+      <img src={infoFau} alt="plan de estudio"/>
+</div>
     </div>
+      </div>
   );
 }
