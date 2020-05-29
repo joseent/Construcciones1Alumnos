@@ -3,7 +3,7 @@ import React from "react";
 // @ts-ignore
 import mapaconceptual1 from "../../images/mapaconceptual1.jpg";
 // @ts-ignore
-import mapaconceptual2 from "../../images/mapaconceptual2.jpg";
+import mapaconceptual2 from "../../images/mapaconceptual2.png";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 
 export default function Catedra() {
@@ -12,6 +12,7 @@ export default function Catedra() {
     <div className="w-full flex justify-center">
       <div className="w-10/12 text-center my-16">
         <h4>CONSTRUCCIONES I</h4>
+        <br/>
         <p>
           En el campo de nuestra competencia, integrando el área de Ciencias
           Básicas, Tecnología, Producción y Gestión, la asignatura
@@ -22,7 +23,7 @@ export default function Catedra() {
         <br />
         <img src={mapaconceptual1} />
         <br />
-        <p>
+        <p className="text-sm">
           Mapa conceptual de la asignatura: descomposición de la obra de
           arquitectura.
         </p>
