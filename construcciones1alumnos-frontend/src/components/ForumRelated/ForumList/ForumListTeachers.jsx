@@ -60,7 +60,7 @@ export default function ForumListTeachers() {
       <div className="w-full mx-auto flex justify-between items-center mb-5 p-2">
         <div className="w-full flex">
           <select
-            className="flex-grow rounded-sm p-1 text-black"
+            className="flex-grow rounded-l-md p-1 text-black"
             id="inputGroupSelect04"
             aria-label="Example select with button addon"
             onChange={handleChangeSelector}
@@ -76,7 +76,7 @@ export default function ForumListTeachers() {
 
           <button
             onClick={GetListByTema}
-            className="w-3/12 p-2 text-black text-bold bgyellow border borderyellow rounded"
+            className="w-3/12 p-2 text-black text-bold bgyellow border borderyellow rounded-r-md"
             type="button"
           >
             BUSCAR
@@ -91,7 +91,7 @@ export default function ForumListTeachers() {
               className="flex items-center mb-4 p-2 cursor-pointer textyellow sm:min-w-full  ulmedia"
               onClick={() => handleOnClick(consultas._id)}
             >
-              <div className="p-4 flex justify-between items-center border borderyellow rounded-md h-20 w-4/5 shadowColor">
+              <div className="p-4 flex justify-between items-center border borderyellow rounded-l-md h-20 w-4/5 shadowColor">
                 {consultas.respondido ? (
                   <i className="fa fa-check"></i>
                 ) : (
@@ -103,7 +103,7 @@ export default function ForumListTeachers() {
                 </div>
                 <i className="fa fa-mail-forward"></i>
               </div>
-              <div className="p-4 border borderyellow rounded-md h-20 w-1/5 shadowColor">
+              <div className="p-4 border borderyellow rounded-r-md h-20 w-1/5 shadowColor">
                 <span>{consultas.usuario}</span>
               </div>
             </li>

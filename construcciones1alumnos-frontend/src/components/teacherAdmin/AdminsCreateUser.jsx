@@ -118,11 +118,11 @@ export default function AdminsCreateUser() {
                 placeholder="11111111"
               />
             </div>
-            <div className="w-full md:w-1/2 px-3">
+            <div className="w-full md:w-1/2 px-3 flex-col">
               <label className=" uppercase tracking-wide textyellow text-xs font-bold mb-2">
                 ADMINISTRADOR
               </label>
-             <input type="checkbox" onClick={handleChangeAdmin}/>
+             <input className="" type="checkbox" onClick={handleChangeAdmin}/>
             </div>
           </div>
           <div className="flex flex-wrap -mx-3 mb-6">
@@ -165,7 +165,7 @@ export default function AdminsCreateUser() {
                 value={contrasena}
                 onChange={handleChangeContrasena}
                 id="grid-password"
-                type="contraseña"
+                type="password"
                 placeholder="**********"
               />
             </div>

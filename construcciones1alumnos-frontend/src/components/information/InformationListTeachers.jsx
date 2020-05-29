@@ -58,7 +58,7 @@ export default function InformationListTeachers() {
         <ul className="w-6/12 list-group mb-5 ulmediainfo">
           {InfoList.map((informacion) => (
             <div className="flex border borderyellow shadowColor rounded-md mb-3" key={informacion._id}>
-              <div className="flex w-11/12">
+              <div className="flex widthlist">
                 <li
                   
                   className="w-10/12 flex justify-between items-center p-2  textyellow cursor-pointer sm:min-w-full"
@@ -75,7 +75,7 @@ export default function InformationListTeachers() {
                   onClick={() => {
                     handleDelete(informacion._id);
                   }}
-                  className="bgyellow font-bold text-black p-2 rounded-r-sm"
+                  className="bgyellow font-bold text-black p-2 rounded-r-md"
                 >
                   BORRAR
                 </button>
