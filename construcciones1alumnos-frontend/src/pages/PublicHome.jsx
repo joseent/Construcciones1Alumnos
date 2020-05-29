@@ -39,7 +39,9 @@ export default function PublicHome() {
             <div className="w-4/5 text-center mt-20">
               <h3>FACULTAD</h3>
               <p>
-              Desde hace más de 60 años la Facultad de Arquitectura y Urbanismo, de la Universidad Nacional de Tucumán, forma talentos comprometidos con su comunidad y con su tiempo.
+                Desde hace más de 60 años la Facultad de Arquitectura y
+                Urbanismo, de la Universidad Nacional de Tucumán, forma talentos
+                comprometidos con su comunidad y con su tiempo.
               </p>
             </div>
             <button
@@ -55,11 +57,14 @@ export default function PublicHome() {
           <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
               <h3>CONSTRUCCIONES I</h3>
+              <p>QUE? CON QUE? COMO? se construye un edificio</p>
+              <br/>
               <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Adipisci ullam maxime, nobis et animi quis sit quia eveniet
-                distinctio dignissimos? Est maiores provident aspernatur nobis
-                eaque, cupiditate ex quia quos?
+                Se pretende orientar al estudiante para que desarrolle
+                CRITERIOS, teniendo en cuenta los MATERIALES y PROCESOS
+                CONSTRUCTIVOS, para proponer alternativas tecnológicas adecuadas
+                para resolver los diferentes elementos constructivos que
+                integran el edificio.
               </p>
             </div>
             <button
@@ -82,7 +87,8 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
               <h4>PRESENCIAL</h4>
               <p>
-              Los alumnos asistirán, en forma presencial, todos los días de clase según se prevea en el cronograma. 
+                Los alumnos asistirán, en forma presencial, todos los días de
+                clase según se prevea en el cronograma.
               </p>
               <button
                 onClick={handleMetodologia}
@@ -94,7 +100,9 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
               <h4>SEMI-PRESENCIAL</h4>
               <p>
-              Los alumnos asistirán, en forma presencial, el 50% de los días de clase de la modalidad presencial, según se prevea el cronograma. 
+                Los alumnos asistirán, en forma presencial, el 50% de los días
+                de clase de la modalidad presencial, según se prevea el
+                cronograma.
               </p>
               <button
                 onClick={handleMetodologia}
@@ -106,7 +114,8 @@ export default function PublicHome() {
             <div className="metodologycol w-4/12 flex-col text-center mt-10">
               <h4>DISTANCIA</h4>
               <p>
-              Los alumnos asistirán, en forma presencial, 4 días de clase según se prevea en el calendario.
+                Los alumnos asistirán, en forma presencial, 4 días de clase
+                según se prevea en el calendario.
               </p>
               <button
                 onClick={handleMetodologia}
@@ -118,15 +127,15 @@ export default function PublicHome() {
           </div>
         </div>
         {/* seminars */}
-        <div className="mediafullwidth flex justify-center">
+        <div className="mediafullwidth w-11/12 flex justify-center">
           <PublicHomeSeminars />
         </div>
         {/* publicity */}
-        <div className="mediafullwidth flex justify-center">
+        <div className="mediafullwidth w-11/12 flex justify-center">
           <PublicHomePublicity />
         </div>
         {/* pictures */}
-        <div className="mediafullwidth flex justify-center">
+        <div className="mediafullwidth w-11/12 flex justify-center">
           <PublicHomeClassRoomPics />
         </div>
         {/* teachers */}
