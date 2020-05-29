@@ -4,8 +4,8 @@ import infoFau from '../../images/infoFau.jpeg'
 
 export default function InfoFau() {
   return (
-    <div>
-        <h4>FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
+    <div className="w-10/12 mt-16">
+        <h4 className="text-center">FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
       <p>
         Plan de Estudios 2008 (PE-08) aprobado en la FAU, plantea el desarrollo
         de la carrera, básicamente en tres ciclos o estadios formativos de
@@ -25,8 +25,9 @@ export default function InfoFau() {
       <p>b- Proyecto y planeamiento </p>
       <p>c- Ciencias básicas, tecnología, producción y gestión</p>
       <p>d- Historia y teoría de la arquitectura</p>
+      <br/>
 
-      <div className="mt-2">
+      <div className="w-full mt-2 flex justify-center">
         <a href="https://www.fau.unt.edu.ar/wp-content/uploads/plan2008.pdf">
           <button className="bgyellow text-black font-bold p-2 rounded-md">
             DESCARGAR PLAN DE ESTUDIO

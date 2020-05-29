@@ -37,7 +37,7 @@ export default function PublicHome() {
           <img src={infofau} className="w-2/5 informativeimage" alt="" />
           <div className="infofaumedia w-3/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h3>INFO FACULTAD</h3>
+              <h3>FACULTAD</h3>
               <p>
               Desde hace más de 60 años la Facultad de Arquitectura y Urbanismo, de la Universidad Nacional de Tucumán, forma talentos comprometidos con su comunidad y con su tiempo.
               </p>
@@ -54,7 +54,7 @@ export default function PublicHome() {
         <div className="mediafullwidth flex mb-20">
           <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h3>INFO CATEDRA</h3>
+              <h3>CONSTRUCCIONES I</h3>
               <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Adipisci ullam maxime, nobis et animi quis sit quia eveniet
