@@ -1,6 +1,8 @@
 // @ts-check
 import React from "react";
+// @ts-ignore
 import mapaconceptual1 from "../../images/mapaconceptual1.jpg";
+// @ts-ignore
 import mapaconceptual2 from "../../images/mapaconceptual2.jpg";
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 

@@ -1,5 +1,6 @@
 // @ts-check
 import React from "react";
+// @ts-ignore
 import infoFau from '../../images/infoFau.jpeg'
 
 export default function InfoFau() {

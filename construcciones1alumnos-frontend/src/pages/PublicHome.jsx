@@ -1,7 +1,9 @@
 // @ts-check
 import React from "react";
 
+// @ts-ignore
 import infofau from "../images/universidadFoto.jpg";
+// @ts-ignore
 import areatecnica from "../images/areatecnica.jpg";
 
 import "../pages/PublicHome.css";
