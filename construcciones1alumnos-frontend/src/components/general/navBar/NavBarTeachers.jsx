@@ -52,18 +52,18 @@ export default function NavBarTeachers() {
           <div className="navContainer">
           <Link to="/" className="active">
             <div className="flex items-center p-3">
-            <img className="w-12 rounded-full" src={c1Logo} alt=""/>
+            <img className="w-12 rounded-full mr-3" src={c1Logo} alt="" />
             </div>
           </Link>
           {menu.map(({ name, to }) => (
             <Link key={name} to={to} className="texthover">
-              <p className="textyellow">{name}</p>
+              <p className="textyellow text-sm">{name}</p>
             </Link>
           ))}
           {
             userLogged && 
             <Link to="" className="texthover" onClick={handleDesloguear}>
-             <p className="textyellow"> CERRAR SESION</p>
+             <p className="textyellow text-sm"> CERRAR SESION</p>
             </Link>
           }
           <a className="icon" onClick={toggleNavbar}>

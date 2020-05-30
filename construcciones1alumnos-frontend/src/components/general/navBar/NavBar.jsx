@@ -53,13 +53,13 @@ export default function NavBar() {
           </Link>
           {menu.map(({ name, to }) => (
             <Link key={name} to={to} className="texthover">
-             <p className="textyellow"> {name}</p>
+             <p className="textyellow text-sm"> {name}</p>
             </Link>
           ))}
            {
             userLogged && 
             <Link to="" className="texthover" onClick={handleDesloguear}>
-             <p className="textyellow"> CERRAR SESION</p>
+             <p className="textyellow text-sm"> CERRAR SESION</p>
             </Link>
           }
           <a className="icon" onClick={toggleNavbar}>

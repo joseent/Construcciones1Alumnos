@@ -112,6 +112,9 @@
   .textNav {
     display: none;
   }
+  .textNavMedia{
+    display: block;
+  }
   .textNavPublicHome {
     font-size: medium;
   }

@@ -110,9 +110,9 @@ export default function ClassRoomEdit() {
                   <p className="p-2 w-8/12 ">{fotos.description}</p>
                 </div>
                 <div className="w-1/12 ">
-                  <button className="bgyellow font-bold rounded-sm p-1 w-full mb-2">
+                  {/* <button className="bgyellow font-bold rounded-sm p-1 w-full mb-2">
                     EDITAR
-                  </button>
+                  </button> */}
                   <button
                     onClick={() => handleDelete(fotos._id)}
                     className="bgyellow font-bold rounded-sm p-1 w-full"

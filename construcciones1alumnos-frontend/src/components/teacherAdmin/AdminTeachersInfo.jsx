@@ -33,7 +33,7 @@ export default function AdminTeachersInfo() {
   };
 
   return (
-    <div>
+    <div className="mt-16">
       <h4 className="text-center">GESTOR DE DOCENTES</h4>
       <div className="flex justify-center mb-8">
         <ul className="w-10/12 mb-6 overflow-x-scroll">
