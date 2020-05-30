@@ -1,8 +1,12 @@
 // @ts-check
 import React from "react";
+// @ts-ignore
 import metodologia1 from "../../images/metodologia1.jpg";
+// @ts-ignore
 import metodologia2 from "../../images/metodologia2.jpg";
+// @ts-ignore
 import metodologia5 from "../../images/metodologia5.jpg";
+// @ts-ignore
 import metodologia3 from "../../images/metodologia3.jpg";
 
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
@@ -10,7 +14,7 @@ export default function Metodologia() {
   return (
     <div className="w-full flex justify-center">
       <div className="w-10/12 text-center my-16">
-        <h4>METODOLOGIA DE DICTADO</h4>
+        <h4 className="font-bold" >METODOLOGIA DE DICTADO</h4>
         <br />
         <img src={metodologia1} />
         <p>
@@ -24,10 +28,6 @@ export default function Metodologia() {
         </p>
         <br />
         <img src={metodologia2} />
-        <p className="text-xs">
-          Mapa conceptual de la asignatura: descomposición de la obra de
-          arquitectura.
-        </p>
         <br />
         <p>
           Todo esto se puede justificar porque, según los especialistas, el

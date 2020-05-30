@@ -11,7 +11,7 @@ export default function Catedra() {
     // info catedra
     <div className="w-full flex justify-center">
       <div className="w-10/12 text-center my-16">
-        <h4>CONSTRUCCIONES I</h4>
+        <h4 className="font-bold">CONSTRUCCIONES I</h4>
         <br/>
         <p>
           En el campo de nuestra competencia, integrando el área de Ciencias

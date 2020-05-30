@@ -8,7 +8,7 @@ export default function InfoFau() {
   return (
     <div className="w-full flex justify-center">
       <div className="w-10/12 mt-16">
-        <h4 className="text-center">FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
+        <h4 className="text-center font-bold">FACULTAD DE ARQUITECTURA Y URBANISMO - UNT</h4>
         <br/>
       <p>
         Plan de Estudios 2008 (PE-08) aprobado en la FAU, plantea el desarrollo

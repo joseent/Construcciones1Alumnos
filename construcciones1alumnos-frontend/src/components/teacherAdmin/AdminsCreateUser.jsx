@@ -56,13 +56,14 @@ export default function AdminsCreateUser() {
           image: ProfilePic,
         })
         .then((res) => {
-          setNombre(res.data.documento.nombre);
-          setApellido(res.data.documento.apellido);
-          setDni(res.data.documento.dni);
-          setAdmin(res.data.documento.admin);
-          setUsuario(res.data.documento.usuario);
-          setContrasena(res.data.documento.contrasena);
-          setMail(res.data.documento.mail);
+          // setNombre(res.data.documento.nombre);
+          // setApellido(res.data.documento.apellido);
+          // setDni(res.data.documento.dni);
+          // setAdmin(res.data.documento.admin);
+          // setUsuario(res.data.documento.usuario);
+          // setContrasena(res.data.documento.contrasena);
+          // setMail(res.data.documento.mail);
+          window.location.reload(false)
           
         })
         .catch((error) => {

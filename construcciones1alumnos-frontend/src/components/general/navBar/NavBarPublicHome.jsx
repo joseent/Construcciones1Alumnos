@@ -25,7 +25,7 @@ export default function NavBarPublicHome() {
       to: "/register",
     },
     {
-      name: "Iniciar Sesion",
+      name: "Iniciar Sesión",
       to: "/login",
     },
   ];
@@ -70,11 +70,11 @@ export default function NavBarPublicHome() {
             </Link>
             {userLogged ? (
               student ? (
-                <button className="text-black bgyellow rounded-md p-1 mt-8" onClick={handleStudent}>
+                <button className="text-black bgyellow rounded-md p-1" onClick={handleStudent}>
                   INGRESAR
                 </button>
               ) : (
-                <button className="text-black bgyellow rounded-md p-1 mt-8 " onClick={handleTeacher}>
+                <button className="text-black bgyellow rounded-md p-1 " onClick={handleTeacher}>
                   INGRESAR TEACHER
                 </button>
               )

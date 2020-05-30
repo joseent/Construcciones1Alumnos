@@ -2,6 +2,7 @@
 import React, { useState } from 'react'
 import { Link, useHistory } from "react-router-dom";
 import "./NavBar.css";
+// @ts-ignore
 import c1Logo from "../../../images/c1Logo.jpg"
 import { useEffect } from 'react';
 const menu = [

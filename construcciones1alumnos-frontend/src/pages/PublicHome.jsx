@@ -5,6 +5,8 @@ import React from "react";
 import infofau from "../images/universidadFoto.jpg";
 // @ts-ignore
 import areatecnica from "../images/areatecnica.jpg";
+// @ts-ignore
+import objetivosGenerales from "../images/objetivosgenerales.jpg";
 
 import "../pages/PublicHome.css";
 import "../components/general/navBar/NavBar.css";
@@ -39,7 +41,7 @@ export default function PublicHome() {
           <img src={infofau} className="w-2/5 informativeimage" alt="" />
           <div className="infofaumedia w-3/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h4 className="text-2xl">FACULTAD</h4>
+              <h4 className="text-2xl font-bold">FACULTAD</h4>
               <p>
                 Desde hace más de 60 años la Facultad de Arquitectura y
                 Urbanismo, de la Universidad Nacional de Tucumán, forma talentos
@@ -59,7 +61,7 @@ export default function PublicHome() {
           <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
               <h4 className="text-2xl">CONSTRUCCIONES I</h4>
-              <p>¿QUE? ¿CON ¿QUE? ¿COMO? se construye un edificio</p>
+              <p>¿QUE? ¿CON QUE? ¿COMO? se construye un edificio</p>
               <br/>
               <p>
                 Se pretende orientar al estudiante para que desarrolle
@@ -77,7 +79,7 @@ export default function PublicHome() {
             </button>
           </div>
           <img
-            src={areatecnica}
+            src={objetivosGenerales}
             className="w-2/5 mt-20 informativeimage"
             alt=""
           />

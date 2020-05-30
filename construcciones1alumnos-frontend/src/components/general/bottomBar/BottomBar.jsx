@@ -16,10 +16,10 @@ export default function BottomBar() {
               <p>Info FAU</p>
             </Link>
             <Link to="/catedra">
-              <p>Info Catedra</p>
+              <p>Info Cátedra</p>
             </Link>
             <Link to="/metodologia">
-              <p>Metodologia</p>
+              <p>Metodología</p>
             </Link>
             <Link to="/seminars">
               <p>Seminarios</p>
