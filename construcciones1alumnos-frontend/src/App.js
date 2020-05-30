@@ -29,12 +29,14 @@ import "./App.css"
 import InfoFau from "./pages/publicHomeInformation/InfoFau";
 import Metodologia from "./pages/publicHomeInformation/Metodologia";
 import PrivateRoute from "./components/PrivateRoute";
+import ScrollToTop from "./components/ScrollToTop";
 
 
 export default function App() {
   return (
     <Router>
       <div className="bgColor">
+      <ScrollToTop/>
         <Switch>
           <PrivateRoute path="/userinfo/:id">
             <UserInfo />
