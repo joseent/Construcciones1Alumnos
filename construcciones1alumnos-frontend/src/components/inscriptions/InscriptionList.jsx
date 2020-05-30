@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import '../inscriptions/InscriptionList.css'
+// @ts-ignore
 import imageLogo from '../../images/userLogo.png'
 
 export default function InscriptionList() {

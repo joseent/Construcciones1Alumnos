@@ -25,7 +25,7 @@ export default function PublicHomeSeminars() {
   return (
     <div className="w-full flex justify-center">
       <div className="w-full text-center my-20 bglayer1 rounded-lg">
-        <h4 className="mb-6 mt-8  text-2xl">SEMINARIOS</h4>
+        <h4 className="mb-6 mt-8  text-2xl font-bold">SEMINARIOS</h4>
         <ul className="seminarsulmedia flex flex-wrap w-full">
           {seminarList.map((seminars) => (
             <li className="seminarslimedia p-4 w-1/2" key={seminars._id}>

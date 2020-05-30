@@ -60,7 +60,7 @@ export default function PublicHome() {
         <div className="mediafullwidth flex mb-20">
           <div className="infocatedramedia w-4/5 flex flex-col justify-center items-center">
             <div className="w-4/5 text-center mt-20">
-              <h4 className="text-2xl">CONSTRUCCIONES I</h4>
+              <h4 className="text-2xl  font-bold">CONSTRUCCIONES I</h4>
               <p>¿QUE? ¿CON QUE? ¿COMO? se construye un edificio</p>
               <br/>
               <p>
@@ -86,7 +86,7 @@ export default function PublicHome() {
         </div>
         {/* metodologia */}
         <div className="mediafullwidth flex flex-col">
-          <h4 className="text-center text-2xl mt-20">METODOLOGIA</h4>
+          <h4 className="text-center text-2xl mt-20 font-bold">METODOLOGIA</h4>
           <div className="flex w-full mediasm">
             <div className="metodologycol w-4/12 flex flex-col items-center text-center mt-10">
               <h4 className="text-2xl">PRESENCIAL</h4>

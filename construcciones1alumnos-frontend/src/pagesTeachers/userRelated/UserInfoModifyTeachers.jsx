@@ -1,5 +1,6 @@
 // @ts-check
 import React, { useState, useEffect } from "react";
+// @ts-ignore
 import userLogo from "../../images/userLogo.png";
 
 

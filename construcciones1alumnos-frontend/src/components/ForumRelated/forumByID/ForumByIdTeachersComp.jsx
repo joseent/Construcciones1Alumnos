@@ -97,7 +97,7 @@ export default function ForumByIdTeachersComp() {
             onClick={handlePut}
             className="w-full bgyellow rounded-md font-bold p-4 mb-2"
           >
-            MODIFICAR
+            ENVIAR
           </button>
         </div>
         {

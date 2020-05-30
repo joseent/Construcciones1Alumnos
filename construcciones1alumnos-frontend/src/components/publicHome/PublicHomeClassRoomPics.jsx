@@ -24,7 +24,7 @@ export default function PublicHomeClassRoomPics() {
     return (
              <div className="w-full flex justify-center">
           <div className="w-full text-center my-20 bglayer1 rounded-lg">
-            <h4 className="text-2xl">IMAGENES</h4>
+            <h4 className="text-2xl font-bold">IMAGENES</h4>
             <Carousel>
               {classPics.map((fotos) => (
                 <div key={fotos._id}>
