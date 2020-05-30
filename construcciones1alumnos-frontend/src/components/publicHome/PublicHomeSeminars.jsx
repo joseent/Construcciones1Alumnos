@@ -1,11 +1,13 @@
 // @ts-check
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import {useHistory} from "react-router-dom"
 
 import "../../pages/PublicHome.css"
 
 export default function PublicHomeSeminars() {
   const [seminarList, setSeminarList] = useState([]);
+  const history = useHistory();
 
   useEffect(() => {
     const GetSeminarList = async () => {
@@ -21,6 +23,10 @@ export default function PublicHomeSeminars() {
     };
     GetSeminarList();
   }, []);
+
+  const handleOnClick = () => {
+    history.push("/seminars")
+  }
 
   return (
     <div className="w-full flex justify-center">
@@ -47,7 +53,7 @@ export default function PublicHomeSeminars() {
             </li>
           ))}
         </ul>
-        <button className="bgyellow  shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold">VER MAS</button>
+        <button onClick={handleOnClick} className="bgyellow  shadow-lg seemorebutton rounded-md mt-8 mb-8 w-1/5 p-2 font-bold">VER MAS</button>
       </div>
     </div>
   );
